@@ -6,13 +6,17 @@
 ; Autor: Valerie Valdez
 ; Copilador: pic-as (v2.30), MPLABX V5.45
 
-; Programa: 2 contadores en el Puerto A
-; Hardware: Oscilador utilizado como temporizador, contador binario de 4 bits 
-;           con display que aumente y decremente con pushes. Cuando t = c led se
-;           se enciende y se reinicia el uC.
+; Descripción del programa: oscilador utilizado como temporizador, contador bi-
+;           nario de 4 bits con display que aumente y decremente con pushes. 
+;           Cuando t = c LED se enciende y se reinicia el uC.
+    
+; Hardware:En los pines RA0 Y RA1 están conectados dos push buttons mientras que
+;          en el RA3 se conectó el LED que presenta la alarma. Por otro lado, en
+;          el puerto B se encuentran los LEDS para el temporizador y en el D el
+;          display para el contador.
     
 ; Creado: 15/02
-; Última modificación: 
+; Última modificación: 19/02
 ;-------------------------------------------------------------------------------    
 
 PROCESSOR 16F887
@@ -52,7 +56,7 @@ PROCESSOR 16F887
     
 ;Configuración del microcontrolador
  PSECT code, delta=2, abs   ; A partir de acá es código
- ORG 100h                   ;posición para el código
+ ORG 0100h                   ;posición para el código
  
 ;----------------------- C O N F I G U R A C I Ó N -----------------------------
  
@@ -75,7 +79,11 @@ main:
     CLRF    PORTB           ; Inicializar los puertos
     CLRF    PORTC
     CLRF    PORTD
-    ; Tosc 1 = contador y Tosc = 0 temporizador
+    
+; Tosc 1 = contador y Tosc = 0 temporizador
+; Temporización : 4*TOSC*TMR0*Prescaler (predivisor)
+    ; TOSC = 1/FOSC
+    ; TMR0 = 256-N (valor a cargar en TMR0)
     
     CLRWDT                  ; Clear watch dog y prescalador
     banksel OPTION_REG      ; Ir al banco donde está Op. reg
@@ -90,7 +98,7 @@ main:
     BSF     OSCCON, 6
     BSF     SCS             ; Utilizar oscilador interno
     
-    call    timer           ; Limpiar la bandera de overflow
+    call    timer           ; Inicializar el timer
     
 ;-------------------------------- L O O P --------------------------------------
 ;                           Boton presionado = 1
@@ -113,7 +121,7 @@ main:
     
 ;  T E M P O R I Z A D O R 
     
-    btfss  INTCON, 2
+    btfss  INTCON, 2     ; Bit test, f = 0 ejecutar sig. instr.
     goto   $-1 
     call   timer
     MOVLW  250
@@ -209,7 +217,7 @@ dec_C:
  
 overflow:
     MOVLW 0x08      ; Encender el 4to bit
-    XORWF PORTA, F  ; XOR AL RA3, c/activacion cambia el valor
+    XORWF PORTA, F  ; XOR AL RA3, c/activacion cambia el valor ALARMA CAMBIAR VALOR
     CLRF  PORTB     ; Resetear portb
     BCF   STATUS, 2 ; Limpiar el 2do bit de STATUS
     RETURN

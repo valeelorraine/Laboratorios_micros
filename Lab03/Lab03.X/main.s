@@ -145,7 +145,7 @@ timer:
     banksel TMR0         ; Ir al banco de TMR0
     MOVLW   131          ; Cargar N = 131 (viene de la ecuación de t)
     MOVF    TMR0         ; Moverlo a TMR0
-    BCF     INTCON, 2    ; Bandera de overflow (viene con v desconocido)
+    BCF     INTCON, 2    ; Bandera de overflow (viene con v desconocido) TIOF
     RETURN 
     
 ; T E M P O R I Z A D O R 

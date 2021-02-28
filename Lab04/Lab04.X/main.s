@@ -75,7 +75,7 @@ PROCESSOR 16F887
     BTFSC INTCON, 2   ; Bandera TOIF
     CALL  INC  
       
- POP: 
+POP: 
     SWAPF STAT_TEMP, W ; Regresando el valor al original
     MOVWF STATUS       ; Regresarlo a STATUS
     SWAPF W_TEMP, F    ; darle vuelta a los nibbles de Wtemp
@@ -154,7 +154,7 @@ main:
     BSF     INTCON, 3       ; Encender interrupción de PORTB
     BCF     INTCON, 5       ; Encender interrupción de TMR0
     BSF     INTCON, 7       ; Encender interrupción de global
-    BCF     INTCON, 2
+    BCF     INTCON, 2       
     banksel PORTA
         
     
@@ -183,19 +183,19 @@ main:
  loop: 
     
 ;   C O N T A D O R     
-    BTFSC  FLAG, 0   ; Bit test skip if clear, si no está apachado se hace la acción
-    call   inc_A     ; Incrementar puerto A
-    BTFSC  FLAG, 1   ; Bit test skip if clear, si no está apachado se hace la cción
-    call   dec_A     ; Decrementar el puerto A
+    BTFSC  FLAG, 0  ; Bit test skip if clear, si no está apachado se hace la acción
+    call   inc_A    ; Incrementar puerto A
+    BTFSC  FLAG, 1  ; Bit test skip if clear, si no está apachado se hace la cción
+    call   dec_A    ; Decrementar el puerto A
 
 ;   T E M P O R I Z A D O R
-    BTFSC  FLAG, 2       ; Si Flag = 0 Ejecutar sigiente instr.
-    CALL TIMER0
+    BTFSC  FLAG, 2      ; Si Flag = 0 Ejecutar sigiente instr.
+    CALL   TIMER0
     goto   loop
     
 ;-------------------------- S U B R U T I N A ----------------------------------
 ;                               Etiquetas
-    
+   
     
  TIMER0:
     CALL    timer
@@ -204,21 +204,17 @@ main:
     MOVLW   125
     SUBWF   COUNTER, 0    ; 0 se guarda en w
     BTFSS   ZERO
-  ; BTFSC  STATUS, 2     ; STATUS = 1 Ejecutar siguiente instr.
     RETURN
     CLRF    COUNTER  
     call    temporizador
    RETURN
     
-    
-
 timer: 
     banksel TMR0         ; Ir al banco de TMR0
     MOVLW   6            ; Cargar N = 6 (viene de la ecuación de t)
     MOVF    TMR0         ; Moverlo a TMR0
     BCF     INTCON, 2    ; Bandera de overflow (viene con v desconocido)
     RETURN 
-    
     
 ; T E M P O R I Z A D O R 
     
@@ -231,33 +227,28 @@ temporizador:
     CALL    Tabla
     MOVWF   PORTD
     RETURN 
-    
-inc_counter:
-    INCF    COUNTER      ; Incrementar contador
-    BCF     INTCON, 2    ; Limpiar la bandera 
-    RETURN
- 
+  
 ; C O N T A D O R 
     
 inc_A:  
-    INCF  PORTA, F  ; Si está en clear incrementa 1 en el puerto C
-    BTFSC PORTA, 4  ; Revisar valor del 4t bit
-    CLRF  PORTA     ; Resetear si 4to bit = 1
-    MOVF  PORTA, 0
-    CALL  Tabla 
-    MOVWF PORTC
-    CLRF  FLAG      ; Limpiar bandera
+    INCF   PORTA, F  ; Si está en clear incrementa 1 en el puerto C
+    BTFSC  PORTA, 4  ; Revisar valor del 4t bit
+    CLRF   PORTA     ; Resetear si 4to bit = 1
+    MOVF   PORTA, 0
+    CALL   Tabla 
+    MOVWF  PORTC
+    CLRF   FLAG      ; Limpiar bandera
     RETURN          ; Regresar al loop
     
 dec_A: 
-    DECF  PORTA, F  ; Si está en clear incrementa 1 en el puerto B
-    MOVLW 0x0F      ; Cargar valor a W cuando se decrementa de 0 a F hex
-    BTFSC PORTA, 7  ; Revisar valor del 4t bit
-    MOVWF PORTA
-    MOVF  PORTA, 0  ; Cargar W en el puerto para encender 4 bit
-    CALL  Tabla
-    MOVWF PORTC
-    CLRF  FLAG      ; Limpiar bandera
+    DECF   PORTA, F  ; Si está en clear incrementa 1 en el puerto B
+    MOVLW  0x0F      ; Cargar valor a W cuando se decrementa de 0 a F hex
+    BTFSC  PORTA, 7  ; Revisar valor del 4t bit
+    MOVWF  PORTA
+    MOVF   PORTA, 0  ; Cargar W en el puerto para encender 4 bit
+    CALL   Tabla
+    MOVWF  PORTC
+    CLRF   FLAG      ; Limpiar bandera
     RETURN          ; Regresar al loop
     
 END

@@ -2524,7 +2524,7 @@ ENDM
     BTFSC INTCON, 2 ; Bandera TOIF
     CALL INC
 
- POP:
+POP:
     SWAPF STAT_TEMP, W ; Regresando el valor al original
     MOVWF STATUS ; Regresarlo a STATUS
     SWAPF W_TEMP, F ; darle vuelta a los nibbles de Wtemp
@@ -2653,13 +2653,10 @@ main:
     MOVLW 125
     SUBWF COUNTER, 0 ; 0 se guarda en w
     BTFSS ((STATUS) and 07Fh), 2
-  ; BTFSC STATUS, 2 ; STATUS = 1 Ejecutar siguiente instr.
     RETURN
     CLRF COUNTER
     call temporizador
    RETURN
-
-
 
 timer:
     banksel TMR0 ; Ir al banco de TMR0
@@ -2667,7 +2664,6 @@ timer:
     MOVF TMR0 ; Moverlo a TMR0
     BCF INTCON, 2 ; Bandera de overflow (viene con v desconocido)
     RETURN
-
 
 ; T E M P O R I Z A D O R
 
@@ -2679,11 +2675,6 @@ temporizador:
     ANDLW 0X0F
     CALL Tabla
     MOVWF PORTD
-    RETURN
-
-inc_counter:
-    INCF COUNTER ; Incrementar contador
-    BCF INTCON, 2 ; Limpiar la bandera
     RETURN
 
 ; C O N T A D O R

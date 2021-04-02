@@ -340,34 +340,34 @@ DISP_DECIMAL:
 ;                                R E S T A
 ;                            UNIDADES Y DECENAS 
 ;_______________________________________________________________________________
-    
-UN: 
-    CLRF   NUMERO+1      ; Limpiar decenas
-    MOVLW  1
-    SUBWF  Bin, F        ; Restar 1 y guardarlo en F
-    BTFSC  STATUS, 0     ; Verificar si ocurrió un borrow
-    INCF   NUMERO+1, 1   ; Incrementar unidades
-    BTFSS  STATUS, 0 
-    BSF    FSOOSA, 2     ; Apagar resta de unidades
-    BTFSS  STATUS, 0
-    ADDWF  Bin, F        ; Sumarle 1 
-    RETURN
-    
-DECC:
-    BSF    FSOOSA, 2     ; Apagar bandera de unidades
-    MOVWF  Bin
-    CLRF   NUMERO        ; Limpiar decenas
-    MOVLW  10
-    SUBWF  Bin, F        ; Restar 10 y guardarlo en F
-    BTFSC  STATUS, 0     ; Verificar si ocurrió un borrow
-    INCF   NUMERO, 1     ; Incrementar decenas
-    BTFSS  STATUS, 0     ; Si carry = 1 no ha terminado de contar
-    BSF	   FSOOSA, 1     ; Apagar resta de decenas
-    BTFSS  STATUS, 0
-    BCF    FSOOSA, 2     ; Encender resta de unidades
-    BTFSS  STATUS, 0
-    ADDWF  Bin, F        ; Sumar 10 al valor para no perder el numero
-    RETURN
+
+    UN: 
+	CLRF   NUMERO+1      ; Limpiar decenas
+	MOVLW  1
+	SUBWF  Bin, F        ; Restar 1 y guardarlo en F
+	BTFSC  STATUS, 0     ; Verificar si ocurrió un borrow
+	INCF   NUMERO+1, 1   ; Incrementar unidades
+	BTFSS  STATUS, 0 
+	BSF    FSOOSA, 2     ; Apagar resta de unidades
+	BTFSS  STATUS, 0
+	ADDWF  Bin, F        ; Sumarle 1 
+	RETURN
+
+    DECC:
+	BSF    FSOOSA, 2     ; Apagar bandera de unidades
+	MOVWF  Bin
+	CLRF   NUMERO        ; Limpiar decenas
+	MOVLW  10
+	SUBWF  Bin, F        ; Restar 10 y guardarlo en F
+	BTFSC  STATUS, 0     ; Verificar si ocurrió un borrow
+	INCF   NUMERO, 1     ; Incrementar decenas
+	BTFSS  STATUS, 0     ; Si carry = 1 no ha terminado de contar
+	BSF	   FSOOSA, 1     ; Apagar resta de decenas
+	BTFSS  STATUS, 0
+	BCF    FSOOSA, 2     ; Encender resta de unidades
+	BTFSS  STATUS, 0
+	ADDWF  Bin, F        ; Sumar 10 al valor para no perder el numero
+	RETURN
 
 END
     

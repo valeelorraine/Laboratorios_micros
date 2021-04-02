@@ -6,16 +6,11 @@
 ; Autor: Valerie Valdez
 ; Copilador: pic-as (v2.30), MPLABX V5.45
 
-; Descripción del programa: contador binario de 8 bits con 2 push buttons que 
-;           utilicen interrupciones ON-CHANGE, pull ups internos, 8 LEDs y dos 
-;           display para mostrar el valor en hexadecimal del contador. Asimismo,  
-;           hacer una subrutina que convierta el valor del contador y lo guarde
-;           en 3 variables en formato decimal. Utilizar procedimiento de divi-
-;           sión. Implementar 3 displays de 7 segmentos multiplexados para des-
-;           legar el valor del multiplexor.
+; Descripción del programa: Sistema de semáforos para controlar 3 vías. 
     
-; Hardware: 8 LEDs en el puerto A, 2 push buttons el puerto B, 5 dislay multi-
-;           plexados en el puerto D y los pines de control en el puerto C.
+; Hardware: 3 push buttons en el PB, 4 pares de displays multiplexados en el PC
+;           con los pines de control en el PD. Asimismo, se incluyen 8 LEDs en 
+;           el PA y 2 LEDs en el PE. 
     
 ; Creado: 13/03
 ; Última modificación: 
@@ -71,7 +66,8 @@ PROCESSOR 16F887
     MOVWF STAT_TEMP     ; Guardar lo de W en variable temporal
      
 ISR:                    ; (Interrupciones) chequear que la bandera está encendida
-
+    BTFSC INTCON, 2     ; Testear bandera del overflow del TMR0
+    CALL
       
 POP:  
     SWAPF STAT_TEMP, W  ; Regresando el valor al original
@@ -101,7 +97,7 @@ ORG 0100h                ;posición para el código
 Tabla:
     CLRF   PCLATH 
     BSF    PCLATH, 0     ; Limpiar program counter, 0100h
-    ANDLW  0X0f          ; No sumar más de 15
+    ANDLW  0X0f          ; No sumar más de 15	
     ADDWF  PCL, 1        ; retlw regresa un valor de W cargado
     RETLW  00111111B     ; 0
     RETLW  00000110B     ; 1
@@ -113,50 +109,53 @@ Tabla:
     RETLW  00000111B     ; 7
     RETLW  01111111B     ; 8
     RETLW  01100111B     ; 9
-
-;---------------------- C O N F I G U R A C I O N E S --------------------------
-
+    
+;_______________________________________________________________________________
+;                         C O N F I G U R A C I O N E S 
+;_______________________________________________________________________________
+    
 main: 
+    banksel OSCCON
+    BSF     SCS            ; Utilizar oscilador interno
+     
     CALL    config_pines
     CALL    weak_PU
     CALL    Inicializar
     CALL    Interrupciones
-    CALL    prescaler
-    
-    banksel OSCCON
-    BSF     SCS            ; Utilizar oscilador interno
-    call    timer          ; Inicializar el timer
-    CLRF    W_TEMP         ; Inicializar las variables
+    CALL    PRE0
+    CALL    timer0          ; Inicializar el timer
+    CLRF    W_TEMP          ; Inicializar las variables
     CLRF    STAT_TEMP 
-    CLRF    FLAG  
-    
-    
-;-------------------------- S U B R U T I N A ----------------------------------
+    CLRF    FLAG 
+
+Loop:
+
+    RETURN
+;_______________________________________________________________________________ 
+;                           S U B R U T I N A 
 ;                               Etiquetas
+;_______________________________________________________________________________
 
-
-; C O N F I G U R A C I O N E S 
+; CONFIGURACIONES 
 config_pines:
     banksel ANSEL          ; Ir al registro donde está ANSEL
     CLRF    ANSEL          ; pines digitales
     CLRF    ANSELH         ; Puerto B digital  
          
     banksel TRISA          ; Ir al banco en donde está TRISA
-    BSF     TRISB, 0       ; Pines = inputs
-    BSF     TRISB, 1
+    BSF     TRISB, 0       ; MODO
+    BSF     TRISB, 1       ; INCREMENTO
+    BSF     TRISB, 2       ; DECREMENTO
     CLRF    TRISA          ; Puertos = outputs
-    BCF     TRISC, 0
-    BCF     TRISC, 1
-    BCF     TRISC, 2
-    BCF     TRISC, 3
-    BCF     TRISC, 4
+    CLRF    TRISC
     CLRF    TRISD
+    CLRF    TRISE
     RETURN
  
 ;----------------------- W E A K   P U L L   U P -------------------------------
 weak_PU:
     BCF     OPTION_REG, 7   ; Desabilitar el RBPU para utilizar pull up en dos p
-    MOVLW   00000011B       ; Habilitar lo del IOCB en pines RB0 y RB1
+    MOVLW   00000111B       ; Habilitar lo del IOCB en pines RB0, RB1 Y RB2
     MOVWF   IOCB            ; Interrupt on change
     MOVWF   WPUB            ; Habilitar pull ups
     RETURN
@@ -167,6 +166,7 @@ Inicializar:
     CLRF    PORTB           
     CLRF    PORTC
     CLRF    PORTD
+    CLRF    PORTE
     RETURN
     
 Interrupciones:
@@ -186,7 +186,7 @@ Interrupciones:
 ;           TOSC = 1/FOSC
 ;           TMR0 = 256-N (valor a cargar en TMR0)
     
-prescaler:
+PRE0:
     BCF     PSA            ; Prescaler se le asigna al módulo TMR0
     CLRWDT                 ; Clear watch dog y prescalador
     banksel OPTION_REG     ; Ir al banco donde está Op. reg
@@ -196,12 +196,57 @@ prescaler:
     MOVWF   OPTION_REG 
     RETURN
 
-timer: 
+timer0: 
     banksel TMR0           ; Ir al banco de TMR0
     MOVLW   6              ; Cargar N = 6 (viene de la ecuación de t)
     MOVF    TMR0           ; Moverlo a TMR0
     BCF     INTCON, 2      ; Bandera de overflow (viene con v desconocido)
     RETURN 
+    
+;_______________________________________________________________________________
+;                            A C C I O N E S 
+;_______________________________________________________________________________
+
+Var_regresiva:
+    BTFSS   INTCON, 2	   ; F = 0 ejecutar siguiente instr.
+    goto    $-1 
+    CALL    timer0         ; Inicializar timer 1
+    MOVLW   125
+    SUBWF   TIEMPO1, 0      ; Ver cuando ya pasó 1 segundo
+    BTFSC   STATUS, 2       ; Zero = 1 entonces se realiza la sig. instr.
+    DECF    TIEMPO1         ; Decrementar la variab  le del tiempo
+    BCF     INTCON, 2       ; Limpiar la bandera del overflow
+    return  
+    
+    CLRF    TIEMPO1
+   
+UN: 
+    CLRF   NUMERO+1      ; Limpiar decenas
+    MOVLW  1
+    SUBWF  Bin, F        ; Restar 1 y guardarlo en F
+    BTFSC  STATUS, 0     ; Verificar si ocurrió un borrow
+    INCF   NUMERO+1, 1   ; Incrementar unidades
+    BTFSS  STATUS, 0 
+    BSF    FSOOSA, 2     ; Apagar resta de unidades
+    BTFSS  STATUS, 0
+    ADDWF  Bin, F        ; Sumarle 1 
+    RETURN
+    
+DECC:
+    BSF    FSOOSA, 2     ; Apagar bandera de unidades
+    MOVWF  Bin
+    CLRF   NUMERO        ; Limpiar decenas
+    MOVLW  10
+    SUBWF  Bin, F        ; Restar 10 y guardarlo en F
+    BTFSC  STATUS, 0     ; Verificar si ocurrió un borrow
+    INCF   NUMERO, 1     ; Incrementar decenas
+    BTFSS  STATUS, 0     ; Si carry = 1 no ha terminado de contar
+    BSF	   FSOOSA, 1     ; Apagar resta de decenas
+    BTFSS  STATUS, 0
+    BCF    FSOOSA, 2     ; Encender resta de unidades
+    BTFSS  STATUS, 0
+    ADDWF  Bin, F        ; Sumar 10 al valor para no perder el numero
+    RETURN
     
     
 END

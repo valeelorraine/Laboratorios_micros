@@ -78,8 +78,8 @@ PROCESSOR 16F887
     MOVWF STAT_TEMP     ; Guardar lo de W en variable temporal
      
 ISR:                    ; (Interrupciones) chequear que la bandera está encendida
-    BTFSC INTCON, 0     ; Bandera RBIF
-    CALL  Button
+    BTFSC INTCON, 0     ; RBIF PB change interrupt flag (Ver si cambió estado)
+    CALL  Button        ; Revisar botones
     BTFSC INTCON, 2     ; Bandera TOIF 
     CALL  TIMER0 
       
@@ -98,7 +98,7 @@ Button:
     BTFSS PORTB, 0      ; Revisar 1er pin del PORTB
     BSF   FLAG,  0      ; Setear FLAG
     BTFSS PORTB, 1      ; Revisar 2do pin del PORTB
-    BSF   FLAG,  1
+    BSF   FLAG,  1      ; Setear
     BCF   INTCON,0      ; Limpiar FLAG RBIF
     RETURN
     

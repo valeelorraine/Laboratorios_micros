@@ -298,11 +298,7 @@ ACC_LED:
     
     CLRF   COUNT2        ; Inicializar bandera
     MOVLW  0X01          ; El bit 1 debe oscilar entre 0 y 1 cada 250ms 
-    XORWF  FLAG, 1       ; El resultado se guarda en F
-    BTFSC  FLAG, 1       ; Revisar LED
-    BSF    PORTA, 0      ; Encender pin del LED
-    BTFSS  FLAG, 1      
-    BCF    PORTA, 0      ; Apagar el pin del LED
+    XORWF  FLAG, F       ; El resultado se guarda en F
     RETURN
     
 ACC_DISP:

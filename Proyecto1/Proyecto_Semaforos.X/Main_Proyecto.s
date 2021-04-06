@@ -189,31 +189,26 @@ Inicializar:
     CLRF    DEC1
     BSF     DISP, 0
     BCF     DISP, 1
-    BCF     DISP, 2
-    BCF     DISP, 3
-    BCF     DISP, 4
-    BCF     DISP, 5
-    BCF     DISP, 6
-    BCF     DISP, 7
     CLRF    DIVISOR
-    CLRF    COLOR
+    ;CLRF    COLOR
     
-    CLRF    FMODO           ; Inicia en el primer modo
+    ;CLRF    FMODO           ; Inicia en el primer modo
     MOVLW   10              ; Inicializar semáforos tiempo con 10 segundos
-    MOVWF   TIEMPO1, F
-    MOVWF   TIEMPO2, F
-    MOVWF   TIEMPO3, F
-    MOVF    TIEMPO2, W
-    ADDWF   TIEMPO3, F      ; TIEMPO de la 3era vía es VÍA1 + VÍA 2
+    MOVWF   TIEMPO1
+    MOVWF   TIEMPO2
+    MOVWF   TIEMPO3
+    MOVWF   TIEMPO4
+    ;MOVF    TIEMPO2, W
+    ;ADDWF   TIEMPO3, F      ; TIEMPO de la 3era vía es VÍA1 + VÍA 2
     
     banksel PORTA               ; Inicializar semáforos (LEDS)
     BSF     PORTB, 3            ; Contador de LEDS en 1
     BCF     PORTB, 4
     BCF     PORTB, 5
-    MOVLW   00001100B		; Primeros dos semáforos
+    MOVLW   00100100B		; Primeros dos semáforos
     MOVWF   PORTA
     MOVLW   0001B               ; Tercer semáforo
-    MOVWF   PORTE
+    MOVLW   PORTE
     RETURN
     
 Interrupciones:
@@ -225,12 +220,12 @@ Interrupciones:
     BSF     INTCON, 6       ; PEIE Encender interrupción periférica
     BSF     INTCON, 7       ; GIE Encender interrupción de global
     
-    banksel OPTION_REG      ; Configuraciones para TMR2
-    BSF     PIE1,   1       ; TMR1IE Encender interrupción de OVERFLOW TMR2
-    banksel TMR0
-    BSF     T2CON,  2       ; Encender el timer2
-    BCF     PIR1,   1       ; TMR2IF TIMER2 to PR2 Interrupt Flag
-    BCF     STATUS, 2       ; Limpiar bandera de Zero
+;    banksel OPTION_REG      ; Configuraciones para TMR2
+;    BSF     PIE1, 1         ; TMR1IE Encender interrupción de OVERFLOW TMR2
+;    banksel TMR0
+;    BSF     T2CON, 2        ; Encender el timer2
+;    BCF     PIR1, 1         ; TMR2IF TIMER2 to PR2 Interrupt Flag
+;    BCF     STATUS, 2       ; Limpiar bandera de Zero
     RETURN
 
 ;--------------- E C U A C I Ó N     T E M P O R I Z A D O R -------------------
@@ -291,26 +286,15 @@ main:
     ;BTFSC   FLAG, 2
     ;CALL    ABAJO
     
-    CALL    DECC          ; Decenas primer semáforo
-    CALL    UNN           ; Unidades primer semáforo  
-    CALL    DECC2          ; Decenas segundo semáforo
-    CALL    UNN2           ; Unidades segundo semáforo
-    CALL    DECC3          ; Decenas tercer semáforo
-    CALL    UNN3           ; Unidades tercer semáforo
-    CALL    DECC4          ; Decenas Indicador de VÍa
-    CALL    UNN4           ; Unidades
-    CALL    DISPLAYS1  
-    
-    ;BTFSC   VIA,    0
-    ;CALL    SEMAFORO1		;FUNCIONAMIENTO DEL SEMAFORO VIA 1
-    ;BTFSC   VIA,    1
-    ;CALL    SEMAFORO2		;FUNCIONAMIENTO DEL SEMAFORO VIA 2		
-    ;BTFSC   VIA,    2
-    ;CALL    SEMAFORO3		;FUNCIONAMIENTO DEL SEMAFORO VIA 3
-    ;CALL    TITILAR1		;TITILITEO DEL SEMAFORO 1
-    ;CALL    TITILAR2		;TITILITEO DEL SEMAFORO 2
-    ;CALL    TITILAR3		;TITILITEO DEL SEMAFORO 3
-    ;CALL    MODE		;LLAMAMOS A MODO DE CONFIGURACION 
+    CALL    DECC          ; Decenas
+    CALL    UNN           ; Unidades
+    CALL    DECC2
+    CALL    UNN2
+    CALL    DECC3
+    CALL    UNN3
+    CALL    DECC4 
+    CALL    UNN4  
+    CALL    DISPLAYS1    
     goto    Loop
 ;_______________________________________________________________________________
 ;                          S U B R U T I N A S 
@@ -319,7 +303,7 @@ main:
 Var_regresiva:
     CALL    timer0        ; Inicializar timer 0
     INCF    TIEMPO
-    MOVLW   250
+    MOVLW   125
     SUBWF   TIEMPO, 0     ; El resultado se queda en W
     BTFSS   STATUS, 2     ; Zero = 0 entonces se realiza la sig. instr.
     RETURN 
@@ -327,42 +311,43 @@ Var_regresiva:
     DECF    TIEMPO1       ; Decrementar el tiempo VÍA 1
     DECF    TIEMPO2       ; Decrementar el tiempo VÍA 2
     DECF    TIEMPO3       ; Decrementar el tiempo VÍA 3
+    DECF    TIEMPO4
     RETURN 
     
-DISPLAYS1: 
-    MOVF   UN1, W         ; Unidades display 1
-    CALL   Tabla
-    MOVWF  DIVISOR+1    
+DISPLAYS1:    
     MOVF   DEC1, W        ; Decenas display 1
     CALL   Tabla
     MOVWF  DIVISOR 
-    
-    MOVF   UN2, W         ; Unidades display 2
+    MOVF   UN1, W         ; Unidades display 1
     CALL   Tabla
-    MOVWF  DIVISOR2+1    
+    MOVWF  DIVISOR+1 
+   
     MOVF   DEC2, W        ; Decenas display 2
     CALL   Tabla
     MOVWF  DIVISOR2 
-    
-    MOVF   UN3, W         ; Unidades display 3
+    MOVF   UN2, W         ; Unidades display 2
     CALL   Tabla
-    MOVWF  DIVISOR3+1    
+    MOVWF  DIVISOR2+1  
+    
     MOVF   DEC3, W        ; Decenas display 3
     CALL   Tabla
     MOVWF  DIVISOR3 
-    
-    MOVF   UN4, W         ; Unidades display 4
+    MOVF   UN3, W         ; Unidades display 3
     CALL   Tabla
-    MOVWF  DIVISOR4+1    
+    MOVWF  DIVISOR3+1    
+      
     MOVF   DEC4, W        ; Decenas display 4
     CALL   Tabla
     MOVWF  DIVISOR4
+    MOVF   UN4, W         ; Unidades display 4
+    CALL   Tabla
+    MOVWF  DIVISOR4+1  
     RETURN 
 
 DISPLAY1: 
-    CLRF   PORTD
     CALL   timer0
-    BTFSC  DISP, 0        ; Subrutina verificar qué display se le carga el valor
+    CLRF   PORTD
+    BTFSC  DISP, 0       
     goto   DISPLAY12      ; UNIDADES segundo display de la vía 1
     BTFSC  DISP, 1
     goto   DISPLAY11      ; DECENAS primer display de la vía 1 
@@ -378,19 +363,20 @@ DISPLAY1:
     goto   DISPLAY31      ; DECENAS primer display de la vía 3
     
     BTFSC  DISP, 6 
-    goto   DISPLAY42      ; UNIDADES segundo display del indicador de vía
+    goto   DISPLAY42      ; UNIDADES segundo display de la vía 4
     BTFSC  DISP, 7
-    goto   DISPLAY41      ; DECENAS primer display del indicador de vía
+    goto   DISPLAY41      ; DECENAS primer display de la vía 4
     
 DISPLAY11:                ; SEMÁFORO VÍA 1
-    MOVF   DIVISOR, w     ; Decenas
+    MOVF   DIVISOR, W     ; Decenas
     MOVWF  PORTC
     BSF    PORTD, 2
     MOVLW  00000100B
     MOVWF  DISP
     RETURN
+
 DISPLAY12:
-    MOVF   DIVISOR+1, w   ; Unidades
+    MOVF   DIVISOR+1, W   ; Unidades
     MOVWF  PORTC
     BSF    PORTD, 3
     MOVLW  00000010B
@@ -398,14 +384,14 @@ DISPLAY12:
     RETURN
     
 DISPLAY21:                ; SEMÁFORO VÍA 2
-    MOVF   DIVISOR2, w    ; Decenas
+    MOVF   DIVISOR2, W    ; Decenas
     MOVWF  PORTC
     BSF    PORTD, 4
     MOVLW  00010000B
     MOVWF  DISP
     RETURN
 DISPLAY22:
-    MOVF   DIVISOR2+1, w  ; Unidades
+    MOVF   DIVISOR2+1, W  ; Unidades
     MOVWF  PORTC
     BSF    PORTD, 5
     MOVLW  00001000B
@@ -420,7 +406,7 @@ DISPLAY31:                ; EMÁFORO VÍA 3
     MOVWF  DISP
     RETURN
 DISPLAY32:
-    MOVF   DIVISOR3+1, w  ; Unidades
+    MOVF   DIVISOR3+1, W  ; Unidades
     MOVWF  PORTC
     BSF    PORTD, 7
     MOVLW  00100000B
@@ -526,10 +512,6 @@ DECC4:                   ; DISPLAY INDICADOR DE VÍA
     BTFSC  STATUS, 0     ; Si carry = 1 no ha terminado de contar
     goto   $-4
     ADDWF  Bin4, F       ; Sumar 10 al valor para no perder el numero
-    ;BTFSC  FFMODO, 0     ; Si está en Modo 1
-    ;goto   OFFDECC4
-    ;BTFSC  FFMODO, 4     ; Si está en modo 5
-    ;goto   OFFDECC4
     RETURN       
 UNN4: 
     CLRF   UN4
@@ -540,17 +522,7 @@ UNN4:
     BTFSC  STATUS, 0 
     goto   $-4
     ADDWF  Bin4, F       ; Sumarle 1
-    ;BTFSC  FFMODO, 0     ; Si está en Modo 1
-    ;goto   OFFUNN4
-    ;BTFSC  FFMODO, 4     ; Si está en modo 5
-    ;goto   OFFUNN4   
     RETURN
-;OFFDECC4:
-  ;  MOVLW   00001010B		;Apagar display de decenas
-   ; MOVWF   DEC4
-;OFFUNN4:
- ;   MOVLW   00001010B		;Apagar display de unidades
-  ;  MOVWF   UN4
     
 ;AMA1:                   ; Color amarillo primer semáforo
     ;BCF COLOR, 0

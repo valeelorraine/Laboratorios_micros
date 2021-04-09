@@ -16,10 +16,9 @@
 ; el PA y 3 LEDs en el PE.
 
 ; Creado: 13/03
-; Última modificación:
+; Última modificación: 05/04
 ;-------------------------------------------------------------------------------
 ;-------------------------------------------------------------------------------
-
 PROCESSOR 16F887
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\xc.inc" 1 3
@@ -2467,7 +2466,7 @@ stk_offset SET 0
 auto_size SET 0
 ENDM
 # 7 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\xc.inc" 2 3
-# 22 "Main_Proyecto.s" 2
+# 21 "Main_Proyecto.s" 2
 
 ;CONFIGURATION WORD 1
  CONFIG FOSC=INTRC_NOCLKOUT
@@ -2491,12 +2490,13 @@ ENDM
    W_TEMP: DS 1 ; Variable temporal
    STAT_TEMP: DS 1 ; Variable temporal
    FLAG: DS 1 ; Variable para los botones
+   FLAG1: DS 1
    FMODO: DS 1 ; Variable para los modos
    DISP: DS 1 ; Flag de los DISPLAYS
    TIEMPO: DS 1 ; Variable queee cuenta los ciclos del TMR0
    COLOR: DS 1 ; Flag para los colores del semáforo
    TURNO: DS 1
-
+   COUNT2: DS 1
    TIEMPO1: DS 1 ; Variable para el tiempo
    Bin: DS 1
    TIEMPO2: DS 1 ; Variable para el tiempo VÍA 2
@@ -2506,7 +2506,7 @@ ENDM
    TIEMPO4: DS 1 ; Variable para el tiempo INDICADOR DE VÍA
    Bin4: DS 1
 
-   TIEMPOO: DS 1
+   TIEMPOO: DS 1 ; Variables del tiempo y tiempos temporales
    TIEMPO11: DS 1
    TIEMPO22: DS 1
    TIEMPO33: DS 1
@@ -2536,39 +2536,38 @@ ENDM
  ORG 00h ; Posición 0000h para el reset
  resetVec:PAGESEL main
     goto main
-;___________________________
+;_______________________________________________________________________________
 ; V E C T O R I N T E R R U P T
-;___________________________
+;_______________________________________________________________________________
  ORG 004h ; Posición 004 para la interrupción
 
 PUSH:
    BCF INTCON, 7 ; Desact. general interrupt (evitar interr. simultaneas)
    MOVWF W_TEMP ; Guardar lo que se encuentra en w
-   SWAPF STATUS, W ; Guardar stat. a W sin MOVF (no afectar banderas de stat.)
+   SWAPF STATUS, W ; Guardar stat. a W sin MOVF (no afectar FLAGS de stat.)
    MOVWF STAT_TEMP ; Guardar lo de W en variable temporal
 
-ISR: ; (Interrupciones) chequear que la bandera está encendida
+ISR: ; (Interrpt.) chequear que la bandera está encendida
    BTFSC INTCON, 0 ; ((INTCON) and 07Fh), 0 PB change interrupt flag (Ver si cambió estado)
    CALL Button
    BTFSC INTCON, 2 ; Testear bandera del TOIF (overflow del TMR0)
    CALL Var_regresiva
    CALL DISPLAY1
-   ;BTFSC INTCON, 2 ; Testear bandera del TOIF
-   ; CALL ALGO NTA
-   ;BTFSC PIR1, 1 ; Flag del Match de TMR2 con PR2
-   ;CALL TITILEO
+   BTFSC INTCON, 2 ; Testear bandera del TOIF
+   CALL Var_regresiva2
+   BTFSC PIR1, 1 ; Flag del Match de TMR2 con PR2
+   CALL ACC_LED
 
 POP:
    SWAPF STAT_TEMP, W ; Regresando el valor al original
    MOVWF STATUS ; Regresarlo a STATUS
    SWAPF W_TEMP, F ; darle vuelta a los nibbles de Wtemp
    SWAPF W_TEMP, W ; Regresamos al orden original y guardamos en w
-   RETFIE ; Regresar de la interrupción (incluye reactivacion del ((INTCON) and 07Fh), 7)
-
-;___________________________
+   RETFIE ; Regresar de la interrupción (incluye reactiv. del ((INTCON) and 07Fh), 7)
+;_______________________________________________________________________________
 ; S U B R U T I N A
 ; V E C T O R I N T E R R U P T
-;___________________________
+;_______________________________________________________________________________
 
 Button:
     BCF STATUS, 0 ; Limpiar bandera de carry
@@ -2582,7 +2581,6 @@ Button:
     RETURN
 
 ;----------------------------- D I S P L A Y ----------------------------------
-
 PSECT code, delta=2, abs ; A partir de acá es código
 ORG 0100h ;posición para el código
 
@@ -2600,9 +2598,9 @@ Tabla:
     RETLW 00000111B ; 7
     RETLW 01111111B ; 8
     RETLW 01100111B ; 9
-;___________________________
+;_______________________________________________________________________________
 ; C O N F I G U R A C I O N E S
-;___________________________
+;_______________________________________________________________________________
 
 config_pines:
     banksel ANSEL ; Ir al registro donde está ANSEL
@@ -2610,9 +2608,9 @@ config_pines:
     CLRF ANSELH ; Puerto B digital
 
     banksel TRISA ; Ir al banco en donde está TRISA
-    BSF TRISB, 0 ; MODO
+    BSF TRISB, 0 ; DECREMENTO
     BSF TRISB, 1 ; INCREMENTO
-    BSF TRISB, 2 ; DECREMENTO
+    BSF TRISB, 2 ; MODO
     BCF TRISB, 3 ; Pines de output
     BCF TRISB, 4
     BCF TRISB, 5
@@ -2631,7 +2629,7 @@ weak_PU:
     MOVWF WPUB ; Habilitar pull ups
     RETURN
 
-Inicializar:
+    Inicializar:
     banksel PORTA ; Ir al banco donde está PORTA
     CLRF PORTA ; Inicializar los puertos
     CLRF PORTB
@@ -2645,20 +2643,28 @@ Inicializar:
     CLRF TIEMPO
     CLRF Bin
     CLRF UN1
+    CLRF LUZ
     CLRF DEC1
     BSF DISP, 0
     BCF DISP, 1
     CLRF DIVISOR
     CLRF COLOR
-
     CLRF FMODO ; Inicia en el primer modo
+    MOVLW 00000001B ; Encender VÍA 1
+    MOVWF TURNO
+
     MOVLW 10 ; Inicializar semáforos tiempo con 10 segundos
+    MOVWF TEMP_TIEMPO1
+    MOVWF TEMP_TIEMPO2
+    MOVWF TEMP_TIEMPO3
+
     MOVWF TIEMPO1
     MOVWF TIEMPO2
     MOVWF TIEMPO3
-    CLRF TIEMPO4 ; Inicializar indicador de via
+    CLRF TIEMPO4
+    MOVF TIEMPO1
     MOVF TIEMPO2, W
-    ADDWF TIEMPO3, 1 ; TIEMPO de la 3era vía es VÍA1 + VÍA 2
+    ADDWF TIEMPO3 ; TIEMPO de la 3era vía es VÍA1 + VÍA 2
 
     banksel PORTA ; Inicializar semáforos (LEDS)
     BSF PORTB, 3 ; Contador de LEDS en 1
@@ -2713,7 +2719,7 @@ PRE2:
     MOVWF T2CON
     CALL timer2
     banksel TMR0
-    BCF PIR1, 1
+    BCF PIR1, 1 ; Limpiar bandera del TMR2
     RETURN
 
 timer2:
@@ -2736,15 +2742,9 @@ main:
 ;_______________________________________________________________________________
 ; L O O P
 ;_______________________________________________________________________________
-
  Loop:
-    BTFSC FLAG, 0
+    BTFSC FLAG, 0 ; Testear si el botón de modo fue presionado
     CALL MODOS
-    BTFSC FLAG, 1
-    CALL ARRIBA
-    BTFSC FLAG, 2
-    CALL ABAJO
-
     CALL DECC ; Decenas primer semáforo
     CALL UNN ; Unidades primer semáforo
     CALL DECC2 ; Decenas segundo semáforo
@@ -2753,6 +2753,7 @@ main:
     CALL UNN3 ; Unidades tercer semáforo
     CALL DECC4 ; Decenas Indicador de VÍA
     CALL UNN4 ; Unidades Indicador de VÍA
+
     CALL DISPLAYS1
     BTFSC TURNO, 0 ; Flag de la primera VÍA
     CALL SEMAFORO1
@@ -2763,176 +2764,187 @@ main:
     CALL T1 ; Centello VÍA 1
     CALL T2 ; Centello VÍA 2
     CALL T3 ; Centello VÍA 3
-    CALL MODE ; 5 Diferentes modos
     goto Loop
-;___________________________
+;_______________________________________________________________________________
 ; S U B R U T I N A S
-;___________________________
+;_______________________________________________________________________________
 
- MODE:
-     BTFSC SMODO, 0 ;MODO 1
-     CALL MODE_1
-     BTFSC SMODO, 1 ;MODO 2
-     CALL MODE_2
-     BTFSC SMODO, 2 ;MODO 3
-     CALL MODE_3
-     BTFSC SMODO, 3 ;MODO 4
-     CALL MODE_4
-     BTFSC SMODO, 4 ;MODO 5
-     CALL MODE_5
-     RETURN
- MODE_1: ;MODO 1
-    BCF PORTE, 0 ;APAGAMOS LOS LED Y NO OCURRE NINGUN CAMBIO
-    BCF PORTE, 1
-    BCF PORTE, 2
+; M O D O S D E C O N F I G U R A C I Ó N
+ MODOS: ; Subrutina para identificar que modo fue seleccionado
+    CALL MODO1
+    INCF FMODO ; Incrementar la variable de los push
+    MOVLW 1
+    XORWF FMODO, F ; Si es 1 ir al modo 2
+    BTFSC STATUS, 2 ; Si zero = 1 hacer sig. instr.
+    CALL MODO2
+
+    MOVLW 2
+    XORWF FMODO, F ; Si es 1 ir al modo 3
+    BTFSC STATUS, 2 ; Si zero = 1 hacer sig. instr.
+    CALL MODO3
+
+    MOVLW 3
+    XORWF FMODO, F ; Si es 1 ir al modo 4
+    BTFSC STATUS, 2 ; Si zero = 1 hacer sig. instr.
+    CALL MODO4
+
+    MOVLW 4
+    XORWF FMODO, F ; Si es 1 ir al modo 5
+    BTFSC STATUS, 2 ; Si zero = 1 hacer sig. instr.
+    CALL MODO5
+    CLRF FMODO ; RESETAR SI FMODO = 4
+    MOVLW 0
+    XORWF FMODO, F
+    BTFSC STATUS, 2 ; Si zero = 1 hacer sig. instr.
+    CALL MODO1 ; PRIMER MODO
     RETURN
- MODE_2: ;CONFIGURA EL TIEMPO DE LA VIA 1
-    BSF PORTE, 0 ;LED 1 ENCENDIDA
-    BCF PORTE, 1 ;LED 2 APAGADA
-    BCF PORTE, 2 ;LED 3 APAGADA
-    BTFSC PORTB, INC ;MIRAMOS QUE EL BOTON PORTB0
-    CALL INC1 ;INCREMENTAMOS EN C_VIA1
-    BTFSC PORTB, DECR ;MIRAMOS EL BOTON PORTB1
-    CALL DEC1 ;DECREMENTAMOS EN C_VIA1
-    MOVF C_VIA1, W ;CARGAMOS EL VALOR A LA VARIABLE DEL DISPLAY 4
-    MOVWF T_VIAM
-    BCF ((INTCON) and 07Fh), 0 ;LIMPIAMOS LA BANDERA ((INTCON) and 07Fh), 0
+
+MODO1:
+    BSF PORTB, 3 ; Los led contarán en binario indicando en qué modo
+    BCF PORTB, 4 ; se está por lo que modo 1 = 1
+    BCF PORTB, 5
     RETURN
-  INC1:
-    BTFSS FLAG_ID, 0 ;BANDERA DE ANTIREBOTE DE INC
+MODO2:
+    BCF PORTB, 3 ; Modo 2, se enciende el segundo led
+    BSF PORTB, 4
+    BCF PORTB, 5
+    BTFSC FLAG, 1 ; Se testea qué botón se está presionando
+    CALL INC2 ; Incrementar el tiempo del semáforo 1
+    BTFSC FLAG, 2
+    CALL DEC2 ; Decrementar el tiempo del semáforo 1
+    MOVF TEMP_TIEMPO1, 0
+    MOVWF TIEMPO4
+    BCF INTCON, 0 ; Testear ((INTCON) and 07Fh), 0 FLAG
     RETURN
-    INCF C_VIA1 ;INCREMENTAMOS LA VARIABLE DE CAMBIO VIA 1
-    BCF FLAG_ID, 0 ;LIMPIAMOS LA BANDERA
-    MOVLW 0X15 ;CARGAMOS EL VALOR DE 20
-    XORWF C_VIA1, W ;EL VALOR NO INCREMENTE MAS DE 20
-    BTFSS ((STATUS) and 07Fh), 2
+MODO3:
+    BSF PORTB, 3 ; Modo 3, enciende los primeros dos leds
+    BSF PORTB, 4
+    BCF PORTB, 5
+    BTFSC FLAG, 1 ; Se testea que botón se presionó
+    CALL INC3 ; Incrementar tiempo del semáforo 2
+    BTFSC FLAG, 2
+    CALL DEC3 ; Decrementar tiempo del Semáforo 2
+    MOVF TEMP_TIEMPO1, 2
+    MOVWF TIEMPO4
+    BCF ((INTCON) and 07Fh), 0
     RETURN
-    MOVLW 0X0A ;COLOCAR EL VALOR DE 10 A LA VARIABLE
-    MOVWF C_VIA1
+MODO4:
+    BCF PORTB, 3 ; Modo 4, enciende el 3er led
+    BCF PORTB, 4
+    BSF PORTB, 5
+    BTFSC FLAG, 1 ; Det. que boton se presionó
+    CALL INC4 ; Incrementar el tiempo del semaforo 3
+    BTFSC FLAG, 2
+    CALL DEC4 ; Dec. tiempo del semáforo 3
+    MOVF TEMP_TIEMPO3, W
+    MOVWF TIEMPO4
+    BCF INTCON, 0 ; Limpiar ((INTCON) and 07Fh), 0
     RETURN
-  DEC1:
-    BTFSS FLAG_ID, 1 ;BANDERA DE ANTIREBOTE DE DEC
+MODO5:
+    BSF PORTB, 3 ; Modo 5, enciende el 3ro y primer led
+    BCF PORTB, 4
+    BSF PORTB, 5
+    BTFSC FLAG, 1 ; Testear que botón se presionó
+    CALL ACEPTAR
+    BTFSC FLAG, 2
+    CALL NEGAR
     RETURN
-    DECF C_VIA1 ;DECREMENTAMOS LA VARIABLE DE CAMBIO VIA 1
-    BCF FLAG_ID, 1 ;LIMPIAMOS LA BANDERA
-    MOVLW 0X09 ;CARGAMOS EL VALOR DE 9
-    XORWF C_VIA1, W ;EL VALOR NO DECREMENTE MENOS DE 9
-    BTFSS ((STATUS) and 07Fh), 2
+
+; I N C R E M E N T O Y D E C R E M E N T O
+INC2: ; Subrutina para incrementar
+    INCF TEMP_TIEMPO1
+    BCF FLAG, 0
+    MOVLW 20 ; No contar más de 20
+    XORWF TEMP_TIEMPO1, W
+    BTFSS STATUS, 2 ; Testear zero flag
     RETURN
-    MOVLW 0X14 ;COLOCAR EL VALOR DE 20 A LA VARIABLE
-    MOVWF C_VIA1
+    MOVLW 10 ; Cargar variable on 10
+    MOVWF TEMP_TIEMPO1
     RETURN
-  MODE_3: ;CONFIGURA EL TIEMPO DE LA VIA 2
-    BCF PORTE, 0 ;LED 1 APAGADA
-    BSF PORTE, 1 ;LED 2 ENCENDIDA
-    BCF PORTE, 2 ;LED 3 APAGADA
-    BTFSC PORTB, INC ;MIRAMOS QUE EL BOTON PORTB0
-    CALL INC2 ;INCREMENTAMOS EN C_VIA1
-    BTFSC PORTB, DECR ;MIRAMOS EL BOTON PORTB1
-    CALL DEC2 ;DECREMENTAMOS EN C_VIA1
-    MOVF C_VIA2, W ;MOVEMOS EL VALOR A LA VARIABLE DEL DISPLAY 4
-    MOVWF T_VIAM
-    BCF ((INTCON) and 07Fh), 0 ;LIMPIAMOS LA BANDERA ((INTCON) and 07Fh), 0
+DEC2: ; Subrutina para decrementar
+    DECF TEMP_TIEMPO1
+    BCF FLAG, 1
+    MOVLW 9 ; No decrementar más de 9
+    XORWF TEMP_TIEMPO1, 1
+    BTFSS STATUS, 2 ; Testear zero FLAG
     RETURN
-   INC2:
-    BTFSS FLAG_ID, 0 ;BANDERA DE ANTIREBOTE DE INC
+    MOVLW 20 ; Cargar variable con 20
+    MOVWF TEMP_TIEMPO1
     RETURN
-    INCF C_VIA2 ;INCREMENTAMOS LA VARIABLE DE CAMBIO VIA 1
-    BCF FLAG_ID, 0 ;LIMPIAMOS LA BANDERA
-    MOVLW 0X15 ;CARGAMOS EL VALOR DE 20
-    XORWF C_VIA2, W ;EL VALOR NO INCREMENTE MAS DE 20
-    BTFSS ((STATUS) and 07Fh), 2
+INC3:
+    INCF TEMP_TIEMPO2 ; Incrementar variable temporal del tiempo
+    BCF FLAG, 0
+    MOVLW 20 ; No contar más de 20
+    XORWF TEMP_TIEMPO2, W
+    BTFSS STATUS, 2 ; Testear zero FLAG
     RETURN
-    MOVLW 0X0A ;COLOCAR EL VALOR DE 10 A LA VARIABLE
-    MOVWF C_VIA2
+    MOVLW 10 ; Setear valor con 10
+    MOVWF TEMP_TIEMPO2
     RETURN
-  DEC2:
-    BTFSS FLAG_ID, 1 ;BANDERA DE ANTIREBOTE DE DEC
+DEC3:
+    DECF TEMP_TIEMPO2 ; Decrementar variable temporal del tiempo
+    BCF FLAG, 1
+    MOVLW 9 ; No contar a menos de 9
+    XORWF TEMP_TIEMPO2, W
+    BTFSS STATUS, 2 ; Testear zero FLAG
     RETURN
-    DECF C_VIA2 ;DECREMENTAMOS LA VARIABLE DE CAMBIO VIA 1
-    BCF FLAG_ID, 1 ;LIMPIAMOS LA BANDERA
-    MOVLW 0X09 ;CARGAMOS EL VALOR DE 9
-    XORWF C_VIA2, W ;EL VALOR NO DECREMENTE MENOS DE 9
-    BTFSS ((STATUS) and 07Fh), 2
+    MOVLW 20 ; Setear valor con 20
+    MOVWF TEMP_TIEMPO2
     RETURN
-    MOVLW 0X14 ;COLOCAR EL VALOR DE 20 A LA VARIABLE
-    MOVWF C_VIA2
+INC4: ; Subrutina para incrementar
+    INCF TEMP_TIEMPO3
+    BCF FLAG, 0
+    MOVLW 20 ; El valor no incrementa más de 20
+    XORWF TEMP_TIEMPO3, W
+    BTFSS STATUS, 2
     RETURN
-  MODE_4: ;CONFIGURA EL TIEMPO DE LA VIA 3
-    BCF PORTE, 0 ;LED 1 APAGADA
-    BCF PORTE, 1 ;LED 2 APAGADA
-    BSF PORTE, 2 ;LED 3 ENCENDIDA
-    BTFSC PORTB, INC ;MIRAMOS QUE EL BOTON PORTB0
-    CALL INC3 ;INCREMENTAMOS EN C_VIA1
-    BTFSC PORTB, DECR ;MIRAMOS EL BOTON PORTB1
-    CALL DEC3 ;DECREMENTAMOS EN C_VIA1
-    MOVF C_VIA3, W ;CARGAMOS EL VALOR AL DISPLAY 4
-    MOVWF T_VIAM
-    BCF ((INTCON) and 07Fh), 0 ;LIMPIAMOS LA BANDERA DE ((INTCON) and 07Fh), 0
+    MOVLW 10 ; Setear variable con 10
+    MOVWF TEMP_TIEMPO3
+DEC4:
+    DECF TEMP_TIEMPO3 ; Decrementar variable temporal
+    BCF FLAG, 1 ; Limpiar bandera
+    MOVLW 9
+    XORWF TEMP_TIEMPO3, W ; Restingir = valor no decremente menos que 9
+    BTFSS STATUS, 2 ; zero = 0 retornar
     RETURN
-  INC3:
-    BTFSS FLAG_ID, 0 ;BANDERA DE ANTIREBOTE DE INC
+    MOVLW 20 ; Colocar 20s
+    MOVWF TEMP_TIEMPO3
     RETURN
-    INCF C_VIA3 ;INCREMENTAMOS LA VARIABLE DE CAMBIO VIA 1
-    BCF FLAG_ID, 0 ;LIMPIAMOS LA BANDERA
-    MOVLW 0X15 ;CARGAMOS EL VALOR DE 20
-    XORWF C_VIA3, W ;EL VALOR NO INCREMENTE MAS DE 20
-    BTFSS ((STATUS) and 07Fh), 2
-    RETURN
-    MOVLW 0X0A ;COLOCAR EL VALOR DE 10 A LA VARIABLE
-    MOVWF C_VIA3
-    RETURN
-  DEC3:
-    BTFSS FLAG_ID, 1 ;BANDERA DE ANTIREBOTE DE DEC
-    RETURN
-    DECF C_VIA3 ;DECREMENTAMOS LA VARIABLE DE CAMBIO VIA 1
-    BCF FLAG_ID, 1 ;LIMPIAMOS LA BANDERA
-    MOVLW 0X09 ;CARGAMOS EL VALOR DE 9
-    XORWF C_VIA3, W ;EL VALOR NO DECREMENTE MENOS DE 9
-    BTFSS ((STATUS) and 07Fh), 2
-    RETURN
-    MOVLW 0X14 ;COLOCAR EL VALOR DE 20 A LA VARIABLE
-    MOVWF C_VIA3
-    RETURN
-  MODE_5: ;ACEPTAMOS O CANCELAMOS LOS CAMBIOS
-    BSF PORTE, 0 ;TODAS LAS LED ENCENDIDAS
-    BSF PORTE, 1
-    BSF PORTE, 2
-    BTFSC PORTB, INC ;MIRAMOS QUE EL BOTON PORTB0
-    CALL ACEPTAR ;ACEPTAMOSE EL CAMBIO
-    BTFSC PORTB, DECR ;MIRAMOS EL BOTON PORTB1
-    CALL CANCEL ;CANCELAMOS LOS CAMBIOS
-    RETURN
-  ACEPTAR:
-    BTFSS FLAG_ID, 0 ;BANDERA DE ANTIREBOTE DE INC
-    RETURN
-    BCF FLAG_ID, 0 ;LIMPIAMOS LA BANDERA
-    BSF RESETEO, 0
-    MOVLW 0XFF ;ENCENDEMOS TODAS LAS LED
+ACEPTAR:
+    BCF FLAG, 1 ; Limpiar la FLAG
+    MOVLW 0XFF ; Encender todas las LEDS
     MOVWF PORTA
     BSF PORTB, 7
     MOVLW 01100111B
     MOVWF PORTC
-    MOVLW 00111111B ;ENCENDEMOS TODAS LAS LED
+    MOVLW 00111111B ; Encender todas las LEDS como indicativo
     MOVWF PORTD
-
     RETURN
-  CANCEL:
-    BTFSS FLAG_ID, 1 ;BANDERA DE ANTIREBOTE DE DEC
-    RETURN
-    BCF FLAG_ID, 1 ;LIMPIAMOS LA BANDERA
-    MOVF TVIA1, W ;VOLVEMOS A CARGAR LAS VARIABLES ORIGINALES A LAS VARIABLES DE CAMBIO
-    MOVWF C_VIA1
-    MOVF TVIA2, W
-    MOVWF C_VIA2
-    MOVF TVIA3, W
-    MOVWF C_VIA3
-    MOVLW 00000001B ;REGRESAMOS AL MODO 0
-    MOVWF SMODO
+ NEGAR:
+    BCF FLAG, 2 ; Limpiar la FLAG
+    MOVF TIEMPO11, ; Variables originales a las variables de cambio
+    MOVWF TEMP_TIEMPO1
+    MOVF TIEMPO22, W
+    MOVWF TEMP_TIEMPO2
+    MOVF TIEMPO33, W
+    MOVWF TEMP_TIEMPO3
+    BSF FMODO, 0 ; Regresar al modo 0
     RETURN
 
+ACC_LED:
+    BCF ((PIR1) and 07Fh), 1 ; Limpiar bandera de interr. TMR2
+    INCF COUNT2 ; Incrementar variable del timer 2
+    MOVF COUNT2, W
+    SUBLW 125 ; Revisar que se haya cumplido el ciclo
+    BTFSS STATUS, 2 ; ZEROFLAG = 0 se ejecuta siguiente instr.
+    RETURN
+    CLRF COUNT2 ; Inicializar bandera
+    MOVLW 0X01 ; El bit 1 debe oscilar entre 0 y 1 cada 250ms
+    XORWF FLAG1, F ; El resultado se guarda en F
+    RETURN
 
 
+; C O L O R E S D E L S E M Á F O R O
 AMA1: ; Color amarillo primer semáforo
     BCF COLOR, 0
     BCF PORTA, 2 ; Apagar verde
@@ -2943,14 +2955,12 @@ ROJO1: ; Color rojo primer semáforo
     BCF PORTA, 1 ; Apagar amarillo VÍA 1
     BSF PORTA, 0 ; Encender rojo VÍA 1
     BSF TURNO, 1 ; Irse a la VÍA 2
-    BTFSS TURNO, 3
-    RETURN
-    MOVLW 10
-    MOVWF TIEMPO1
-    MOVWF TIEMPO2
-    MOVWF TIEMPO3
-    MOVLW 10 ; LA VARIABLE TEMPORAL , W
-    ADDWF TIEMPO1, 1 ; Se guarda en la variable
+    MOVF TIEMPO2, W
+    MOVWF TEMP_TIEMPO1
+    MOVWF TEMP_TIEMPO2
+    MOVWF TEMP_TIEMPO3
+    MOVF TIEMPO3, W
+    ADDWF TEMP_TIEMPO1, 1
     BSF PORTA, 5 ; Verde ´VÍA 2
     BCF PORTA, 3 ; Rojo VÍA 2
     RETURN
@@ -2964,14 +2974,12 @@ ROJO2: ; Color rojo segundo semáforo
     BCF PORTA, 4 ; Apagar amarillo VÍA 2
     BSF PORTA, 3 ; Encender rojo VÍA 2
     BSF TURNO, 2 ; Irse a la VÍA 3
-    BTFSS TURNO, 4
-    RETURN
-    MOVLW 10
-    MOVWF TIEMPO1
-    MOVWF TIEMPO2
-    MOVWF TIEMPO3
-    MOVLW 10 ; LA VARIABLE TEMPORAL , W
-    ADDWF TIEMPO2, 1 ; Se guarda en la variable
+    MOVF TIEMPO3, 0
+    MOVWF TEMP_TIEMPO1
+    MOVWF TEMP_TIEMPO2
+    MOVWF TEMP_TIEMPO3
+    MOVF TIEMPO1, 0
+    ADDWF TEMP_TIEMPO2, 1 ; T2 = T1 + T3
     BSF PORTE, 2
     BCF PORTE, 0
     RETURN
@@ -2985,69 +2993,49 @@ ROJO3: ; Color rojo tercer semáforo
     BCF PORTE, 1 ; Apagar amarillo VÍA 3
     BSF PORTE, 0 ; Encender rojo VÍA 3
     BSF TURNO, 0
-    BTFSS TURNO, 5
-    RETURN
-    MOVLW 10
-    MOVWF TIEMPO1
-    MOVWF TIEMPO2
-    MOVWF TIEMPO3
-    MOVLW 10 ; LA VARIABLE TEMPORAL , W
-    ADDWF TIEMPO3, 1 ; Se guarda en la variable
-    RETURN
+    MOVF TIEMPO1, 0
+    MOVWF TEMP_TIEMPO1
+    MOVWF TEMP_TIEMPO2
+    MOVWF TEMP_TIEMPO3
+    MOVF TIEMPO2, 0
+    ADDWF TIEMPO3, 1
     BSF PORTA,2 ; Encender verde VÍA 1
     BCF PORTA, 0 ; Apagar rojo VÍA 1
-
-Var_regresiva:
-    CALL timer0 ; Inicializar timer 0
-    INCF TIEMPO
-    MOVLW 125
-    SUBWF TIEMPO, 0 ; El resultado se queda en W
-    BTFSS STATUS, 2 ; Zero = 0 entonces se realiza la sig. instr.
-    RETURN
-    CLRF TIEMPO
-    DECF TIEMPO1 ; Decrementar el tiempo VÍA 1
-    DECF TIEMPO2 ; Decrementar el tiempo VÍA 2
-    DECF TIEMPO3 ; Decrementar el tiempo VÍA 3
     RETURN
 
-T1:
-    BTFSS COLOR, 0 ;REVISAMOS LA BANDERA
+; C E N T E L L A R D E L O S L E D S
+ T1:
+    BTFSS COLOR, 0 ; Testear la bandera
     RETURN
-    BTFSC RESETEO, 0 ;REVISAMOS BANDERA DE RESETEO
+    BTFSC LUZ, 0
+    BSF PORTA, 2 ; Encender el led verde 1
+    BTFSS LUZ, 0
+    BCF PORTA, 2 ; Apagar el led verde 1
     RETURN
-    BTFSC LED, 0 ;REVISAMOS BANDERA DE LED
-    BSF PORTA, 2 ;ENCEDEMOS VERDE 1
-    BTFSS LED, 0 ;REVISAMOS BANDERA DE LED
-    BCF PORTA, 2 ;APAGAMOS VERDE 1
+ T2:
+    BTFSS COLOR, 1 ; Testear bandera
     RETURN
-T2:
-    BTFSS COLOR, 1 ;REVISAMOS LA BANDERA
+    BTFSC LUZ, 0
+    BSF PORTA, 5 ; Encender el led verde 2
+    BTFSS LUZ, 0
+    BCF PORTA, 5 ; Apagar Led verde 2
     RETURN
-    BTFSC RESETEO, 0 ;REVISAMOS BANDERA DE RESETEO
+  T3:
+    BTFSS COLOR, 2 ; Testear bandera
     RETURN
-    BTFSC LED, 0 ;REVISAMOS BANDERA DE LED
-    BSF PORTA, 5 ;ENCENDEMOS VERDE 2
-    BTFSS LED, 0 ;REVISAMOS BANDERA DE LED
-    BCF PORTA, 5 ;APAGAMOS VERDE 2
-    RETURN
-T3:
-    BTFSS COLOR, 2 ;REVISAMOS BANDERA 3
-    RETURN
-    BTFSC RESETEO, 0 ;REVISAMOS BANDERA DE RESETEO
-    RETURN
-    BTFSC LED, 0 ;REVISAMOS BANDERA DE LED
-    BSF PORTB, 7 ;ENCENDEMOS VERDE 3
-    BTFSS LED, 0 ;REVISAMOS BANDERA DE LED
-    BCF PORTB, 7 ;APAGAMOS VERDE 3
+    BTFSC LUZ, 0
+    BSF PORTB, 7 ; Encender el led verde 3
+    BTFSS LUZ, 0
+    BCF PORTB, 7 ; Apagar led verde 3
     RETURN
 
 
+; S E M Á F O R O S
 SEMAFORO1:
-    BTFSS TURNO, 0 ; Flag de la vía 1
-    RETURN
+    BTFSC TURNO, 0 ; Flag de la vía 1
     MOVLW 6
     XORWF TIEMPO1, F
-    BTFSC STATUS, 2 ; ((STATUS) and 07Fh), 2 = 1
+    BTFSC STATUS, 2 ; ((STATUS) and 07Fh), 2 = 1, setear 1er bit de la FLAG de color
     BSF COLOR, 0
     MOVLW 3
     XORWF TIEMPO1, F
@@ -3058,10 +3046,8 @@ SEMAFORO1:
     BTFSC STATUS, 2
     CALL ROJO1
     RETURN
-
 SEMAFORO2:
-    BTFSS TURNO, 1 ; Flag de la vía 2
-    RETURN
+    BTFSC TURNO, 1 ; Flag de la vía 2
     MOVLW 6 ; Comparación a los 6s para titileo
     XORWF TIEMPO2, F
     BTFSC STATUS, 2 ; ((STATUS) and 07Fh), 2 = 1, hacer sig. instr.
@@ -3075,10 +3061,8 @@ SEMAFORO2:
     BTFSC STATUS, 2 ; ((STATUS) and 07Fh), 2 = 1, hacer sig. instr.
     CALL ROJO2
     RETURN
-
 SEMAFORO3:
-    BTFSS TURNO, 2 ; Flag de la vía 3
-    RETURN
+    BTFSC TURNO, 2 ; Flag de la vía 3
     MOVLW 6 ; Comparación a los 6s para titileo
     XORWF TIEMPO3, F
     BTFSC STATUS, 2 ; ((STATUS) and 07Fh), 2 = 1, hacer sig. instr.
@@ -3093,6 +3077,42 @@ SEMAFORO3:
     CALL ROJO3
     RETURN
 
+Var_regresiva1:
+    CALL timer0 ; Inicializar timer 0
+    INCF TIEMPO ; Contabilizar las veces que se realiza el ciclo
+    MOVLW 125 ; Repetir 250 veces para hacer 1S
+    SUBWF TIEMPO, 0 ; El resultado se queda en W
+    BTFSS STATUS, 2 ; Zero = 0 entonces se realiza la sig. instr.
+    RETURN
+    CLRF TIEMPO
+    DECF TIEMPO1 ; Decrementar el tiempo VÍA 1
+    DECF TIEMPO2 ; Decrementar el tiempo VÍA 2
+    DECF TIEMPO3 ; Decrementar el tiempo VÍA 3
+    RETURN
+
+Var_regresiva2:
+    CALL timer0 ; Inicializar timer0
+    INCF TIEMPOO ; Incrementar la variable del tiempo
+    MOVLW 125 ; Repetir 125 veces
+    SUBWF TIEMPOO
+    BTFSS STATUS, 2 ; Zero = 0 entonces se realiza la sig. instr.
+    RETURN
+    MOVF TEMP_TIEMPO1, 0 ; Variable temporal se guarda en w
+    MOVWF TIEMPO11 ; Cargar los valores temp. a las var. originales
+    MOVF TEMP_TIEMPO2, 0
+    MOVWF TIEMPO22
+    MOVF TEMP_TIEMPO3, 0
+    MOVWF TIEMPO33
+    CALL ROJO3
+    MOVLW 01001100B ; CONFIG. estado inicial del semáforo
+    MOVWF PORTA ; Los LEDS del semáforo
+    BCF PORTB, 7
+    CLRF COLOR ; Limpiar bandera de cambio de color
+    BSF FMODO, 0 ; Setear modo 1
+    RETURN
+
+
+    ; S U B R U T I N A S P A R A L O S D I S P L A Y S
 DISPLAYS1:
     MOVF DEC1, W ; Decenas display 1
     CALL Tabla
@@ -3124,7 +3144,7 @@ DISPLAYS1:
     RETURN
 
 DISPLAY1:
-    CALL timer0
+    CALL timer0 ; Inicializar timer0
     CLRF PORTD
     BTFSC DISP, 0
     goto DISPLAY12 ; UNIDADES segundo display de la vía 1
@@ -3154,7 +3174,6 @@ DISPLAY11: ; SEMÁFORO VÍA 1
     MOVLW 00000100B
     MOVWF DISP
     RETURN
-
 DISPLAY12:
     MOVF DIVISOR+1, W ; Unidades
     MOVWF PORTC
@@ -3178,7 +3197,7 @@ DISPLAY22:
     MOVWF DISP
     RETURN
 
-DISPLAY31: ; EMÁFORO VÍA 3
+DISPLAY31: ; SEMÁFORO VÍA 3
     MOVF DIVISOR3, w ; Decenas
     MOVWF PORTC
     BSF PORTD, 6
@@ -3208,6 +3227,7 @@ DISPLAY42:
     MOVWF DISP
     RETURN
 
+; D I V I D I E N D O
 DECC: ; DISPLAY VÍA 1
     CLRF Bin
     MOVF TIEMPO1, W ; Cargar el valor de la variable
@@ -3303,35 +3323,4 @@ UNN4:
     goto $-4
     ADDWF Bin4, F ; Sumarle 1
     RETURN
-
-;AMA1: ; Color amarillo primer semáforo
-    ;BCF COLOR, 0
-    ;BFC PORTA, 0 ; Apagar verde
-    ;BSF PORTA, 1 ; Encender amarillo
-    ;RETURN
-;ROJO1: ; Color rojo primer semáforo
-    ;BCF PORTA, 1 ; Apagar amarillo
-    ;BSF PORTA, 2 ; Encender rojo
-
-;AMA2: ; Color amarillo segundo semáforo
-    ;BCF COLOR, 1
-    ;BFC PORTA, 3 ; Apagar verde
-    ;BSF PORTA, 4 ; Encender amarillo
-    ;RETURN
-;ROJO2: ; Color rojo segundo semáforo
-    ;BCF PORTA, 4 ; Apagar amarillo
-    ;BSF PORTA, 5 ; Encender rojo
-
-;AMA3: ; Color amarillo tercer semáforo
-    ;BCF COLOR, 1
-    ;BFC PORTE, 0 ; Apagar verde
-    ;BSF PORTE, 1 ; Encender amarillo
-    ;RETURN
-;ROJO3: ; Color rojo tercer semáforo
-    ;BCF PORTE, 1 ; Apagar amarillo
-    ;BSF PORTE, 2 ; Encender rojo
-
-
-
-
 END

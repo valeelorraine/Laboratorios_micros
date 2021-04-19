@@ -344,7 +344,7 @@ Displays:
 	
     MOVF   NUMERO+2, W     ; Unidades
     CALL   Tabla
-    MOVWF  DIVISOR+2       ;Guardar en variable las unidades
+    MOVWF  DIVISOR+2       ; Guardar en variable las unidades
     RETURN
 
 SPLIT:

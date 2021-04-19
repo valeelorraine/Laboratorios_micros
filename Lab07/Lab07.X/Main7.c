@@ -3,9 +3,16 @@
  * Author: Valerie Lorraine Sofia Valdez Trujillo
  * Compilador: pic-as (v2.30), MPLABX V5.45
  * 
- * Descripción del programa: 
+ * Descripción del programa: Contador que funciona con la interrupci{on del TMR0
+ *                           Contador que incrementa y decrementa con dos pushes
+ *                           Ambos muestran sus valores en 8 LEDS, sin embargo
+ *                           el contador de pushes tambien muestra su valor en 3
+ *                           displays multiplexados.
  * 
- * Hardware:
+ * Hardware: 2 Push buttons conectados a RB0 y RB1 con WPU 
+ *           16 Leds conectados al puerto A y C
+ *           3 displays multiplexados en el puerto D con sus transistores 
+ *           conectados a los 3 pines del puerto E.
  * 
  * Created on 12 de abril de 2021, 17:56
  * Última modificación:

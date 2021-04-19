@@ -87,7 +87,7 @@ void __interrupt() isr(void){
        PORTA++;                  // Incrementar contador del TMR0
        TMR0 = _tmr0_value;       // Inicializar TMR0
        
-       switch(DISPLAY){             // Multiplexación de los DISPLAYS
+       switch(DISPLAY){          // Multiplexación de los DISPLAYS
         case 1:                  // Centenas buscan el valor en la tabla
             PORTE = 0X00;
             PORTD = NUMEROS[CENTENAS]; 
@@ -179,16 +179,16 @@ void main(void){
     setup();                   // Llamar al set up
     
     while (1){ 
-        VAL = PORTC; 
-        VALORES();   }
+        VAL = PORTC;           // La variable empieza con el valor del puerto C
+        VALORES();   }         // Llamar a la función
     }
 
-void VALORES(void){ 
-    CENTENAS = VAL/100;
-    VAL = VAL-CENTENAS*100;
+void VALORES(void){            // División para obtener los valores del disp.
+    CENTENAS = VAL/100;        
+    VAL = VAL-CENTENAS*100;    // Quitarle las centenas
     DECENAS = VAL/10;
-    VAL = VAL-DECENAS*10;
-    UNIDADES = VAL;
+    VAL = VAL-DECENAS*10;      // Quitarle decenas
+    UNIDADES = VAL;            // Lo que sobra son unidades
         }
  
     

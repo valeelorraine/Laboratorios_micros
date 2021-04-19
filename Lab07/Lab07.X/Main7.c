@@ -86,7 +86,28 @@ void __interrupt() isr(void){
        INTCONbits.T0IF = 0;      // Apagar la bandera
        PORTA++;                  // Incrementar contador del TMR0
        TMR0 = _tmr0_value;       // Inicializar TMR0
-       INTCONbits.T0IF = 0;      // Limpiar bandera de Overflow del TMR0
+       
+       switch(DISPLAY){             // Multiplexación de los DISPLAYS
+        case 1:                  // Centenas buscan el valor en la tabla
+            PORTE = 0X00;
+            PORTD = NUMEROS[CENTENAS]; 
+            PORTEbits.RE0 = 1;   // Encender pin del transistor del disp
+            DISPLAY++;           // Incrementar variable para ir al sig. display
+            break;
+        case 2:                  // Decenas buscan el valor en la tabla
+            PORTE = 0X00;
+            PORTD = NUMEROS[DECENAS];
+            PORTEbits.RE1 = 1;   // Encender pin del transistor del disp
+            DISPLAY++;           // Incrementar variable para ir al sig. display
+            break;
+        case 3:                  // Unidades buscan el valor en la tabla
+            PORTE = 0X00;
+            PORTD = NUMEROS[UNIDADES];
+            PORTEbits.RE2 = 1;   // Encender pin del transistor del disp
+            DISPLAY = 1;         // Regresar al primer display
+            break;
+        }
+       INTCONbits.T0IF = 0;      // Apagar la bandera
                  } 
     
     if(INTCONbits.RBIF == 1){    // Si RBIF se enciende...                     
@@ -109,23 +130,6 @@ void __interrupt() isr(void){
         }
         INTCONbits.RBIF = 0;     // RBIF Limpiar la bandera de CHANGE INTERRUPT
     }
-    switch(DISPLAY){             // Multiplexación de los DISPLAYS
-        case 1:                  // Centenas buscan el valor en la tabla
-            PORTD = NUMEROS[CENTENAS];  
-            PORTEbits.RE0 = 1;   // Encender pin del transistor del disp
-            DISPLAY++;           // Incrementar variable para ir al sig. display
-            break;
-        case 2:                  // Decenas buscan el valor en la tabla
-            PORTD = NUMEROS[DECENAS];
-            PORTEbits.RE1 = 1;   // Encender pin del transistor del disp
-            DISPLAY++;           // Incrementar variable para ir al sig. display
-            break;
-        case 3:                  // Unidades buscan el valor en la tabla
-            PORTD = NUMEROS[UNIDADES];
-            PORTEbits.RE2 = 1;   // Encender pin del transistor del disp
-            DISPLAY = 1;         // Regresar al primer display
-            break;
-        }
 }
 
 //******************************************************************************
@@ -140,6 +144,7 @@ void setup(void) {
     TRISA = 0X00;               // Puertos como outputs
     TRISC = 0X00; 
     TRISD = 0X00; 
+    TRISE = 0X00;
     TRISB = 0B00000011;         // RB0 y RB1 son inputs
     
     PORTA = 0X00;               // Inicializar los puertos
@@ -179,17 +184,11 @@ void main(void){
     }
 
 void VALORES(void){ 
-    if(VAL  >= 100){           // Si el valor del coontador es mayor a 100
-        CENTENAS = VAL/100;
-        VAL = VAL-CENTENAS*100;
-        } 
-    if(VAL >= 10){ 
-        DECENAS = VAL/10;
-        VAL = VAL-DECENAS*10;
-        }
-    else{
-        UNIDADES = VAL;
-            } 
+    CENTENAS = VAL/100;
+    VAL = VAL-CENTENAS*100;
+    DECENAS = VAL/10;
+    VAL = VAL-DECENAS*10;
+    UNIDADES = VAL;
         }
  
     

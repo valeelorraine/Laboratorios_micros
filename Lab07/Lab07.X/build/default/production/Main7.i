@@ -2743,6 +2743,27 @@ void __attribute__((picinterrupt(("")))) isr(void){
        INTCONbits.T0IF = 0;
        PORTA++;
        TMR0 = 100;
+
+       switch(DISPLAY){
+        case 1:
+            PORTE = 0X00;
+            PORTD = NUMEROS[CENTENAS];
+            PORTEbits.RE0 = 1;
+            DISPLAY++;
+            break;
+        case 2:
+            PORTE = 0X00;
+            PORTD = NUMEROS[DECENAS];
+            PORTEbits.RE1 = 1;
+            DISPLAY++;
+            break;
+        case 3:
+            PORTE = 0X00;
+            PORTD = NUMEROS[UNIDADES];
+            PORTEbits.RE2 = 1;
+            DISPLAY = 1;
+            break;
+        }
        INTCONbits.T0IF = 0;
                  }
 
@@ -2766,23 +2787,6 @@ void __attribute__((picinterrupt(("")))) isr(void){
         }
         INTCONbits.RBIF = 0;
     }
-    switch(DISPLAY){
-        case 1:
-            PORTD = NUMEROS[CENTENAS];
-            PORTEbits.RE0 = 1;
-            DISPLAY++;
-            break;
-        case 2:
-            PORTD = NUMEROS[DECENAS];
-            PORTEbits.RE1 = 1;
-            DISPLAY++;
-            break;
-        case 3:
-            PORTD = NUMEROS[UNIDADES];
-            PORTEbits.RE2 = 1;
-            DISPLAY = 1;
-            break;
-        }
 }
 
 
@@ -2797,6 +2801,7 @@ void setup(void) {
     TRISA = 0X00;
     TRISC = 0X00;
     TRISD = 0X00;
+    TRISE = 0X00;
     TRISB = 0B00000011;
 
     PORTA = 0X00;
@@ -2836,15 +2841,9 @@ void main(void){
     }
 
 void VALORES(void){
-    if(VAL >= 100){
-        CENTENAS = VAL/100;
-        VAL = VAL-CENTENAS*100;
-        }
-    if(VAL >= 10){
-        DECENAS = VAL/10;
-        VAL = VAL-DECENAS*10;
-        }
-    else{
-        UNIDADES = VAL;
-            }
+    CENTENAS = VAL/100;
+    VAL = VAL-CENTENAS*100;
+    DECENAS = VAL/10;
+    VAL = VAL-DECENAS*10;
+    UNIDADES = VAL;
         }

@@ -2766,12 +2766,6 @@ void setup(void) {
 void main(void){
     setup();
     while (1){
-         _delay((unsigned long)((500)*(4000000/4000.0)));
-        VALOR = 0;
-        if(VALOR > 94){
-            TXREG = I[VALOR];
-            VALOR++;
-    }
         INS();
     }
 }
@@ -2787,6 +2781,11 @@ void putch(char DATA){
 }
 
 void INS(void){
+        _delay((unsigned long)((500)*(4000000/4000.0)));
+        VALOR = 0;
+        if(VALOR > 94){
+            TXREG = I[VALOR];
+            VALOR++;
     switch(RCREG){
         while(RCIF == 0){
             case 49:
@@ -2813,10 +2812,12 @@ void INS(void){
                 break;
 
             default:
-                (0);
+                _delay((unsigned long)((500)*(4000000/4000.0)));
+                VALOR = 0;
+                if(VALOR > 94){
+                TXREG = I[VALOR];
+                VALOR++;
                 break;
-
-
         }
     }
   }

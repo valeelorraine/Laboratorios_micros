@@ -117,12 +117,6 @@ void setup(void) {
 void main(void){  
     setup();                    // Llamar al set up    
     while (1){
-         __delay_ms(500); 
-        VALOR = 0;
-        if(VALOR > 94){
-            TXREG = I[VALOR];
-            VALOR++;
-    }
         INS();                  // Llamar al mensaje a mostrar
     }
 }
@@ -138,6 +132,11 @@ void putch(char DATA){
 }
 
 void INS(void){
+        __delay_ms(500); 
+        VALOR = 0;
+        if(VALOR > 94){
+            TXREG = I[VALOR];
+            VALOR++;
     switch(RCREG){
         while(RCIF == 0){
             case 49:
@@ -164,10 +163,12 @@ void INS(void){
                 break;
                 
             default:
-                NULL;
-                break;
-            
-                        
+                __delay_ms(500); 
+                VALOR = 0;
+                if(VALOR > 94){
+                TXREG = I[VALOR];
+                VALOR++;
+                break;             
         }  
     }
   }

@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <xc.h>
 
+
 //******************************************************************************
 //                      C O N F I G U R A C I Ó N 
 //******************************************************************************
@@ -47,22 +48,18 @@
 //******************************************************************************
 //                           V A R I A B L E S
 //******************************************************************************
-unsigned char DATO = 96;
-unsigned char I[95] = "¿Que accion desea realizar?\r1) Desplegar cadena de caracteres\r2) Cambiar PORTA\r3) Cambiar PORTB";
-int VALOR;
-char PUERTOA;
-char PUERTOB;
+unsigned char DATO[21] = " \rVamos a sacar 100\r";
+unsigned char I[96] = " Que accion desea realizar?\r1) Desplegar cadena de caracteres\r2) Cambiar PORTA\r3) Cambiar PORTB\r";
+int VALOR = 0;
+int VALOR1 = 0;
+int OP;
 
 //******************************************************************************
 //                 P R O T O T I P O S  de  F U N C I O N E S
 //******************************************************************************
 void setup(void);         // Configuraciones
-void putch(char DATO);    // Dato que se desea transmitir
+void putch(char DATA);    // Dato que se desea transmitir
 void INS(void);           // Mensaje a desplegar
-
-//******************************************************************************
-//                     F U N C I Ó N   para   I S R
-//******************************************************************************
 
 
 //******************************************************************************
@@ -93,7 +90,7 @@ void setup(void) {
     
     // Configuración UART transmisor y receptor asíncrono
     PIR1bits.RCIF = 0;          // Bandera
-    PIE1bits.RCIE = 1;          // Habilitar la interrución por el modo receptor
+    PIE1bits.RCIE = 0;          // Habilitar la interrución por el modo receptor
     PIE1bits.TXIE = 0;          // Habilitar bandera de interrupción
     TXSTAbits.TX9 = 0;          // 8 bits
     TXSTAbits.TXEN = 1;         // Se habilita el transmisor
@@ -115,63 +112,49 @@ void setup(void) {
 //******************************************************************************
 
 void main(void){  
-    setup();                    // Llamar al set up    
+    setup();                     // Llamar al set up    
     while (1){
-        INS();                  // Llamar al mensaje a mostrar
+            __delay_ms(500); 
+            VALOR = 0;
+            do{VALOR++;
+                TXREG = I[VALOR];   
+                __delay_ms(50); 
+            } while(VALOR<=95);
+            while(RCIF == 0);
+            INS();                // Llamar al mensaje a mostrar  
+            }
     }
-}
 
 //******************************************************************************
 //                           F U N C I O N E S
 //******************************************************************************
 
-void putch(char DATA){
-    while(TXIF == 0){           // TXIF = 1 cuando no se está recibiendo nada   
-        TXREG = DATA;           // Transmite datos al recibir printf en algun lado
-    }
-}
-
-void INS(void){
-        __delay_ms(500); 
-        VALOR = 0;
-        if(VALOR > 94){
-            TXREG = I[VALOR];
-            VALOR++;
-    switch(RCREG){
-        while(RCIF == 0){
-            case 49:
-                if (PIR1bits.TXIF == 1){
-                    DATO++;            // Inc. var. para mandar cadena de caract.
-                    if(DATO > 122){    // El alfabeto en minúsculas
-                        DATO = 97;     // Empezar en a
-                              }
-                    TXREG = DATO;
-                    TXREG = 32;        // Espacio
-                }
+void INS(void){  
+    OP = RCREG;
+    switch(OP){
+            case 49:                      // Si presionan 1
+                 do{ 
+                VALOR1++;
+                TXREG = DATO[VALOR1];   
+                __delay_ms(50); 
+            } while(VALOR1<=21);
+                 VALOR1 = 0;             // Limpiar la variable que hace el cambio
+                 OP = 0;
                 break;
                 
-            case 50:
-                printf("\r Presione el caracter para desplegar en PORTA: \r");
-                PUERTOA = RCREG;
-                PORTA = PUERTOA;
+            case 50:                      // Si presionan 2
+                 __delay_ms(500);
+                while(RCIF == 0);         // Esperar a ingresar caracter
+                PORTA = RCREG;
+                OP = 0;                  // Limpiar la variable que hace el cambio
                 break;
                 
-            case 51:
-                printf("\r Presione el caracter para desplegar en PORTB: \r");
-                PUERTOB = RCREG;
-                PORTB = PUERTOB; 
+            case 51:                       // Si presionan 3
+                __delay_ms(50);  
+                while(RCIF == 0);         // Esperar a ingresar caracter
+                PORTB = RCREG; 
+                OP = 0;                   // Limpiar la variable que hace el cambio
                 break;
-                
-            default:
-                __delay_ms(500); 
-                VALOR = 0;
-                if(VALOR > 94){
-                TXREG = I[VALOR];
-                VALOR++;
-                break;             
-        }  
-    }
-  }
-
-
-               
+        }
+     }
+       

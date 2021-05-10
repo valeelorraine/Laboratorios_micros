@@ -150,8 +150,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4175
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4175: extern volatile __bit RCIF __attribute__((address(0x65)));
 [v _RCIF `Vb ~T0 @X0 0 e@101 ]
-"62 Main10.c
-[; ;Main10.c: 62: void INS(void);
+"61 Main10.c
+[; ;Main10.c: 61: void INS(void);
 [v _INS `(v ~T0 @X0 0 ef ]
 "1140 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1140: extern volatile unsigned char RCREG __attribute__((address(0x01A)));
@@ -560,130 +560,130 @@ Version 4.0 HI-TECH Software Intermediate Code
 "55
 [; ;Main10.c: 55: int OP;
 [v _OP `i ~T0 @X0 1 e ]
-"69
-[; ;Main10.c: 69: void setup(void) {
+"68
+[; ;Main10.c: 68: void setup(void) {
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"71
-[; ;Main10.c: 71:     ANSEL = 0X00;
+"70
+[; ;Main10.c: 70:     ANSEL = 0X00;
 [e = _ANSEL -> -> 0 `i `uc ]
-"72
-[; ;Main10.c: 72:     ANSELH = 0X00;
+"71
+[; ;Main10.c: 71:     ANSELH = 0X00;
 [e = _ANSELH -> -> 0 `i `uc ]
-"74
-[; ;Main10.c: 74:     TRISA = 0x00;
+"73
+[; ;Main10.c: 73:     TRISA = 0x00;
 [e = _TRISA -> -> 0 `i `uc ]
-"75
-[; ;Main10.c: 75:     TRISB = 0X00;
+"74
+[; ;Main10.c: 74:     TRISB = 0X00;
 [e = _TRISB -> -> 0 `i `uc ]
-"76
-[; ;Main10.c: 76:     TRISCbits.TRISC6 = 0;
+"75
+[; ;Main10.c: 75:     TRISCbits.TRISC6 = 0;
 [e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
-"77
-[; ;Main10.c: 77:     TRISCbits.TRISC7 = 1;
+"76
+[; ;Main10.c: 76:     TRISCbits.TRISC7 = 1;
 [e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
-"79
-[; ;Main10.c: 79:     PORTA = 0X00;
+"78
+[; ;Main10.c: 78:     PORTA = 0X00;
 [e = _PORTA -> -> 0 `i `uc ]
-"80
-[; ;Main10.c: 80:     PORTB = 0X00;
+"79
+[; ;Main10.c: 79:     PORTB = 0X00;
 [e = _PORTB -> -> 0 `i `uc ]
-"83
-[; ;Main10.c: 83:     OSCCONbits.SCS = 1;
+"82
+[; ;Main10.c: 82:     OSCCONbits.SCS = 1;
 [e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
-"84
-[; ;Main10.c: 84:     INTCONbits.GIE = 1;
+"83
+[; ;Main10.c: 83:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"85
-[; ;Main10.c: 85:     INTCONbits.PEIE = 1;
+"84
+[; ;Main10.c: 84:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"87
-[; ;Main10.c: 87:     OSCCONbits.IRCF2 = 1;
+"86
+[; ;Main10.c: 86:     OSCCONbits.IRCF2 = 1;
 [e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"88
-[; ;Main10.c: 88:     OSCCONbits.IRCF1 = 1;
+"87
+[; ;Main10.c: 87:     OSCCONbits.IRCF1 = 1;
 [e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
-"89
-[; ;Main10.c: 89:     OSCCONbits.IRCF0 = 0;
+"88
+[; ;Main10.c: 88:     OSCCONbits.IRCF0 = 0;
 [e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-"92
-[; ;Main10.c: 92:     PIR1bits.RCIF = 0;
+"91
+[; ;Main10.c: 91:     PIR1bits.RCIF = 0;
 [e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-"93
-[; ;Main10.c: 93:     PIE1bits.RCIE = 0;
+"92
+[; ;Main10.c: 92:     PIE1bits.RCIE = 0;
 [e = . . _PIE1bits 0 5 -> -> 0 `i `uc ]
-"94
-[; ;Main10.c: 94:     PIE1bits.TXIE = 0;
+"93
+[; ;Main10.c: 93:     PIE1bits.TXIE = 0;
 [e = . . _PIE1bits 0 4 -> -> 0 `i `uc ]
-"95
-[; ;Main10.c: 95:     TXSTAbits.TX9 = 0;
+"94
+[; ;Main10.c: 94:     TXSTAbits.TX9 = 0;
 [e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
-"96
-[; ;Main10.c: 96:     TXSTAbits.TXEN = 1;
+"95
+[; ;Main10.c: 95:     TXSTAbits.TXEN = 1;
 [e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-"97
-[; ;Main10.c: 97:     TXSTAbits.SYNC = 0;
+"96
+[; ;Main10.c: 96:     TXSTAbits.SYNC = 0;
 [e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-"98
-[; ;Main10.c: 98:     TXSTAbits.BRGH = 1;
+"97
+[; ;Main10.c: 97:     TXSTAbits.BRGH = 1;
 [e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
-"99
-[; ;Main10.c: 99:     RCSTAbits.RX9 = 0;
+"98
+[; ;Main10.c: 98:     RCSTAbits.RX9 = 0;
 [e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
-"100
-[; ;Main10.c: 100:     RCSTAbits.CREN = 1;
+"99
+[; ;Main10.c: 99:     RCSTAbits.CREN = 1;
 [e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-"101
-[; ;Main10.c: 101:     RCSTAbits.SPEN = 1;
+"100
+[; ;Main10.c: 100:     RCSTAbits.SPEN = 1;
 [e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-"105
-[; ;Main10.c: 105:     BAUDCTLbits.BRG16 = 0;
+"104
+[; ;Main10.c: 104:     BAUDCTLbits.BRG16 = 0;
 [e = . . _BAUDCTLbits 0 3 -> -> 0 `i `uc ]
-"106
-[; ;Main10.c: 106:     SPBRG = 25;
+"105
+[; ;Main10.c: 105:     SPBRG = 25;
 [e = _SPBRG -> -> 25 `i `uc ]
-"107
-[; ;Main10.c: 107:     SPBRGH = 1;
+"106
+[; ;Main10.c: 106:     SPBRGH = 1;
 [e = _SPBRGH -> -> 1 `i `uc ]
-"108
-[; ;Main10.c: 108:     }
+"107
+[; ;Main10.c: 107:     }
 [e :UE 143 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"114
-[; ;Main10.c: 114: void main(void){
+"113
+[; ;Main10.c: 113: void main(void){
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"115
-[; ;Main10.c: 115:     setup();
+"114
+[; ;Main10.c: 114:     setup();
 [e ( _setup ..  ]
-"116
-[; ;Main10.c: 116:     while (1){
+"115
+[; ;Main10.c: 115:     while (1){
 [e :U 146 ]
 {
-"117
-[; ;Main10.c: 117:             _delay((unsigned long)((500)*(4000000/4000.0)));
+"116
+[; ;Main10.c: 116:             _delay((unsigned long)((500)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"118
-[; ;Main10.c: 118:             VALOR = 0;
+"117
+[; ;Main10.c: 117:             VALOR = 0;
 [e = _VALOR -> 0 `i ]
-"119
-[; ;Main10.c: 119:             do{VALOR++;
+"118
+[; ;Main10.c: 118:             do{VALOR++;
 [e :U 150 ]
 {
 [e ++ _VALOR -> 1 `i ]
-"120
-[; ;Main10.c: 120:                 TXREG = I[VALOR];
+"119
+[; ;Main10.c: 119:                 TXREG = I[VALOR];
 [e = _TXREG *U + &U _I * -> -> _VALOR `ui `ux -> -> # *U &U _I `ui `ux ]
-"121
-[; ;Main10.c: 121:                 _delay((unsigned long)((50)*(4000000/4000.0)));
+"120
+[; ;Main10.c: 120:                 _delay((unsigned long)((50)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"122
-[; ;Main10.c: 122:             } while(VALOR<=95);
+"121
+[; ;Main10.c: 121:             }
 }
 [e $ <= _VALOR -> 95 `i 150  ]
 [e :U 149 ]
@@ -724,20 +724,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Main10.c: 135:             case 49:
 [e :U 157 ]
 "136
-[; ;Main10.c: 136:                  do{
+[; ;Main10.c: 136:                 do{VALOR1++;
 [e :U 160 ]
 {
-"137
-[; ;Main10.c: 137:                 VALOR1++;
 [e ++ _VALOR1 -> 1 `i ]
-"138
-[; ;Main10.c: 138:                 TXREG = DATO[VALOR1];
+"137
+[; ;Main10.c: 137:                 TXREG = DATO[VALOR1];
 [e = _TXREG *U + &U _DATO * -> -> _VALOR1 `ui `ux -> -> # *U &U _DATO `ui `ux ]
-"139
-[; ;Main10.c: 139:                 _delay((unsigned long)((50)*(4000000/4000.0)));
+"138
+[; ;Main10.c: 138:                 _delay((unsigned long)((50)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"140
-[; ;Main10.c: 140:             } while(VALOR1<=21);
+"139
+[; ;Main10.c: 139:             }
 }
 [e $ <= _VALOR1 -> 21 `i 160  ]
 [e :U 159 ]

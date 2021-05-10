@@ -24,7 +24,7 @@ dataBANK0 BANK0 1 20 20 15 1
 dataBANK3 BANK3 1 190 190 60 1
 bssCOMMON COMMON 1 70 70 6 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\PERSON~1\AppData\Local\Temp\sbrs.o
+$C:\Users\PERSON~1\AppData\Local\Temp\sfks.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
@@ -71,44 +71,44 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab10.X.production.o
-7DA cinit CODE >598:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7DA cinit CODE >601:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7DA cinit CODE >662:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7DB cinit CODE >663:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7DC cinit CODE >664:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7DD cinit CODE >665:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7DE cinit CODE >666:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7DF cinit CODE >667:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7E0 cinit CODE >668:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7E1 cinit CODE >669:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7E2 cinit CODE >670:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7E3 cinit CODE >671:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7E8 cinit CODE >675:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7E9 cinit CODE >676:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7EA cinit CODE >677:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7EB cinit CODE >678:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7EC cinit CODE >679:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7ED cinit CODE >680:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7EE cinit CODE >681:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7EF cinit CODE >682:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7F0 cinit CODE >683:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7F1 cinit CODE >684:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7F6 cinit CODE >688:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7F7 cinit CODE >689:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7F8 cinit CODE >690:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7F9 cinit CODE >691:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7FA cinit CODE >692:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7FB cinit CODE >693:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7FC cinit CODE >699:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7FC cinit CODE >701:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-7FD cinit CODE >702:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
+7DA cinit CODE >598:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7DA cinit CODE >601:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7DA cinit CODE >662:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7DB cinit CODE >663:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7DC cinit CODE >664:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7DD cinit CODE >665:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7DE cinit CODE >666:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7DF cinit CODE >667:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7E0 cinit CODE >668:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7E1 cinit CODE >669:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7E2 cinit CODE >670:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7E3 cinit CODE >671:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7E8 cinit CODE >675:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7E9 cinit CODE >676:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7EA cinit CODE >677:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7EB cinit CODE >678:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7EC cinit CODE >679:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7ED cinit CODE >680:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7EE cinit CODE >681:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7EF cinit CODE >682:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7F0 cinit CODE >683:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7F1 cinit CODE >684:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7F6 cinit CODE >688:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7F7 cinit CODE >689:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7F8 cinit CODE >690:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7F9 cinit CODE >691:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7FA cinit CODE >692:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7FB cinit CODE >693:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7FC cinit CODE >699:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7FC cinit CODE >701:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+7FD cinit CODE >702:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
 76C text2 CODE >132:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
 76C text2 CODE >133:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
 775 text2 CODE >134:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-776 text2 CODE >137:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-77C text2 CODE >138:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-784 text2 CODE >139:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-78D text2 CODE >140:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+776 text2 CODE >136:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+77C text2 CODE >137:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+784 text2 CODE >138:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+78D text2 CODE >139:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
 79A text2 CODE >141:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
 79C text2 CODE >142:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
 79E text2 CODE >143:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
@@ -122,62 +122,62 @@ $dist/default/production\Lab10.X.production.o
 7C6 text2 CODE >155:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
 7C9 text2 CODE >158:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
 7D9 text2 CODE >159:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-695 text1 CODE >69:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-695 text1 CODE >71:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-698 text1 CODE >72:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-699 text1 CODE >74:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-69C text1 CODE >75:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-69D text1 CODE >76:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-69E text1 CODE >77:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-69F text1 CODE >79:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6A2 text1 CODE >80:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6A3 text1 CODE >83:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6A6 text1 CODE >84:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6A7 text1 CODE >85:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6A8 text1 CODE >87:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6A9 text1 CODE >88:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6AA text1 CODE >89:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6AB text1 CODE >92:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6AE text1 CODE >93:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6B1 text1 CODE >94:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6B2 text1 CODE >95:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6B3 text1 CODE >96:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6B4 text1 CODE >97:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6B5 text1 CODE >98:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6B6 text1 CODE >99:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6B9 text1 CODE >100:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6BA text1 CODE >101:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6BB text1 CODE >105:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6BE text1 CODE >106:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6C2 text1 CODE >107:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6C4 text1 CODE >108:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+695 text1 CODE >68:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+695 text1 CODE >70:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+698 text1 CODE >71:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+699 text1 CODE >73:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+69C text1 CODE >74:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+69D text1 CODE >75:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+69E text1 CODE >76:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+69F text1 CODE >78:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6A2 text1 CODE >79:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6A3 text1 CODE >82:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6A6 text1 CODE >83:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6A7 text1 CODE >84:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6A8 text1 CODE >86:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6A9 text1 CODE >87:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6AA text1 CODE >88:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6AB text1 CODE >91:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6AE text1 CODE >92:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6B1 text1 CODE >93:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6B2 text1 CODE >94:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6B3 text1 CODE >95:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6B4 text1 CODE >96:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6B5 text1 CODE >97:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6B6 text1 CODE >98:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6B9 text1 CODE >99:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6BA text1 CODE >100:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6BB text1 CODE >104:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6BE text1 CODE >105:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6C2 text1 CODE >106:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6C4 text1 CODE >107:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6C5 maintext CODE >113:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
 6C5 maintext CODE >114:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6C5 maintext CODE >115:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6CA maintext CODE >117:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6D7 maintext CODE >118:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6D9 maintext CODE >119:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6DF maintext CODE >120:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6E7 maintext CODE >121:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-6F0 maintext CODE >122:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6CA maintext CODE >116:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6D7 maintext CODE >117:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6D9 maintext CODE >118:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6DF maintext CODE >119:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6E7 maintext CODE >120:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+6F0 maintext CODE >121:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
 6FD maintext CODE >123:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
 703 maintext CODE >124:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
-66D inittext CODE >636:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-66D inittext CODE >637:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-66E inittext CODE >638:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-66F inittext CODE >639:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-670 inittext CODE >640:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-671 inittext CODE >647:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-671 inittext CODE >648:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-676 inittext CODE >649:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-677 inittext CODE >650:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-678 inittext CODE >651:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-679 inittext CODE >652:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-67A inittext CODE >653:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-67B inittext CODE >654:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-67C inittext CODE >655:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-67D inittext CODE >656:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-67E inittext CODE >657:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
-67F inittext CODE >658:C:\Users\PERSON~1\AppData\Local\Temp\sbrs.s
+66D inittext CODE >636:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+66D inittext CODE >637:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+66E inittext CODE >638:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+66F inittext CODE >639:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+670 inittext CODE >640:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+671 inittext CODE >647:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+671 inittext CODE >648:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+676 inittext CODE >649:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+677 inittext CODE >650:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+678 inittext CODE >651:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+679 inittext CODE >652:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+67A inittext CODE >653:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+67B inittext CODE >654:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+67C inittext CODE >655:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+67D inittext CODE >656:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+67E inittext CODE >657:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
+67F inittext CODE >658:C:\Users\PERSON~1\AppData\Local\Temp\sfks.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -206,21 +206,21 @@ _OP 70 0 COMMON 1 bssCOMMON dist/default/production\Lab10.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _DATO 20 0 BANK0 1 dataBANK0 dist/default/production\Lab10.X.production.o
 _RCIF 65 0 ABS 0 - dist/default/production\Lab10.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\PERSON~1\AppData\Local\Temp\sbrs.o
+___sp 0 0 STACK 2 stack C:\Users\PERSON~1\AppData\Local\Temp\sfks.o
 _main D8A 0 CODE 0 maintext dist/default/production\Lab10.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab10.X.production.o
-start 0 0 CODE 0 init C:\Users\PERSON~1\AppData\Local\Temp\sbrs.o
+start 0 0 CODE 0 init C:\Users\PERSON~1\AppData\Local\Temp\sfks.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Lab10.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
 __LidataBANK3 0 0 ABS 0 idataBANK3 -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sbrs.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sbrs.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sbrs.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sbrs.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sbrs.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sbrs.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sfks.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sfks.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sfks.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sfks.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sfks.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sfks.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Lab10.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Lab10.X.production.o
@@ -228,15 +228,15 @@ __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 _ANSELH 189 0 ABS 0 - dist/default/production\Lab10.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\PERSON~1\AppData\Local\Temp\sbrs.o
-___stacklo 0 0 ABS 0 - C:\Users\PERSON~1\AppData\Local\Temp\sbrs.o
+___stackhi 0 0 ABS 0 - C:\Users\PERSON~1\AppData\Local\Temp\sfks.o
+___stacklo 0 0 ABS 0 - C:\Users\PERSON~1\AppData\Local\Temp\sfks.o
 _BAUDCTLbits 187 0 ABS 0 - dist/default/production\Lab10.X.production.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\Lab10.X.production.o
 start_initialization FB4 0 CODE 0 cinit dist/default/production\Lab10.X.production.o
 _TRISCbits 87 0 ABS 0 - dist/default/production\Lab10.X.production.o
 _SPBRGH 9A 0 ABS 0 - dist/default/production\Lab10.X.production.o
 _VALOR1 72 0 COMMON 1 bssCOMMON dist/default/production\Lab10.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\PERSON~1\AppData\Local\Temp\sbrs.o
+___int_sp 0 0 STACK 2 stack C:\Users\PERSON~1\AppData\Local\Temp\sfks.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -278,7 +278,7 @@ __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __end_of_INS FB4 0 CODE 0 text2 dist/default/production\Lab10.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\PERSON~1\AppData\Local\Temp\sbrs.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\PERSON~1\AppData\Local\Temp\sfks.o
 __pdataBANK0 20 0 BANK0 1 dataBANK0 dist/default/production\Lab10.X.production.o
 __pdataBANK3 190 0 BANK3 1 dataBANK3 dist/default/production\Lab10.X.production.o
 _RCSTAbits 18 0 ABS 0 - dist/default/production\Lab10.X.production.o

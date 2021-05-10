@@ -58,7 +58,6 @@ int OP;
 //                 P R O T O T I P O S  de  F U N C I O N E S
 //******************************************************************************
 void setup(void);         // Configuraciones
-void putch(char DATA);    // Dato que se desea transmitir
 void INS(void);           // Mensaje a desplegar
 
 
@@ -116,10 +115,11 @@ void main(void){
     while (1){
             __delay_ms(500); 
             VALOR = 0;
-            do{VALOR++;
+            do{VALOR++;          // Incrementar la variable
                 TXREG = I[VALOR];   
                 __delay_ms(50); 
-            } while(VALOR<=95);
+            } 
+            while(VALOR<=95);     // Cantidad de carcateres del Array
             while(RCIF == 0);
             INS();                // Llamar al mensaje a mostrar  
             }
@@ -132,27 +132,27 @@ void main(void){
 void INS(void){  
     OP = RCREG;
     switch(OP){
-            case 49:                      // Si presionan 1
-                 do{ 
-                VALOR1++;
-                TXREG = DATO[VALOR1];   
+            case 49:                       // Si presionan 1
+                do{VALOR1++;               // Incrementar variable
+                TXREG = DATO[VALOR1];      // Mostrar caracter
                 __delay_ms(50); 
-            } while(VALOR1<=21);
-                 VALOR1 = 0;             // Limpiar la variable que hace el cambio
+            } 
+                while(VALOR1<=21);
+                 VALOR1 = 0;              // Limpiar la variable que hace el cambio
                  OP = 0;
                 break;
                 
             case 50:                      // Si presionan 2
                  __delay_ms(500);
                 while(RCIF == 0);         // Esperar a ingresar caracter
-                PORTA = RCREG;
-                OP = 0;                  // Limpiar la variable que hace el cambio
+                PORTA = RCREG;            // El valor ingresado estará en PORTA
+                OP = 0;                   // Limpiar la variable que hace el cambio
                 break;
                 
-            case 51:                       // Si presionan 3
+            case 51:                      // Si presionan 3
                 __delay_ms(50);  
                 while(RCIF == 0);         // Esperar a ingresar caracter
-                PORTB = RCREG; 
+                PORTB = RCREG;            // El valor ingresado estará en PORTB
                 OP = 0;                   // Limpiar la variable que hace el cambio
                 break;
         }

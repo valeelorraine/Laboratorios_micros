@@ -2716,7 +2716,6 @@ int OP;
 
 
 void setup(void);
-void putch(char DATA);
 void INS(void);
 
 
@@ -2777,7 +2776,8 @@ void main(void){
             do{VALOR++;
                 TXREG = I[VALOR];
                 _delay((unsigned long)((50)*(4000000/4000.0)));
-            } while(VALOR<=95);
+            }
+            while(VALOR<=95);
             while(RCIF == 0);
             INS();
             }
@@ -2791,11 +2791,11 @@ void INS(void){
     OP = RCREG;
     switch(OP){
             case 49:
-                 do{
-                VALOR1++;
+                do{VALOR1++;
                 TXREG = DATO[VALOR1];
                 _delay((unsigned long)((50)*(4000000/4000.0)));
-            } while(VALOR1<=21);
+            }
+                while(VALOR1<=21);
                  VALOR1 = 0;
                  OP = 0;
                 break;

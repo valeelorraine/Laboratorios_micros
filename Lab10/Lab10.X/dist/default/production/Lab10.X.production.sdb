@@ -11,9 +11,9 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"69 C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
+"68 C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Lab10\Lab10.X\Main10.c
 [v _setup setup `(v  1 e 1 0 ]
-"114
+"113
 [v _main main `(v  1 e 1 0 ]
 "132
 [v _INS INS `(v  1 e 1 0 ]
@@ -167,15 +167,15 @@
 [v _VALOR1 VALOR1 `i  1 e 2 0 ]
 "55
 [v _OP OP `i  1 e 2 0 ]
-"114
+"113
 [v _main main `(v  1 e 1 0 ]
 {
 "126
 } 0
-"69
+"68
 [v _setup setup `(v  1 e 1 0 ]
 {
-"108
+"107
 } 0
 "132
 [v _INS INS `(v  1 e 1 0 ]

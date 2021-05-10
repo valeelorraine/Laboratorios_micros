@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Sun May 09 22:44:09 2021
+                                                                                               Sun May 09 23:09:32 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -486,7 +486,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    472 ;;
    473 ;; *************** function _main *****************
    474 ;; Defined at:
-   475 ;;		line 114 in file "Main10.c"
+   475 ;;		line 113 in file "Main10.c"
    476 ;; Parameters:    Size  Location     Type
    477 ;;		None
    478 ;; Auto vars:     Size  Location     Type
@@ -522,11 +522,11 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    508                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
    509                           
    510                           
-   511                           ;Main10.c: 115:     setup();
+   511                           ;Main10.c: 114:     setup();
    512  06C5  120A  118A  2695  120A  118A  	fcall	_setup
    513  06CA                     l756:
    514                           
-   515                           ;Main10.c: 117:             _delay((unsigned long)((500)*(4000000/4000.0)));
+   515                           ;Main10.c: 116:             _delay((unsigned long)((500)*(4000000/4000.0)));
    516  06CA  3003               	movlw	3
    517  06CB  00FB               	movwf	??_main+2
    518  06CC  308A               	movlw	138
@@ -543,7 +543,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    529  06D6  2ED7               	nop2
    530  06D7                     l758:
    531                           
-   532                           ;Main10.c: 118:             VALOR = 0;
+   532                           ;Main10.c: 117:             VALOR = 0;
    533  06D7  01F4               	clrf	_VALOR
    534  06D8  01F5               	clrf	_VALOR+1
    535  06D9                     l760:
@@ -555,7 +555,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    541  06DE  07F5               	addwf	_VALOR+1,f
    542  06DF                     l762:
    543                           
-   544                           ;Main10.c: 120:                 TXREG = I[VALOR];
+   544                           ;Main10.c: 119:                 TXREG = I[VALOR];
    545  06DF  0874               	movf	_VALOR,w
    546  06E0  3E90               	addlw	(low (_I| (0+256)))& (0+255)
    547  06E1  0084               	movwf	4
@@ -566,7 +566,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    552  06E6  0099               	movwf	25	;volatile
    553  06E7                     l764:
    554                           
-   555                           ;Main10.c: 121:                 _delay((unsigned long)((50)*(4000000/4000.0)));
+   555                           ;Main10.c: 120:                 _delay((unsigned long)((50)*(4000000/4000.0)));
    556  06E7  3041               	movlw	65
    557  06E8  00FA               	movwf	??_main+1
    558  06E9  30EE               	movlw	238
@@ -579,7 +579,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    565  06EF  0000               	nop
    566  06F0                     l766:
    567                           
-   568                           ;Main10.c: 122:             } while(VALOR<=95);
+   568                           ;Main10.c: 121:             }
    569  06F0  0875               	movf	_VALOR+1,w
    570  06F1  3A80               	xorlw	128
    571  06F2  00FF               	movwf	btemp+1
@@ -617,7 +617,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    603  0695                     __ptext1:	
    604 ;; *************** function _setup *****************
    605 ;; Defined at:
-   606 ;;		line 69 in file "Main10.c"
+   606 ;;		line 68 in file "Main10.c"
    607 ;; Parameters:    Size  Location     Type
    608 ;;		None
    609 ;; Auto vars:     Size  Location     Type
@@ -652,125 +652,125 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    638                           ; Regs used in _setup: [wreg+status,2]
    639                           
    640                           
-   641                           ;Main10.c: 71:     ANSEL = 0X00;
+   641                           ;Main10.c: 70:     ANSEL = 0X00;
    642  0695  1683               	bsf	3,5	;RP0=1, select bank3
    643  0696  1703               	bsf	3,6	;RP1=1, select bank3
    644  0697  0188               	clrf	8	;volatile
    645                           
-   646                           ;Main10.c: 72:     ANSELH = 0X00;
+   646                           ;Main10.c: 71:     ANSELH = 0X00;
    647  0698  0189               	clrf	9	;volatile
    648                           
-   649                           ;Main10.c: 74:     TRISA = 0x00;
+   649                           ;Main10.c: 73:     TRISA = 0x00;
    650  0699  1683               	bsf	3,5	;RP0=1, select bank1
    651  069A  1303               	bcf	3,6	;RP1=0, select bank1
    652  069B  0185               	clrf	5	;volatile
    653                           
-   654                           ;Main10.c: 75:     TRISB = 0X00;
+   654                           ;Main10.c: 74:     TRISB = 0X00;
    655  069C  0186               	clrf	6	;volatile
    656  069D                     l678:
    657                           
-   658                           ;Main10.c: 76:     TRISCbits.TRISC6 = 0;
+   658                           ;Main10.c: 75:     TRISCbits.TRISC6 = 0;
    659  069D  1307               	bcf	7,6	;volatile
    660  069E                     l680:
    661                           
-   662                           ;Main10.c: 77:     TRISCbits.TRISC7 = 1;
+   662                           ;Main10.c: 76:     TRISCbits.TRISC7 = 1;
    663  069E  1787               	bsf	7,7	;volatile
    664                           
-   665                           ;Main10.c: 79:     PORTA = 0X00;
+   665                           ;Main10.c: 78:     PORTA = 0X00;
    666  069F  1283               	bcf	3,5	;RP0=0, select bank0
    667  06A0  1303               	bcf	3,6	;RP1=0, select bank0
    668  06A1  0185               	clrf	5	;volatile
    669                           
-   670                           ;Main10.c: 80:     PORTB = 0X00;
+   670                           ;Main10.c: 79:     PORTB = 0X00;
    671  06A2  0186               	clrf	6	;volatile
    672  06A3                     l682:
    673                           
-   674                           ;Main10.c: 83:     OSCCONbits.SCS = 1;
+   674                           ;Main10.c: 82:     OSCCONbits.SCS = 1;
    675  06A3  1683               	bsf	3,5	;RP0=1, select bank1
    676  06A4  1303               	bcf	3,6	;RP1=0, select bank1
    677  06A5  140F               	bsf	15,0	;volatile
    678  06A6                     l684:
    679                           
-   680                           ;Main10.c: 84:     INTCONbits.GIE = 1;
+   680                           ;Main10.c: 83:     INTCONbits.GIE = 1;
    681  06A6  178B               	bsf	11,7	;volatile
    682  06A7                     l686:
    683                           
-   684                           ;Main10.c: 85:     INTCONbits.PEIE = 1;
+   684                           ;Main10.c: 84:     INTCONbits.PEIE = 1;
    685  06A7  170B               	bsf	11,6	;volatile
    686  06A8                     l688:
    687                           
-   688                           ;Main10.c: 87:     OSCCONbits.IRCF2 = 1;
+   688                           ;Main10.c: 86:     OSCCONbits.IRCF2 = 1;
    689  06A8  170F               	bsf	15,6	;volatile
    690  06A9                     l690:
    691                           
-   692                           ;Main10.c: 88:     OSCCONbits.IRCF1 = 1;
+   692                           ;Main10.c: 87:     OSCCONbits.IRCF1 = 1;
    693  06A9  168F               	bsf	15,5	;volatile
    694  06AA                     l692:
    695                           
-   696                           ;Main10.c: 89:     OSCCONbits.IRCF0 = 0;
+   696                           ;Main10.c: 88:     OSCCONbits.IRCF0 = 0;
    697  06AA  120F               	bcf	15,4	;volatile
    698  06AB                     l694:
    699                           
-   700                           ;Main10.c: 92:     PIR1bits.RCIF = 0;
+   700                           ;Main10.c: 91:     PIR1bits.RCIF = 0;
    701  06AB  1283               	bcf	3,5	;RP0=0, select bank0
    702  06AC  1303               	bcf	3,6	;RP1=0, select bank0
    703  06AD  128C               	bcf	12,5	;volatile
    704  06AE                     l696:
    705                           
-   706                           ;Main10.c: 93:     PIE1bits.RCIE = 0;
+   706                           ;Main10.c: 92:     PIE1bits.RCIE = 0;
    707  06AE  1683               	bsf	3,5	;RP0=1, select bank1
    708  06AF  1303               	bcf	3,6	;RP1=0, select bank1
    709  06B0  128C               	bcf	12,5	;volatile
    710  06B1                     l698:
    711                           
-   712                           ;Main10.c: 94:     PIE1bits.TXIE = 0;
+   712                           ;Main10.c: 93:     PIE1bits.TXIE = 0;
    713  06B1  120C               	bcf	12,4	;volatile
    714  06B2                     l700:
    715                           
-   716                           ;Main10.c: 95:     TXSTAbits.TX9 = 0;
+   716                           ;Main10.c: 94:     TXSTAbits.TX9 = 0;
    717  06B2  1318               	bcf	24,6	;volatile
    718  06B3                     l702:
    719                           
-   720                           ;Main10.c: 96:     TXSTAbits.TXEN = 1;
+   720                           ;Main10.c: 95:     TXSTAbits.TXEN = 1;
    721  06B3  1698               	bsf	24,5	;volatile
    722  06B4                     l704:
    723                           
-   724                           ;Main10.c: 97:     TXSTAbits.SYNC = 0;
+   724                           ;Main10.c: 96:     TXSTAbits.SYNC = 0;
    725  06B4  1218               	bcf	24,4	;volatile
    726  06B5                     l706:
    727                           
-   728                           ;Main10.c: 98:     TXSTAbits.BRGH = 1;
+   728                           ;Main10.c: 97:     TXSTAbits.BRGH = 1;
    729  06B5  1518               	bsf	24,2	;volatile
    730  06B6                     l708:
    731                           
-   732                           ;Main10.c: 99:     RCSTAbits.RX9 = 0;
+   732                           ;Main10.c: 98:     RCSTAbits.RX9 = 0;
    733  06B6  1283               	bcf	3,5	;RP0=0, select bank0
    734  06B7  1303               	bcf	3,6	;RP1=0, select bank0
    735  06B8  1318               	bcf	24,6	;volatile
    736  06B9                     l710:
    737                           
-   738                           ;Main10.c: 100:     RCSTAbits.CREN = 1;
+   738                           ;Main10.c: 99:     RCSTAbits.CREN = 1;
    739  06B9  1618               	bsf	24,4	;volatile
    740  06BA                     l712:
    741                           
-   742                           ;Main10.c: 101:     RCSTAbits.SPEN = 1;
+   742                           ;Main10.c: 100:     RCSTAbits.SPEN = 1;
    743  06BA  1798               	bsf	24,7	;volatile
    744  06BB                     l714:
    745                           
-   746                           ;Main10.c: 105:     BAUDCTLbits.BRG16 = 0;
+   746                           ;Main10.c: 104:     BAUDCTLbits.BRG16 = 0;
    747  06BB  1683               	bsf	3,5	;RP0=1, select bank3
    748  06BC  1703               	bsf	3,6	;RP1=1, select bank3
    749  06BD  1187               	bcf	7,3	;volatile
    750  06BE                     l716:
    751                           
-   752                           ;Main10.c: 106:     SPBRG = 25;
+   752                           ;Main10.c: 105:     SPBRG = 25;
    753  06BE  3019               	movlw	25
    754  06BF  1683               	bsf	3,5	;RP0=1, select bank1
    755  06C0  1303               	bcf	3,6	;RP1=0, select bank1
    756  06C1  0099               	movwf	25	;volatile
    757  06C2                     l718:
    758                           
-   759                           ;Main10.c: 107:     SPBRGH = 1;
+   759                           ;Main10.c: 106:     SPBRGH = 1;
    760  06C2  3001               	movlw	1
    761  06C3  009A               	movwf	26	;volatile
    762  06C4                     l55:
@@ -830,220 +830,218 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    816                           ;Main10.c: 134:     switch(OP){
    817  0775  2FC9               	goto	l746
    818  0776                     l722:
-   819                           
-   820                           ;Main10.c: 137:                 VALOR1++;
-   821  0776  3001               	movlw	1
-   822  0777  07F2               	addwf	_VALOR1,f
-   823  0778  1803               	skipnc
-   824  0779  0AF3               	incf	_VALOR1+1,f
-   825  077A  3000               	movlw	0
-   826  077B  07F3               	addwf	_VALOR1+1,f
-   827  077C                     l724:
-   828                           
-   829                           ;Main10.c: 138:                 TXREG = DATO[VALOR1];
-   830  077C  0872               	movf	_VALOR1,w
-   831  077D  3E20               	addlw	(low (_DATO| 0))& (0+255)
-   832  077E  0084               	movwf	4
-   833  077F  1383               	bcf	3,7	;select IRP bank0
-   834  0780  0800               	movf	0,w
-   835  0781  1283               	bcf	3,5	;RP0=0, select bank0
-   836  0782  1303               	bcf	3,6	;RP1=0, select bank0
-   837  0783  0099               	movwf	25	;volatile
-   838  0784                     l726:
-   839                           
-   840                           ;Main10.c: 139:                 _delay((unsigned long)((50)*(4000000/4000.0)));
-   841  0784  3041               	movlw	65
-   842  0785  00F7               	movwf	??_INS+1
-   843  0786  30EE               	movlw	238
-   844  0787  00F6               	movwf	??_INS
-   845  0788                     u87:
-   846  0788  0BF6               	decfsz	??_INS,f
-   847  0789  2F88               	goto	u87
-   848  078A  0BF7               	decfsz	??_INS+1,f
-   849  078B  2F88               	goto	u87
-   850  078C  0000               	nop
-   851  078D                     l728:
-   852                           
-   853                           ;Main10.c: 140:             } while(VALOR1<=21);
-   854  078D  0873               	movf	_VALOR1+1,w
-   855  078E  3A80               	xorlw	128
-   856  078F  00FF               	movwf	btemp+1
-   857  0790  3080               	movlw	128
-   858  0791  027F               	subwf	btemp+1,w
-   859  0792  1D03               	skipz
-   860  0793  2F96               	goto	u15
-   861  0794  3016               	movlw	22
-   862  0795  0272               	subwf	_VALOR1,w
-   863  0796                     u15:
-   864  0796  1C03               	skipc
-   865  0797  2F99               	goto	u11
-   866  0798  2F9A               	goto	u10
-   867  0799                     u11:
-   868  0799  2F76               	goto	l722
-   869  079A                     u10:
-   870  079A                     l730:
-   871                           
-   872                           ;Main10.c: 141:                  VALOR1 = 0;
-   873  079A  01F2               	clrf	_VALOR1
-   874  079B  01F3               	clrf	_VALOR1+1
-   875                           
-   876                           ;Main10.c: 142:                  OP = 0;
-   877  079C  01F0               	clrf	_OP
-   878  079D  01F1               	clrf	_OP+1
-   879                           
-   880                           ;Main10.c: 143:                 break;
-   881  079E  2FD9               	goto	l84
-   882  079F                     l732:
-   883                           
-   884                           ;Main10.c: 146:                  _delay((unsigned long)((500)*(4000000/4000.0)));
-   885  079F  3003               	movlw	3
-   886  07A0  00F8               	movwf	??_INS+2
-   887  07A1  308A               	movlw	138
-   888  07A2  00F7               	movwf	??_INS+1
-   889  07A3  3055               	movlw	85
-   890  07A4  00F6               	movwf	??_INS
-   891  07A5                     u97:
-   892  07A5  0BF6               	decfsz	??_INS,f
-   893  07A6  2FA5               	goto	u97
-   894  07A7  0BF7               	decfsz	??_INS+1,f
-   895  07A8  2FA5               	goto	u97
-   896  07A9  0BF8               	decfsz	??_INS+2,f
-   897  07AA  2FA5               	goto	u97
-   898  07AB  2FAC               	nop2
-   899  07AC                     l77:	
-   900                           ;Main10.c: 147:                 while(RCIF == 0);
-   901                           
-   902  07AC  1283               	bcf	3,5	;RP0=0, select bank0
-   903  07AD  1303               	bcf	3,6	;RP1=0, select bank0
-   904  07AE  1E8C               	btfss	12,5	;volatile
-   905  07AF  2FB1               	goto	u21
-   906  07B0  2FB2               	goto	u20
-   907  07B1                     u21:
-   908  07B1  2FAC               	goto	l77
-   909  07B2                     u20:
-   910  07B2                     l734:
-   911                           
-   912                           ;Main10.c: 148:                 PORTA = RCREG;
-   913  07B2  081A               	movf	26,w	;volatile
-   914  07B3  0085               	movwf	5	;volatile
-   915  07B4                     l736:
-   916                           
-   917                           ;Main10.c: 149:                 OP = 0;
-   918  07B4  01F0               	clrf	_OP
-   919  07B5  01F1               	clrf	_OP+1
-   920                           
-   921                           ;Main10.c: 150:                 break;
-   922  07B6  2FD9               	goto	l84
-   923  07B7                     l738:
-   924                           
-   925                           ;Main10.c: 153:                 _delay((unsigned long)((50)*(4000000/4000.0)));
-   926  07B7  3041               	movlw	65
-   927  07B8  00F7               	movwf	??_INS+1
-   928  07B9  30EE               	movlw	238
-   929  07BA  00F6               	movwf	??_INS
-   930  07BB                     u107:
-   931  07BB  0BF6               	decfsz	??_INS,f
-   932  07BC  2FBB               	goto	u107
-   933  07BD  0BF7               	decfsz	??_INS+1,f
-   934  07BE  2FBB               	goto	u107
-   935  07BF  0000               	nop
-   936  07C0                     l81:	
-   937                           ;Main10.c: 154:                 while(RCIF == 0);
-   938                           
-   939  07C0  1283               	bcf	3,5	;RP0=0, select bank0
-   940  07C1  1303               	bcf	3,6	;RP1=0, select bank0
-   941  07C2  1E8C               	btfss	12,5	;volatile
-   942  07C3  2FC5               	goto	u31
-   943  07C4  2FC6               	goto	u30
-   944  07C5                     u31:
-   945  07C5  2FC0               	goto	l81
-   946  07C6                     u30:
-   947  07C6                     l740:
-   948                           
-   949                           ;Main10.c: 155:                 PORTB = RCREG;
-   950  07C6  081A               	movf	26,w	;volatile
-   951  07C7  0086               	movwf	6	;volatile
-   952  07C8  2FB4               	goto	l736
-   953  07C9                     l746:
-   954                           
-   955                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+   819  0776  3001               	movlw	1
+   820  0777  07F2               	addwf	_VALOR1,f
+   821  0778  1803               	skipnc
+   822  0779  0AF3               	incf	_VALOR1+1,f
+   823  077A  3000               	movlw	0
+   824  077B  07F3               	addwf	_VALOR1+1,f
+   825  077C                     l724:
+   826                           
+   827                           ;Main10.c: 137:                 TXREG = DATO[VALOR1];
+   828  077C  0872               	movf	_VALOR1,w
+   829  077D  3E20               	addlw	(low (_DATO| 0))& (0+255)
+   830  077E  0084               	movwf	4
+   831  077F  1383               	bcf	3,7	;select IRP bank0
+   832  0780  0800               	movf	0,w
+   833  0781  1283               	bcf	3,5	;RP0=0, select bank0
+   834  0782  1303               	bcf	3,6	;RP1=0, select bank0
+   835  0783  0099               	movwf	25	;volatile
+   836  0784                     l726:
+   837                           
+   838                           ;Main10.c: 138:                 _delay((unsigned long)((50)*(4000000/4000.0)));
+   839  0784  3041               	movlw	65
+   840  0785  00F7               	movwf	??_INS+1
+   841  0786  30EE               	movlw	238
+   842  0787  00F6               	movwf	??_INS
+   843  0788                     u87:
+   844  0788  0BF6               	decfsz	??_INS,f
+   845  0789  2F88               	goto	u87
+   846  078A  0BF7               	decfsz	??_INS+1,f
+   847  078B  2F88               	goto	u87
+   848  078C  0000               	nop
+   849  078D                     l728:
+   850                           
+   851                           ;Main10.c: 139:             }
+   852  078D  0873               	movf	_VALOR1+1,w
+   853  078E  3A80               	xorlw	128
+   854  078F  00FF               	movwf	btemp+1
+   855  0790  3080               	movlw	128
+   856  0791  027F               	subwf	btemp+1,w
+   857  0792  1D03               	skipz
+   858  0793  2F96               	goto	u15
+   859  0794  3016               	movlw	22
+   860  0795  0272               	subwf	_VALOR1,w
+   861  0796                     u15:
+   862  0796  1C03               	skipc
+   863  0797  2F99               	goto	u11
+   864  0798  2F9A               	goto	u10
+   865  0799                     u11:
+   866  0799  2F76               	goto	l722
+   867  079A                     u10:
+   868  079A                     l730:
+   869                           
+   870                           ;Main10.c: 141:                  VALOR1 = 0;
+   871  079A  01F2               	clrf	_VALOR1
+   872  079B  01F3               	clrf	_VALOR1+1
+   873                           
+   874                           ;Main10.c: 142:                  OP = 0;
+   875  079C  01F0               	clrf	_OP
+   876  079D  01F1               	clrf	_OP+1
+   877                           
+   878                           ;Main10.c: 143:                 break;
+   879  079E  2FD9               	goto	l84
+   880  079F                     l732:
+   881                           
+   882                           ;Main10.c: 146:                  _delay((unsigned long)((500)*(4000000/4000.0)));
+   883  079F  3003               	movlw	3
+   884  07A0  00F8               	movwf	??_INS+2
+   885  07A1  308A               	movlw	138
+   886  07A2  00F7               	movwf	??_INS+1
+   887  07A3  3055               	movlw	85
+   888  07A4  00F6               	movwf	??_INS
+   889  07A5                     u97:
+   890  07A5  0BF6               	decfsz	??_INS,f
+   891  07A6  2FA5               	goto	u97
+   892  07A7  0BF7               	decfsz	??_INS+1,f
+   893  07A8  2FA5               	goto	u97
+   894  07A9  0BF8               	decfsz	??_INS+2,f
+   895  07AA  2FA5               	goto	u97
+   896  07AB  2FAC               	nop2
+   897  07AC                     l77:	
+   898                           ;Main10.c: 147:                 while(RCIF == 0);
+   899                           
+   900  07AC  1283               	bcf	3,5	;RP0=0, select bank0
+   901  07AD  1303               	bcf	3,6	;RP1=0, select bank0
+   902  07AE  1E8C               	btfss	12,5	;volatile
+   903  07AF  2FB1               	goto	u21
+   904  07B0  2FB2               	goto	u20
+   905  07B1                     u21:
+   906  07B1  2FAC               	goto	l77
+   907  07B2                     u20:
+   908  07B2                     l734:
+   909                           
+   910                           ;Main10.c: 148:                 PORTA = RCREG;
+   911  07B2  081A               	movf	26,w	;volatile
+   912  07B3  0085               	movwf	5	;volatile
+   913  07B4                     l736:
+   914                           
+   915                           ;Main10.c: 149:                 OP = 0;
+   916  07B4  01F0               	clrf	_OP
+   917  07B5  01F1               	clrf	_OP+1
+   918                           
+   919                           ;Main10.c: 150:                 break;
+   920  07B6  2FD9               	goto	l84
+   921  07B7                     l738:
+   922                           
+   923                           ;Main10.c: 153:                 _delay((unsigned long)((50)*(4000000/4000.0)));
+   924  07B7  3041               	movlw	65
+   925  07B8  00F7               	movwf	??_INS+1
+   926  07B9  30EE               	movlw	238
+   927  07BA  00F6               	movwf	??_INS
+   928  07BB                     u107:
+   929  07BB  0BF6               	decfsz	??_INS,f
+   930  07BC  2FBB               	goto	u107
+   931  07BD  0BF7               	decfsz	??_INS+1,f
+   932  07BE  2FBB               	goto	u107
+   933  07BF  0000               	nop
+   934  07C0                     l81:	
+   935                           ;Main10.c: 154:                 while(RCIF == 0);
+   936                           
+   937  07C0  1283               	bcf	3,5	;RP0=0, select bank0
+   938  07C1  1303               	bcf	3,6	;RP1=0, select bank0
+   939  07C2  1E8C               	btfss	12,5	;volatile
+   940  07C3  2FC5               	goto	u31
+   941  07C4  2FC6               	goto	u30
+   942  07C5                     u31:
+   943  07C5  2FC0               	goto	l81
+   944  07C6                     u30:
+   945  07C6                     l740:
+   946                           
+   947                           ;Main10.c: 155:                 PORTB = RCREG;
+   948  07C6  081A               	movf	26,w	;volatile
+   949  07C7  0086               	movwf	6	;volatile
+   950  07C8  2FB4               	goto	l736
+   951  07C9                     l746:
+   952                           
+   953                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
-   956                           ; Switch size 1, requested type "simple"
-   957                           ; Number of cases is 1, Range of values is 0 to 0
-   958                           ; switch strategies available:
-   959                           ; Name         Instructions Cycles
-   960                           ; simple_byte            4     3 (average)
-   961                           ; direct_byte           11     8 (fixed)
-   962                           ; jumptable            260     6 (fixed)
-   963                           ;	Chosen strategy is simple_byte
-   964  07C9  0871               	movf	_OP+1,w
-   965  07CA  3A00               	xorlw	0	; case 0
-   966  07CB  1903               	skipnz
-   967  07CC  2FCE               	goto	l800
-   968  07CD  2FD9               	goto	l84
-   969  07CE                     l800:
-   970                           
-   971                           ; Switch size 1, requested type "simple"
-   972                           ; Number of cases is 3, Range of values is 49 to 51
-   973                           ; switch strategies available:
-   974                           ; Name         Instructions Cycles
-   975                           ; simple_byte           10     6 (average)
-   976                           ; direct_byte           20    11 (fixed)
-   977                           ; jumptable            263     9 (fixed)
-   978                           ;	Chosen strategy is simple_byte
-   979  07CE  0870               	movf	_OP,w
-   980  07CF  3A31               	xorlw	49	; case 49
-   981  07D0  1903               	skipnz
-   982  07D1  2F76               	goto	l722
-   983  07D2  3A03               	xorlw	3	; case 50
-   984  07D3  1903               	skipnz
-   985  07D4  2F9F               	goto	l732
-   986  07D5  3A01               	xorlw	1	; case 51
-   987  07D6  1903               	skipnz
-   988  07D7  2FB7               	goto	l738
-   989  07D8  2FD9               	goto	l84
-   990  07D9                     l84:
-   991  07D9  0008               	return
-   992  07DA                     __end_of_INS:
-   993  007E                     btemp	set	126	;btemp
-   994  007E                     wtemp0	set	126
+   954                           ; Switch size 1, requested type "simple"
+   955                           ; Number of cases is 1, Range of values is 0 to 0
+   956                           ; switch strategies available:
+   957                           ; Name         Instructions Cycles
+   958                           ; simple_byte            4     3 (average)
+   959                           ; direct_byte           11     8 (fixed)
+   960                           ; jumptable            260     6 (fixed)
+   961                           ;	Chosen strategy is simple_byte
+   962  07C9  0871               	movf	_OP+1,w
+   963  07CA  3A00               	xorlw	0	; case 0
+   964  07CB  1903               	skipnz
+   965  07CC  2FCE               	goto	l800
+   966  07CD  2FD9               	goto	l84
+   967  07CE                     l800:
+   968                           
+   969                           ; Switch size 1, requested type "simple"
+   970                           ; Number of cases is 3, Range of values is 49 to 51
+   971                           ; switch strategies available:
+   972                           ; Name         Instructions Cycles
+   973                           ; simple_byte           10     6 (average)
+   974                           ; direct_byte           20    11 (fixed)
+   975                           ; jumptable            263     9 (fixed)
+   976                           ;	Chosen strategy is simple_byte
+   977  07CE  0870               	movf	_OP,w
+   978  07CF  3A31               	xorlw	49	; case 49
+   979  07D0  1903               	skipnz
+   980  07D1  2F76               	goto	l722
+   981  07D2  3A03               	xorlw	3	; case 50
+   982  07D3  1903               	skipnz
+   983  07D4  2F9F               	goto	l732
+   984  07D5  3A01               	xorlw	1	; case 51
+   985  07D6  1903               	skipnz
+   986  07D7  2FB7               	goto	l738
+   987  07D8  2FD9               	goto	l84
+   988  07D9                     l84:
+   989  07D9  0008               	return
+   990  07DA                     __end_of_INS:
+   991  007E                     btemp	set	126	;btemp
+   992  007E                     wtemp0	set	126
+   993                           
+   994                           	psect	config
    995                           
-   996                           	psect	config
-   997                           
-   998                           ;Config register CONFIG1 @ 0x2007
-   999                           ;	Oscillator Selection bits
-  1000                           ;	FOSC = INTRC_NOCLKOUT, INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O f
+   996                           ;Config register CONFIG1 @ 0x2007
+   997                           ;	Oscillator Selection bits
+   998                           ;	FOSC = INTRC_NOCLKOUT, INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O f
       +                          unction on RA7/OSC1/CLKIN
-  1001                           ;	Watchdog Timer Enable bit
-  1002                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
-  1003                           ;	Power-up Timer Enable bit
-  1004                           ;	PWRTE = OFF, PWRT disabled
-  1005                           ;	RE3/MCLR pin function select bit
-  1006                           ;	MCLRE = OFF, RE3/MCLR pin function is digital input, MCLR internally tied to VDD
-  1007                           ;	Code Protection bit
-  1008                           ;	CP = OFF, Program memory code protection is disabled
-  1009                           ;	Data Code Protection bit
-  1010                           ;	CPD = OFF, Data memory code protection is disabled
-  1011                           ;	Brown Out Reset Selection bits
-  1012                           ;	BOREN = OFF, BOR disabled
-  1013                           ;	Internal External Switchover bit
-  1014                           ;	IESO = OFF, Internal/External Switchover mode is disabled
-  1015                           ;	Fail-Safe Clock Monitor Enabled bit
-  1016                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
-  1017                           ;	Low Voltage Programming Enable bit
-  1018                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
-  1019                           ;	In-Circuit Debugger Mode bit
-  1020                           ;	DEBUG = 0x1, unprogrammed default
-  1021  2007                     	org	8199
-  1022  2007  20D4               	dw	8404
-  1023                           
-  1024                           ;Config register CONFIG2 @ 0x2008
-  1025                           ;	Brown-out Reset Selection bit
-  1026                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
-  1027                           ;	Flash Program Memory Self Write Enable bits
-  1028                           ;	WRT = OFF, Write protection off
-  1029  2008                     	org	8200
-  1030  2008  3FFF               	dw	16383
+   999                           ;	Watchdog Timer Enable bit
+  1000                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
+  1001                           ;	Power-up Timer Enable bit
+  1002                           ;	PWRTE = OFF, PWRT disabled
+  1003                           ;	RE3/MCLR pin function select bit
+  1004                           ;	MCLRE = OFF, RE3/MCLR pin function is digital input, MCLR internally tied to VDD
+  1005                           ;	Code Protection bit
+  1006                           ;	CP = OFF, Program memory code protection is disabled
+  1007                           ;	Data Code Protection bit
+  1008                           ;	CPD = OFF, Data memory code protection is disabled
+  1009                           ;	Brown Out Reset Selection bits
+  1010                           ;	BOREN = OFF, BOR disabled
+  1011                           ;	Internal External Switchover bit
+  1012                           ;	IESO = OFF, Internal/External Switchover mode is disabled
+  1013                           ;	Fail-Safe Clock Monitor Enabled bit
+  1014                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
+  1015                           ;	Low Voltage Programming Enable bit
+  1016                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
+  1017                           ;	In-Circuit Debugger Mode bit
+  1018                           ;	DEBUG = 0x1, unprogrammed default
+  1019  2007                     	org	8199
+  1020  2007  20D4               	dw	8404
+  1021                           
+  1022                           ;Config register CONFIG2 @ 0x2008
+  1023                           ;	Brown-out Reset Selection bit
+  1024                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
+  1025                           ;	Flash Program Memory Self Write Enable bits
+  1026                           ;	WRT = OFF, Write protection off
+  1027  2008                     	org	8200
+  1028  2008  3FFF               	dw	16383
 
 Data Sizes:
     Strings     0
@@ -1138,7 +1136,7 @@ EEDATA             100      0       0       0        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Sun May 09 22:44:09 2021
+Symbol Table                                                                                   Sun May 09 23:09:32 2021
 
                       _I 0190                        pc 0002                       l55 06C4  
                      l63 06FD                       l81 07C0                       l84 07D9  

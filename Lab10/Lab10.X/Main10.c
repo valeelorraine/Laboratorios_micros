@@ -47,22 +47,23 @@
 //******************************************************************************
 //                           V A R I A B L E S
 //******************************************************************************
-int DATO = 97;
+unsigned char DATO = 96;
+unsigned char I[95] = "¿Que accion desea realizar?\r1) Desplegar cadena de caracteres\r2) Cambiar PORTA\r3) Cambiar PORTB";
+int VALOR;
+char PUERTOA;
+char PUERTOB;
 
 //******************************************************************************
 //                 P R O T O T I P O S  de  F U N C I O N E S
 //******************************************************************************
-void setup(void);
+void setup(void);         // Configuraciones
+void putch(char DATO);    // Dato que se desea transmitir
+void INS(void);           // Mensaje a desplegar
 
 //******************************************************************************
 //                     F U N C I Ó N   para   I S R
 //******************************************************************************
 
-void __interrupt() isr(void){   
-    if(PIR1bits.RCIF == 1){   
-        PORTA = RCREG;
-    }
-  }
 
 //******************************************************************************
 //                      C O N F I G U R A C I Ó N
@@ -86,6 +87,10 @@ void setup(void) {
     INTCONbits.GIE = 1;         // GIE Encender interrupción de global
     INTCONbits.PEIE = 1;        // PEIE 
   
+    OSCCONbits.IRCF2 = 1;       // Oscilador de 4MHz
+    OSCCONbits.IRCF1 = 1;
+    OSCCONbits.IRCF0 = 0;
+    
     // Configuración UART transmisor y receptor asíncrono
     PIR1bits.RCIF = 0;          // Bandera
     PIE1bits.RCIE = 1;          // Habilitar la interrución por el modo receptor
@@ -110,11 +115,62 @@ void setup(void) {
 //******************************************************************************
 
 void main(void){  
-    setup();                    // Llamar al set up       
+    setup();                    // Llamar al set up    
     while (1){
-        __delay_ms(500);
-         if (PIR1bits.TXIF == 1){
-             TXREG = DATO;      // Enviar 97 = @ 
-        }
+         __delay_ms(500); 
+        VALOR = 0;
+        if(VALOR > 94){
+            TXREG = I[VALOR];
+            VALOR++;
+    }
+        INS();                  // Llamar al mensaje a mostrar
     }
 }
+
+//******************************************************************************
+//                           F U N C I O N E S
+//******************************************************************************
+
+void putch(char DATA){
+    while(TXIF == 0){           // TXIF = 1 cuando no se está recibiendo nada   
+        TXREG = DATA;           // Transmite datos al recibir printf en algun lado
+    }
+}
+
+void INS(void){
+    switch(RCREG){
+        while(RCIF == 0){
+            case 49:
+                if (PIR1bits.TXIF == 1){
+                    DATO++;            // Inc. var. para mandar cadena de caract.
+                    if(DATO > 122){    // El alfabeto en minúsculas
+                        DATO = 97;     // Empezar en a
+                              }
+                    TXREG = DATO;
+                    TXREG = 32;        // Espacio
+                }
+                break;
+                
+            case 50:
+                printf("\r Presione el caracter para desplegar en PORTA: \r");
+                PUERTOA = RCREG;
+                PORTA = PUERTOA;
+                break;
+                
+            case 51:
+                printf("\r Presione el caracter para desplegar en PORTB: \r");
+                PUERTOB = RCREG;
+                PORTB = PUERTOB; 
+                break;
+                
+            default:
+                NULL;
+                break;
+            
+                        
+        }  
+    }
+  }
+
+
+               

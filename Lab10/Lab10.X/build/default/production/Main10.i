@@ -2705,27 +2705,19 @@ extern __bank0 __bit __timeout;
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
 # 50 "Main10.c"
-int DATO = 97;
+unsigned char DATO = 96;
+unsigned char I[95] = "¿Que accion desea realizar?\r1) Desplegar cadena de caracteres\r2) Cambiar PORTA\r3) Cambiar PORTB";
+int VALOR;
+char PUERTOA;
+char PUERTOB;
 
 
 
 
 void setup(void);
-
-
-
-
-
-void __attribute__((picinterrupt(("")))) isr(void){
-    if(PIR1bits.RCIF == 1){
-        PORTA = RCREG;
-    }
-  }
-
-
-
-
-
+void putch(char DATO);
+void INS(void);
+# 72 "Main10.c"
 void setup(void) {
 
     ANSEL = 0X00;
@@ -2743,6 +2735,10 @@ void setup(void) {
     OSCCONbits.SCS = 1;
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
+
+    OSCCONbits.IRCF2 = 1;
+    OSCCONbits.IRCF1 = 1;
+    OSCCONbits.IRCF0 = 0;
 
 
     PIR1bits.RCIF = 0;
@@ -2770,9 +2766,57 @@ void setup(void) {
 void main(void){
     setup();
     while (1){
-        _delay((unsigned long)((500)*(4000000/4000.0)));
-         if (PIR1bits.TXIF == 1){
-             TXREG = DATO;
-        }
+         _delay((unsigned long)((500)*(4000000/4000.0)));
+        VALOR = 0;
+        if(VALOR > 94){
+            TXREG = I[VALOR];
+            VALOR++;
+    }
+        INS();
     }
 }
+
+
+
+
+
+void putch(char DATA){
+    while(TXIF == 0){
+        TXREG = DATA;
+    }
+}
+
+void INS(void){
+    switch(RCREG){
+        while(RCIF == 0){
+            case 49:
+                if (PIR1bits.TXIF == 1){
+                    DATO++;
+                    if(DATO > 122){
+                        DATO = 97;
+                              }
+                    TXREG = DATO;
+                    TXREG = 32;
+                }
+                break;
+
+            case 50:
+                printf("\r Presione el caracter para desplegar en PORTA: \r");
+                PUERTOA = RCREG;
+                PORTA = PUERTOA;
+                break;
+
+            case 51:
+                printf("\r Presione el caracter para desplegar en PORTB: \r");
+                PUERTOB = RCREG;
+                PORTB = PUERTOB;
+                break;
+
+            default:
+                (0);
+                break;
+
+
+        }
+    }
+  }

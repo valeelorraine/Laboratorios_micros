@@ -50,19 +50,16 @@
 //******************************************************************************
 int VAL;                           // Variable para los potenciómetros
 int POT3;
-int Contador1;                     // Contador 1
-int Contador2;                     // Contador 2
-int Contador3;                     // Contador 2
-unsigned char PWM1;
-unsigned char PWM2;
-unsigned char PWM3;
+int S1;                     // Contador 1
+int S2;                     // Contador 2
+int PWM1;
 
 //******************************************************************************
 //                 P R O T O T I P O S  de  F U N C I O N E S
 //******************************************************************************
 void setup(void);
 //void contadores(void);
-void canales(void);
+void canales(int VAL);
 //******************************************************************************
 //                     F U N C I Ó N   para   I S R
 //******************************************************************************
@@ -72,14 +69,11 @@ void __interrupt() isr(void){
         VAL = ADRESH;
         PIR1bits.ADIF = 0;          // Limpiar bandera 
         }
-
+//Contador de 300
     if(T0IF == 1){                  // Bandera del TMR0 encendida
         TMR0 = _tmr0_value;         // Inicializar TMR0
         PWM1++;                     // Incrementa el contador para el PWM del S1
         
-        if(PWM1 >= 50){             // Comparacion de la variable y el contador 
-            PWM1 = 0;
-        }   
        if(PWM1 >= POT3){             // Comparacion de la variable y el contador 
             PORTCbits.RC3 = 0;
         }   
@@ -89,7 +83,6 @@ void __interrupt() isr(void){
            INTCONbits.T0IF = 0;        // Apagar la bandera
         }
 }    
-
 
 //******************************************************************************
 //                      C O N F I G U R A C I Ó N
@@ -102,12 +95,13 @@ void setup(void){
     
     TRISA = 0B00001111;          // Puertos como outputs      
     TRISC = 0X00; 
-
+    TRISD = 0X00; 
+    
     PORTA = 0X00;                // Inicializar los puertos
     PORTC = 0X00;
     
     // Configuración del TMR0 con PRESCALER 1:1, N = 246 y un overflow de 10us
-    OPTION_REG = 10001000;       // RBPU INTEDG T0CS T0SE PSA PS 
+    OPTION_REG = 01000000;       // RBPU INTEDG T0CS T0SE PSA PS 
     TMR0 = _tmr0_value;          // Inicializar TMR0
     INTCONbits.GIE = 1;          // GIE Encender interrupción de global
     INTCONbits.PEIE = 1;         // PEIE 
@@ -152,9 +146,12 @@ void setup(void){
 //******************************************************************************
 
 void main(void){  
-    setup();                      // Llamar al set up       
+    setup();                       // Llamar al set up       
     while (1){
-        canales();
+        if(PWM1 >= 20){         // Comparacion de la variable y el contador 
+            PWM1 = 0;
+        }   
+        canales(VAL);
     }
 }
 
@@ -163,26 +160,28 @@ void main(void){
 //******************************************************************************
 
 // Bit banging se refiere a manejar el PWM por tiempos manuales
-void canales(void){ 
-    //if(ADCON0bits.GO == 0){           // El ciclo del ADC no ha comenzado
-        switch(ADCON0bits.CHS){  // Revisar si el canal AN0 está activo
+void canales(int VAL){ 
+        switch(ADCON0bits.CHS){       // Revisar si el canal AN0 está activo
             case 0: 
-                CCPR1L = ((0.247*VAL)+62); // Función para el servo
-                ADCON0bits.CHS = 2;   // Canal 2
+                S1 = ((0.247*VAL)+62); // Función para el servo
+                CCPR1L = S1;
+                ADCON0bits.CHS = 3;   // Canal 2
                 __delay_us(100);      // Delay para activar una medición
                 ADCON0bits.GO = 1;    
                 break; 
                 
-            case 1:                   // PWM codificado
-                 POT3 = ((0.7843*VAL)+50);  // Función para el servo
-                ADCON0bits.CHS = 0;   // Canal 0
+            case 3:                   // PWM codificado
+                POT3 = ((0.0158*VAL)+2);  // Función para el servo
+                VAL = PORTD;
+                ADCON0bits.CHS = 2;   // Canal 0
                 __delay_us(100);      // Delay para activar una medición
                 ADCON0bits.GO = 1;    // Comienza el ciclo del ADC
                 break; 
                 
             case 2: 
-                CCPR2L = ((0.247*VAL)+62); // Función para el servo
-                ADCON0bits.CHS = 1;   // Canal 1
+                S2 = ((0.247*VAL)+62); // Función para el servo
+                CCPR2L = S2;
+                ADCON0bits.CHS = 0;   // Canal 1
                 __delay_us(100);      // Delay para activar una medición
                 ADCON0bits.GO = 1;    // 
                 break;  

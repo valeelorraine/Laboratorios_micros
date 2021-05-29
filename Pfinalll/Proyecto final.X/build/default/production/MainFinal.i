@@ -2707,19 +2707,16 @@ extern __bank0 __bit __timeout;
 # 51 "MainFinal.c"
 int VAL;
 int POT3;
-int Contador1;
-int Contador2;
-int Contador3;
-unsigned char PWM1;
-unsigned char PWM2;
-unsigned char PWM3;
+int S1;
+int S2;
+int PWM1;
 
 
 
 
 void setup(void);
 
-void canales(void);
+void canales(int VAL);
 
 
 
@@ -2734,9 +2731,6 @@ void __attribute__((picinterrupt(("")))) isr(void){
         TMR0 = 246;
         PWM1++;
 
-        if(PWM1 >= 50){
-            PWM1 = 0;
-        }
        if(PWM1 >= POT3){
             PORTCbits.RC3 = 0;
         }
@@ -2751,7 +2745,6 @@ void __attribute__((picinterrupt(("")))) isr(void){
 
 
 
-
 void setup(void){
 
     ANSEL = 0B00001111;
@@ -2759,12 +2752,13 @@ void setup(void){
 
     TRISA = 0B00001111;
     TRISC = 0X00;
+    TRISD = 0X00;
 
     PORTA = 0X00;
     PORTC = 0X00;
 
 
-    OPTION_REG = 10001000;
+    OPTION_REG = 01000000;
     TMR0 = 246;
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
@@ -2811,7 +2805,10 @@ void setup(void){
 void main(void){
     setup();
     while (1){
-        canales();
+        if(PWM1 >= 20){
+            PWM1 = 0;
+        }
+        canales(VAL);
     }
 }
 
@@ -2820,26 +2817,28 @@ void main(void){
 
 
 
-void canales(void){
-
+void canales(int VAL){
         switch(ADCON0bits.CHS){
             case 0:
-                CCPR1L = ((0.247*VAL)+62);
+                S1 = ((0.247*VAL)+62);
+                CCPR1L = S1;
+                ADCON0bits.CHS = 3;
+                _delay((unsigned long)((100)*(4000000/4000000.0)));
+                ADCON0bits.GO = 1;
+                break;
+
+            case 3:
+                POT3 = ((0.0158*VAL)+2);
+                VAL = PORTD;
                 ADCON0bits.CHS = 2;
                 _delay((unsigned long)((100)*(4000000/4000000.0)));
                 ADCON0bits.GO = 1;
                 break;
 
-            case 1:
-                 POT3 = ((0.7843*VAL)+50);
-                ADCON0bits.CHS = 0;
-                _delay((unsigned long)((100)*(4000000/4000000.0)));
-                ADCON0bits.GO = 1;
-                break;
-
             case 2:
-                CCPR2L = ((0.247*VAL)+62);
-                ADCON0bits.CHS = 1;
+                S2 = ((0.247*VAL)+62);
+                CCPR2L = S2;
+                ADCON0bits.CHS = 0;
                 _delay((unsigned long)((100)*(4000000/4000000.0)));
                 ADCON0bits.GO = 1;
                 break;

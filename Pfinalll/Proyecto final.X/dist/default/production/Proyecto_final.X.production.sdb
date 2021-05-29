@@ -17,13 +17,13 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"70 C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinalll\Proyecto final.X\MainFinal.c
+"67 C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinalll\Proyecto final.X\MainFinal.c
 [v _isr isr `II(v  1 e 1 0 ]
-"98
+"91
 [v _setup setup `(v  1 e 1 0 ]
-"154
+"148
 [v _main main `(v  1 e 1 0 ]
-"166
+"163
 [v _canales canales `(v  1 e 1 0 ]
 "59 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
@@ -43,6 +43,8 @@
 "307
 [u S54 . 1 `S45 1 . 1 0 ]
 [v _PORTCbits PORTCbits `VES54  1 e 1 @7 ]
+"352
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
 [s S66 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
@@ -83,13 +85,13 @@
 [v _CCP2CON CCP2CON `VEuc  1 e 1 @29 ]
 "1238
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
-[s S132 . 1 `uc 1 ADON 1 0 :1:0 
+[s S133 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1276
-[s S137 . 1 `uc 1 . 1 0 :1:0 
+[s S138 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -98,21 +100,23 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S146 . 1 `uc 1 . 1 0 :1:0 
+[s S147 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S149 . 1 `uc 1 . 1 0 :1:0 
+[s S150 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S152 . 1 `S132 1 . 1 0 `S137 1 . 1 0 `S146 1 . 1 0 `S149 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES152  1 e 1 @31 ]
+[u S153 . 1 `S133 1 . 1 0 `S138 1 . 1 0 `S147 1 . 1 0 `S150 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES153  1 e 1 @31 ]
 "1346
 [v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1540
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
-[s S184 . 1 `uc 1 TMR1IE 1 0 :1:0 
+"1602
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+[s S185 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -121,33 +125,33 @@
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1718
-[u S192 . 1 `S184 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES192  1 e 1 @140 ]
-[s S105 . 1 `uc 1 SCS 1 0 :1:0 
+[u S193 . 1 `S185 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES193  1 e 1 @140 ]
+[s S106 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S111 . 1 `uc 1 . 1 0 :4:0 
+[s S112 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S116 . 1 `S105 1 . 1 0 `S111 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES116  1 e 1 @143 ]
+[u S117 . 1 `S106 1 . 1 0 `S112 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES117  1 e 1 @143 ]
 "2041
 [v _PR2 PR2 `VEuc  1 e 1 @146 ]
-[s S203 . 1 `uc 1 . 1 0 :4:0 
+[s S204 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2991
-[u S209 . 1 `S203 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES209  1 e 1 @159 ]
+[u S210 . 1 `S204 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES210  1 e 1 @159 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
@@ -160,71 +164,76 @@
 [v _VAL VAL `i  1 e 2 0 ]
 "52
 [v _POT3 POT3 `i  1 e 2 0 ]
-"56
-[v _PWM1 PWM1 `uc  1 e 1 0 ]
-"154
+"53
+[v _S1 S1 `i  1 e 2 0 ]
+"54
+[v _S2 S2 `i  1 e 2 0 ]
+"55
+[v _PWM1 PWM1 `i  1 e 2 0 ]
+"148
 [v _main main `(v  1 e 1 0 ]
 {
-"159
+"156
 } 0
-"98
+"91
 [v _setup setup `(v  1 e 1 0 ]
 {
-"148
+"142
 } 0
-"166
+"163
 [v _canales canales `(v  1 e 1 0 ]
 {
-"190
+[v canales@VAL VAL `i  1 p 2 65 ]
+"189
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 {
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
 "13
-[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+[v ___xxtofl@arg arg `ul  1 a 4 6 ]
 "12
-[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+[v ___xxtofl@exp exp `uc  1 a 1 5 ]
 "10
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-[v ___xxtofl@val val `l  1 p 4 0 ]
+[v ___xxtofl@val val `l  1 p 4 4 ]
 "15
-[v ___xxtofl@sign sign `uc  1 a 1 8 ]
+[v ___xxtofl@sign sign `uc  1 a 1 4 ]
 "44
 } 0
 "43 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
-[v ___fltol@exp1 exp1 `uc  1 a 1 70 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 69 ]
+[v ___fltol@exp1 exp1 `uc  1 a 1 9 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 8 ]
 "43
-[v ___fltol@f1 f1 `d  1 p 4 60 ]
+[v ___fltol@f1 f1 `d  1 p 4 56 ]
 "70
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S576 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S577 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S581 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S584 . 4 `l 1 i 4 0 `d 1 f 4 0 `S576 1 fAsBytes 4 0 `S581 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S584  1 a 4 34 ]
+[s S582 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S585 . 4 `l 1 i 4 0 `d 1 f 4 0 `S577 1 fAsBytes 4 0 `S582 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S585  1 a 4 30 ]
 "12
-[v ___flmul@grs grs `ul  1 a 4 29 ]
-[s S653 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[v ___flmul@grs grs `ul  1 a 4 24 ]
+[s S654 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S656 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S653 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S656  1 a 2 38 ]
+[u S657 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S654 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S657  1 a 2 34 ]
 "10
-[v ___flmul@bexp bexp `uc  1 a 1 33 ]
+[v ___flmul@bexp bexp `uc  1 a 1 29 ]
 "11
 [v ___flmul@aexp aexp `uc  1 a 1 28 ]
 "9
-[v ___flmul@sign sign `uc  1 a 1 27 ]
+[v ___flmul@sign sign `uc  1 a 1 23 ]
 "8
-[v ___flmul@b b `d  1 p 4 14 ]
-[v ___flmul@a a `d  1 p 4 18 ]
+[v ___flmul@b b `d  1 p 4 10 ]
+[v ___flmul@a a `d  1 p 4 14 ]
 "205
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
@@ -232,33 +241,33 @@
 {
 [v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
 "6
-[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 4 ]
+[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 2 ]
 "5
-[v __Umul8_16@product product `ui  1 a 2 2 ]
+[v __Umul8_16@product product `ui  1 a 2 0 ]
 "4
 [v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
 [v __Umul8_16@multiplicand multiplicand `uc  1 p 1 4 ]
-[v __Umul8_16@multiplier multiplier `uc  1 a 1 6 ]
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 4 ]
 "60
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 {
 "17
-[v ___fladd@grs grs `uc  1 a 1 59 ]
+[v ___fladd@grs grs `uc  1 a 1 55 ]
 "15
-[v ___fladd@bexp bexp `uc  1 a 1 58 ]
+[v ___fladd@bexp bexp `uc  1 a 1 54 ]
 "16
-[v ___fladd@aexp aexp `uc  1 a 1 57 ]
+[v ___fladd@aexp aexp `uc  1 a 1 53 ]
 "13
-[v ___fladd@signs signs `uc  1 a 1 56 ]
+[v ___fladd@signs signs `uc  1 a 1 52 ]
 "10
-[v ___fladd@b b `d  1 p 4 40 ]
-[v ___fladd@a a `d  1 p 4 44 ]
+[v ___fladd@b b `d  1 p 4 36 ]
+[v ___fladd@a a `d  1 p 4 40 ]
 "237
 } 0
-"70 C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinalll\Proyecto final.X\MainFinal.c
+"67 C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinalll\Proyecto final.X\MainFinal.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"91
+"85
 } 0

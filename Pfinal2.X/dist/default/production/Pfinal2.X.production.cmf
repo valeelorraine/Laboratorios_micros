@@ -28,7 +28,7 @@ intentry CODE 0 4 4 8 2
 bssBANK0 BANK0 1 68 68 2 1
 bssCOMMON COMMON 1 78 78 3 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\PERSON~1\AppData\Local\Temp\sab8.o
+$C:\Users\PERSON~1\AppData\Local\Temp\sesg.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -83,18 +83,18 @@ STRING 1000-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Pfinal2.X.production.o
-F cinit CODE >497:C:\Users\PERSON~1\AppData\Local\Temp\sab8.s
-F cinit CODE >500:C:\Users\PERSON~1\AppData\Local\Temp\sab8.s
-F cinit CODE >526:C:\Users\PERSON~1\AppData\Local\Temp\sab8.s
-10 cinit CODE >527:C:\Users\PERSON~1\AppData\Local\Temp\sab8.s
-11 cinit CODE >528:C:\Users\PERSON~1\AppData\Local\Temp\sab8.s
-12 cinit CODE >531:C:\Users\PERSON~1\AppData\Local\Temp\sab8.s
-13 cinit CODE >532:C:\Users\PERSON~1\AppData\Local\Temp\sab8.s
-14 cinit CODE >533:C:\Users\PERSON~1\AppData\Local\Temp\sab8.s
-15 cinit CODE >534:C:\Users\PERSON~1\AppData\Local\Temp\sab8.s
-16 cinit CODE >540:C:\Users\PERSON~1\AppData\Local\Temp\sab8.s
-16 cinit CODE >542:C:\Users\PERSON~1\AppData\Local\Temp\sab8.s
-17 cinit CODE >543:C:\Users\PERSON~1\AppData\Local\Temp\sab8.s
+F cinit CODE >497:C:\Users\PERSON~1\AppData\Local\Temp\sesg.s
+F cinit CODE >500:C:\Users\PERSON~1\AppData\Local\Temp\sesg.s
+F cinit CODE >526:C:\Users\PERSON~1\AppData\Local\Temp\sesg.s
+10 cinit CODE >527:C:\Users\PERSON~1\AppData\Local\Temp\sesg.s
+11 cinit CODE >528:C:\Users\PERSON~1\AppData\Local\Temp\sesg.s
+12 cinit CODE >531:C:\Users\PERSON~1\AppData\Local\Temp\sesg.s
+13 cinit CODE >532:C:\Users\PERSON~1\AppData\Local\Temp\sesg.s
+14 cinit CODE >533:C:\Users\PERSON~1\AppData\Local\Temp\sesg.s
+15 cinit CODE >534:C:\Users\PERSON~1\AppData\Local\Temp\sesg.s
+16 cinit CODE >540:C:\Users\PERSON~1\AppData\Local\Temp\sesg.s
+16 cinit CODE >542:C:\Users\PERSON~1\AppData\Local\Temp\sesg.s
+17 cinit CODE >543:C:\Users\PERSON~1\AppData\Local\Temp\sesg.s
 4 intentry CODE >66:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
 7B5 text8 CODE >66:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
 7B5 text8 CODE >67:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
@@ -486,10 +486,10 @@ _POT3 69 0 BANK0 1 bssBANK0 dist/default/production\Pfinal2.X.production.o
 _POT4 78 0 COMMON 1 bssCOMMON dist/default/production\Pfinal2.X.production.o
 _PWM1 79 0 COMMON 1 bssCOMMON dist/default/production\Pfinal2.X.production.o
 _TMR0 1 0 ABS 0 - dist/default/production\Pfinal2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\PERSON~1\AppData\Local\Temp\sab8.o
+___sp 0 0 STACK 2 stack C:\Users\PERSON~1\AppData\Local\Temp\sesg.o
 _main FD8 0 CODE 0 maintext dist/default/production\Pfinal2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Pfinal2.X.production.o
-start 18 0 CODE 0 init C:\Users\PERSON~1\AppData\Local\Temp\sab8.o
+start 18 0 CODE 0 init C:\Users\PERSON~1\AppData\Local\Temp\sesg.o
 ___flmul@aexp 38 0 BANK0 1 cstackBANK0 dist/default/production\Pfinal2.X.production.o
 ___flmul@bexp 3D 0 BANK0 1 cstackBANK0 dist/default/production\Pfinal2.X.production.o
 ___flmul@prod 3E 0 BANK0 1 cstackBANK0 dist/default/production\Pfinal2.X.production.o
@@ -501,12 +501,12 @@ __size_of___fltol 0 0 ABS 0 - dist/default/production\Pfinal2.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Pfinal2.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sab8.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sab8.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sab8.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sab8.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sab8.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sab8.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sesg.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sesg.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sesg.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sesg.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sesg.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sesg.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Pfinal2.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Pfinal2.X.production.o
@@ -525,8 +525,8 @@ __end_of___flmul 6F6 0 CODE 0 text5 dist/default/production\Pfinal2.X.production
 __end_of___fltol 1E88 0 CODE 0 text4 dist/default/production\Pfinal2.X.production.o
 __Umul8_16@multiplicand 73 0 COMMON 1 cstackCOMMON dist/default/production\Pfinal2.X.production.o
 _OPTION_REG 81 0 ABS 0 - dist/default/production\Pfinal2.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\PERSON~1\AppData\Local\Temp\sab8.o
-___stacklo 0 0 ABS 0 - C:\Users\PERSON~1\AppData\Local\Temp\sab8.o
+___stackhi 0 0 ABS 0 - C:\Users\PERSON~1\AppData\Local\Temp\sesg.o
+___stacklo 0 0 ABS 0 - C:\Users\PERSON~1\AppData\Local\Temp\sesg.o
 _BAUDCTLbits 187 0 ABS 0 - dist/default/production\Pfinal2.X.production.o
 __size_of_canales 0 0 ABS 0 - dist/default/production\Pfinal2.X.production.o
 ___fladd@a 48 0 BANK0 1 cstackBANK0 dist/default/production\Pfinal2.X.production.o
@@ -538,7 +538,7 @@ start_initialization 1E 0 CODE 0 cinit dist/default/production\Pfinal2.X.product
 _TRISCbits 87 0 ABS 0 - dist/default/production\Pfinal2.X.production.o
 _SPBRGH 9A 0 ABS 0 - dist/default/production\Pfinal2.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Pfinal2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\PERSON~1\AppData\Local\Temp\sab8.o
+___int_sp 0 0 STACK 2 stack C:\Users\PERSON~1\AppData\Local\Temp\sesg.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -591,7 +591,7 @@ saved_w 7E 0 ABS 0 - dist/default/production\Pfinal2.X.production.o
 ___xxtofl 1E88 0 CODE 0 text3 dist/default/production\Pfinal2.X.production.o
 __end_of_isr FD8 0 CODE 0 text8 dist/default/production\Pfinal2.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\PERSON~1\AppData\Local\Temp\sab8.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\PERSON~1\AppData\Local\Temp\sesg.o
 __end_of___xxtofl 2000 0 CODE 0 text3 dist/default/production\Pfinal2.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 _RCSTAbits 18 0 ABS 0 - dist/default/production\Pfinal2.X.production.o

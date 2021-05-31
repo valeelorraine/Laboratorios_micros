@@ -73,7 +73,7 @@ void __interrupt() isr(void){
     if(INTCONbits.T0IF == 1){       // Bandera del TMR0 encendida
         PWM1++;                     // Incrementa el contador para el PWM del S1
         
-        if(PWM1 <= POT3){           // El valor del período depende del POT3
+        if(PWM1 <= POT3){           // El valor del período depende del POT3    
         //    TMR0 = POT3;
             PORTCbits.RC3 = 1; 
         }

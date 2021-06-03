@@ -2646,20 +2646,30 @@ typedef uint16_t uintptr_t;
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 50 "Mainfinal2.c"
+# 51 "Mainfinal2.c"
 uint8_t VAL;
-uint8_t POT3;
 uint8_t PWM1;
-uint8_t POT4;
 uint8_t PWM2;
+uint8_t POT3;
+uint8_t POT4;
+uint8_t RX;
+uint8_t modo;
+uint8_t modos;
+uint8_t val1;
+uint8_t val2;
+uint8_t val3;
+char guardar = 103;
+char rep = 114;
 
 
 
 
 void setup(void);
-
 void canales(uint8_t VAL);
-
+void escribir(uint8_t data, uint8_t address);
+uint8_t leer(uint8_t address);
+void play(void);
+void record(void);
 
 
 
@@ -2669,12 +2679,15 @@ void __attribute__((picinterrupt(("")))) isr(void){
         PIR1bits.ADIF = 0;
         }
 
+    if(PIR1bits.RCIF == 1){
+        RX = RCREG;
+        }
+
 
     if(INTCONbits.T0IF == 1){
         PWM1++;
 
         if(PWM1 <= POT3){
-
             PORTCbits.RC3 = 1;
         }
         else{
@@ -2690,7 +2703,6 @@ void __attribute__((picinterrupt(("")))) isr(void){
         }
 
         if(PWM1 >= 250){
-
             PWM1 = 0;
         }
 
@@ -2703,21 +2715,24 @@ void __attribute__((picinterrupt(("")))) isr(void){
 
 
 
-
-
 void setup(void){
 
     ANSEL = 0B00011111;
     ANSELH = 0X00;
 
     TRISA = 0B00011111;
+    TRISB = 0B00000011;
     TRISC = 0X00;
     TRISD = 0X00;
     TRISCbits.TRISC6 = 0;
     TRISCbits.TRISC7 = 1;
 
     PORTA = 0X00;
+    PORTB = 0X00;
     PORTC = 0X00;
+    PORTD = 0X00;
+
+
 
 
     OPTION_REG = 0x88;
@@ -2779,9 +2794,14 @@ void main(void){
     setup();
     while (1){
         canales(VAL);
+        if(RX == guardar){
+            record();
+        }
+        if(RX == rep){
+            play();
+        }
     }
-}
-
+ }
 
 
 
@@ -2791,8 +2811,16 @@ void canales(uint8_t VAL){
         switch(ADCON0bits.CHS){
             case 0:
                 CCPR1L = ((0.247*VAL)+62);
-                ADCON0bits.CHS = 2;
+                ADCON0bits.CHS = 1;
                 _delay((unsigned long)((100)*(4000000/4000000.0)));
+                ADCON0bits.GO = 1;
+                break;
+
+            case 1:
+                POT4 = ((0.049*VAL)+7);
+                PORTD = POT4;
+                ADCON0bits.CHS = 2;
+                _delay((unsigned long)((250)*(4000000/4000000.0)));
                 ADCON0bits.GO = 1;
                 break;
 
@@ -2805,15 +2833,6 @@ void canales(uint8_t VAL){
 
             case 3:
                 POT3 = ((0.049*VAL)+7);
-
-                ADCON0bits.CHS = 1;
-                _delay((unsigned long)((250)*(4000000/4000000.0)));
-                ADCON0bits.GO = 1;
-                break;
-
-            case 1:
-                POT4 = ((0.049*VAL)+7);
-                PORTD = POT4;
                 ADCON0bits.CHS = 0;
                 _delay((unsigned long)((250)*(4000000/4000000.0)));
                 ADCON0bits.GO = 1;
@@ -2822,5 +2841,83 @@ void canales(uint8_t VAL){
             default:
                 break;
          }
+    }
+}
+
+
+void escribir(uint8_t data, uint8_t address){
+    EEADR = address;
+    EEDAT = data;
+
+    EECON1bits.EEPGD = 0;
+    EECON1bits.WREN = 1 ;
+    INTCONbits.GIE = 0;
+
+    EECON2 = 0X55;
+    EECON2 = 0xAA;
+
+    EECON1bits.WR = 1;
+
+    while(PIR2bits.EEIF == 0);
+    PIR2bits.EEIF = 0;
+
+    EECON1bits.WREN = 0;
+    INTCONbits.GIE = 1;
+   }
+
+
+uint8_t leer(uint8_t address){
+    EEADR = address;
+    EECON1bits.EEPGD = 0;
+    EECON1bits.RD = 1;
+    uint8_t data = EEDATA;
+    return data;
+}
+
+void play(void){
+    RX = 0;
+
+    switch(modo){
+        case 0:
+            escribir(0x00, val1);
+            escribir(0x01, val2);
+            escribir(0x02, val3);
+            modos = 1;
+            break;
+        case 1:
+            escribir(0x03, val1);
+            escribir(0x04, val2);
+            escribir(0x05, val3);
+            break;
+
+        case 2:
+            escribir(0x06, val1);
+            escribir(0x07, val2);
+            escribir(0x08, val3);
+            break;
+    }
+
+ }
+
+void record(void){
+    RX = 0;
+    switch(modos){
+        case 0:
+            escribir(0x00, val1);
+            escribir(0x01, val2);
+            escribir(0x02, val3);
+            modos = 1;
+            break;
+        case 1:
+            escribir(0x03, val1);
+            escribir(0x04, val2);
+            escribir(0x05, val3);
+            break;
+
+        case 2:
+            escribir(0x06, val1);
+            escribir(0x07, val2);
+            escribir(0x08, val3);
+            break;
     }
 }

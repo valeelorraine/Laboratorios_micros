@@ -53,6 +53,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "482
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 482: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
+"296
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 296:     struct {
+[s S10 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S10 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"295
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 295: typedef union {
+[u S9 `S10 1 ]
+[n S9 . . ]
+"307
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 307: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x007)));
+[v _PORTCbits `VS9 ~T0 @X0 0 e@7 ]
+"59
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 59: extern volatile unsigned char TMR0 __attribute__((address(0x001)));
+[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
 "234
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 234:     struct {
 [s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -113,12 +127,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1154
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1154: extern volatile unsigned char CCPR2L __attribute__((address(0x01B)));
 [v _CCPR2L `Vuc ~T0 @X0 0 e@27 ]
-"83 Mainfinal2.c
-[; ;Mainfinal2.c: 83: void MTMR0(void);
-[v _MTMR0 `(v ~T0 @X0 0 ef ]
-"59 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 59: extern volatile unsigned char TMR0 __attribute__((address(0x001)));
-[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
 "3387
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
@@ -326,17 +334,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "82
 [; ;Mainfinal2.c: 82: void MENSAJE(void);
 [v _MENSAJE `(v ~T0 @X0 0 ef ]
-"296 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 296:     struct {
-[s S10 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S10 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
-"295
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 295: typedef union {
-[u S9 `S10 1 ]
-[n S9 . . ]
-"307
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 307: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x007)));
-[v _PORTCbits `VS9 ~T0 @X0 0 e@7 ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -650,73 +647,56 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Mainfinal2.c: 67: uint8_t OP;
 [v _OP `uc ~T0 @X0 1 e ]
 "68
-[; ;Mainfinal2.c: 68: unsigned char I[85] = " \rComo desea controlar los servomotores?\r1) Manualmente \r2) Con comunicacion serial\r";
-[v _I `uc ~T0 @X0 -> 85 `i e ]
+[; ;Mainfinal2.c: 68: unsigned char I[72] = " \nBienvenido, presione 1 para continuar con la comunicacion serial\n";
+[v _I `uc ~T0 @X0 -> 72 `i e ]
 [i _I
 :U ..
 -> 32 `c
--> 13 `c
--> 67 `c
--> 111 `c
--> 109 `c
--> 111 `c
--> 32 `c
--> 100 `c
+-> 10 `c
+-> 66 `c
+-> 105 `c
 -> 101 `c
--> 115 `c
--> 101 `c
--> 97 `c
--> 32 `c
--> 99 `c
--> 111 `c
 -> 110 `c
--> 116 `c
--> 114 `c
--> 111 `c
--> 108 `c
--> 97 `c
--> 114 `c
--> 32 `c
--> 108 `c
--> 111 `c
--> 115 `c
--> 32 `c
--> 115 `c
--> 101 `c
--> 114 `c
 -> 118 `c
+-> 101 `c
+-> 110 `c
+-> 105 `c
+-> 100 `c
 -> 111 `c
--> 109 `c
--> 111 `c
--> 116 `c
--> 111 `c
+-> 44 `c
+-> 32 `c
+-> 112 `c
 -> 114 `c
 -> 101 `c
 -> 115 `c
--> 63 `c
--> 13 `c
+-> 105 `c
+-> 111 `c
+-> 110 `c
+-> 101 `c
+-> 32 `c
 -> 49 `c
--> 41 `c
 -> 32 `c
--> 77 `c
+-> 112 `c
 -> 97 `c
+-> 114 `c
+-> 97 `c
+-> 32 `c
+-> 99 `c
+-> 111 `c
+-> 110 `c
+-> 116 `c
+-> 105 `c
 -> 110 `c
 -> 117 `c
 -> 97 `c
--> 108 `c
--> 109 `c
--> 101 `c
--> 110 `c
--> 116 `c
--> 101 `c
+-> 114 `c
 -> 32 `c
--> 13 `c
--> 50 `c
--> 41 `c
--> 32 `c
--> 67 `c
+-> 99 `c
 -> 111 `c
 -> 110 `c
+-> 32 `c
+-> 108 `c
+-> 97 `c
 -> 32 `c
 -> 99 `c
 -> 111 `c
@@ -737,17 +717,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 105 `c
 -> 97 `c
 -> 108 `c
--> 13 `c
+-> 10 `c
 -> 0 `c
 ..
 ]
 "69
-[; ;Mainfinal2.c: 69: unsigned char R[60] = " \rQue servomotor desea mover?\r1) PD \r2) PI \r3) CD \r4) CI\r";
+[; ;Mainfinal2.c: 69: unsigned char R[60] = " \nQue servomotor desea mover?\n1) PD \n2) PI \n3) CD \n4) CI\n";
 [v _R `uc ~T0 @X0 -> 60 `i e ]
 [i _R
 :U ..
 -> 32 `c
--> 13 `c
+-> 10 `c
 -> 81 `c
 -> 117 `c
 -> 101 `c
@@ -775,44 +755,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 101 `c
 -> 114 `c
 -> 63 `c
--> 13 `c
+-> 10 `c
 -> 49 `c
 -> 41 `c
 -> 32 `c
 -> 80 `c
 -> 68 `c
 -> 32 `c
--> 13 `c
+-> 10 `c
 -> 50 `c
 -> 41 `c
 -> 32 `c
 -> 80 `c
 -> 73 `c
 -> 32 `c
--> 13 `c
+-> 10 `c
 -> 51 `c
 -> 41 `c
 -> 32 `c
 -> 67 `c
 -> 68 `c
 -> 32 `c
--> 13 `c
+-> 10 `c
 -> 52 `c
 -> 41 `c
 -> 32 `c
 -> 67 `c
 -> 73 `c
--> 13 `c
+-> 10 `c
 -> 0 `c
 ..
 ]
 "70
-[; ;Mainfinal2.c: 70: unsigned char M[36] = " \rIngrese un numero entre 0 y 9\r";
+[; ;Mainfinal2.c: 70: unsigned char M[36] = " \nIngrese un numero entre 0 y 9\n";
 [v _M `uc ~T0 @X0 -> 36 `i e ]
 [i _M
 :U ..
 -> 32 `c
--> 13 `c
+-> 10 `c
 -> 73 `c
 -> 110 `c
 -> 103 `c
@@ -842,7 +822,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 121 `c
 -> 32 `c
 -> 57 `c
--> 13 `c
+-> 10 `c
 -> 0 `c
 ..
 ]
@@ -916,461 +896,474 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 139 ]
 "107
-[; ;Mainfinal2.c: 107:     if(INTCONbits.RBIF == 1){
-[e $ ! == -> . . _INTCONbits 0 0 `i -> 1 `i 146  ]
+[; ;Mainfinal2.c: 107:     if(INTCONbits.T0IF == 1){
+[e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 146  ]
 {
 "108
-[; ;Mainfinal2.c: 108:         if(PORTBbits.RB2 == 0){
-[e $ ! == -> . . _PORTBbits 0 2 `i -> 0 `i 147  ]
-{
+[; ;Mainfinal2.c: 108:         PWM1++;
+[e ++ _PWM1 -> -> 1 `i `uc ]
 "109
-[; ;Mainfinal2.c: 109:             FLAG = 1;
-[e = _FLAG -> -> 1 `i `uc ]
-"110
-[; ;Mainfinal2.c: 110:             while(FLAG == 1){
-[e $U 148  ]
-[e :U 149 ]
+[; ;Mainfinal2.c: 109:         if(PWM1 <= POT3){
+[e $ ! <= -> _PWM1 `i -> _POT3 `i 147  ]
 {
+"110
+[; ;Mainfinal2.c: 110:             PORTCbits.RC3 = 1;
+[e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
 "111
-[; ;Mainfinal2.c: 111:                 TXSTAbits.TXEN = 1;
-[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+[; ;Mainfinal2.c: 111:         }
+}
+[e $U 148  ]
 "112
-[; ;Mainfinal2.c: 112:                 UART();
-[e ( _UART ..  ]
+[; ;Mainfinal2.c: 112:         else{
+[e :U 147 ]
+{
 "113
-[; ;Mainfinal2.c: 113:         }
+[; ;Mainfinal2.c: 113:             PORTCbits.RC3 = 0;
+[e = . . _PORTCbits 0 3 -> -> 0 `i `uc ]
+"114
+[; ;Mainfinal2.c: 114:         }
 }
 [e :U 148 ]
-"110
-[; ;Mainfinal2.c: 110:             while(FLAG == 1){
-[e $ == -> _FLAG `i -> 1 `i 149  ]
-[e :U 150 ]
-"114
-[; ;Mainfinal2.c: 114:             TXSTAbits.TXEN = 0;
-[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
 "115
-[; ;Mainfinal2.c: 115:             }
-}
-[e :U 147 ]
-"117
-[; ;Mainfinal2.c: 117:         if(PORTBbits.RB0 == 0){
-[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 151  ]
+[; ;Mainfinal2.c: 115:         if(PWM1 <= POT4){
+[e $ ! <= -> _PWM1 `i -> _POT4 `i 149  ]
 {
+"116
+[; ;Mainfinal2.c: 116:             PORTCbits.RC4 = 1;
+[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
+"117
+[; ;Mainfinal2.c: 117:         }
+}
+[e $U 150  ]
 "118
-[; ;Mainfinal2.c: 118:             PORTDbits.RD0 = 1;
-[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
+[; ;Mainfinal2.c: 118:         else{
+[e :U 149 ]
+{
 "119
-[; ;Mainfinal2.c: 119:             PORTDbits.RD1 = 0;
-[e = . . _PORTDbits 0 1 -> -> 0 `i `uc ]
+[; ;Mainfinal2.c: 119:             PORTCbits.RC4 = 0;
+[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
 "120
-[; ;Mainfinal2.c: 120:             escribir(VALOR1, 0x10);
-[e ( _escribir (2 , _VALOR1 -> -> 16 `i `uc ]
+[; ;Mainfinal2.c: 120:         }
+}
+[e :U 150 ]
 "121
-[; ;Mainfinal2.c: 121:             escribir(VALOR2, 0x11);
-[e ( _escribir (2 , _VALOR2 -> -> 17 `i `uc ]
+[; ;Mainfinal2.c: 121:         if(PWM1 >= 250){
+[e $ ! >= -> _PWM1 `i -> 250 `i 151  ]
+{
 "122
-[; ;Mainfinal2.c: 122:             escribir(POT3, 0X12);
-[e ( _escribir (2 , _POT3 -> -> 18 `i `uc ]
+[; ;Mainfinal2.c: 122:             PWM1 = 0;
+[e = _PWM1 -> -> 0 `i `uc ]
 "123
-[; ;Mainfinal2.c: 123:             escribir(POT4, 0X13);
-[e ( _escribir (2 , _POT4 -> -> 19 `i `uc ]
-"124
-[; ;Mainfinal2.c: 124:             _delay((unsigned long)((500)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"125
-[; ;Mainfinal2.c: 125:         }
+[; ;Mainfinal2.c: 123:         }
 }
 [e :U 151 ]
+"124
+[; ;Mainfinal2.c: 124:         TMR0 = 176;
+[e = _TMR0 -> -> 176 `i `uc ]
+"125
+[; ;Mainfinal2.c: 125:         INTCONbits.T0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "126
-[; ;Mainfinal2.c: 126:         if(PORTBbits.RB1 == 0){
-[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 152  ]
-{
-"127
-[; ;Mainfinal2.c: 127:             ADCON0bits.ADON = 0;
-[e = . . _ADCON0bits 0 0 -> -> 0 `i `uc ]
-"128
-[; ;Mainfinal2.c: 128:             PORTDbits.RD0 = 0;
-[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
-"129
-[; ;Mainfinal2.c: 129:             PORTDbits.RD1 = 1;
-[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
-"130
-[; ;Mainfinal2.c: 130:             val1 = leer(0X10);
-[e = _val1 ( _leer (1 -> -> 16 `i `uc ]
-"131
-[; ;Mainfinal2.c: 131:             val2 = leer(0x11);
-[e = _val2 ( _leer (1 -> -> 17 `i `uc ]
-"132
-[; ;Mainfinal2.c: 132:             val3 = leer(0x12);
-[e = _val3 ( _leer (1 -> -> 18 `i `uc ]
-"133
-[; ;Mainfinal2.c: 133:             val4 = leer(0x13);
-[e = _val4 ( _leer (1 -> -> 19 `i `uc ]
-"135
-[; ;Mainfinal2.c: 135:             CCPR1L = val1;
-[e = _CCPR1L _val1 ]
-"136
-[; ;Mainfinal2.c: 136:             CCPR2L = val2;
-[e = _CCPR2L _val2 ]
-"137
-[; ;Mainfinal2.c: 137:             POT3 = val3;
-[e = _POT3 _val3 ]
-"138
-[; ;Mainfinal2.c: 138:             POT4 = val4;
-[e = _POT4 _val4 ]
-"139
-[; ;Mainfinal2.c: 139:             MTMR0();
-[e ( _MTMR0 ..  ]
-"140
-[; ;Mainfinal2.c: 140:             _delay((unsigned long)((3000)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"141
-[; ;Mainfinal2.c: 141:             ADCON0bits.ADON = 1;
-[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-"142
-[; ;Mainfinal2.c: 142:         }
-}
-[e :U 152 ]
-"143
-[; ;Mainfinal2.c: 143:         INTCONbits.RBIF = 0;
-[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"144
-[; ;Mainfinal2.c: 144:     }
+[; ;Mainfinal2.c: 126:     }
 }
 [e :U 146 ]
-"147
-[; ;Mainfinal2.c: 147:     if(INTCONbits.T0IF == 1){
-[e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 153  ]
+"130
+[; ;Mainfinal2.c: 130:     if(INTCONbits.RBIF == 1){
+[e $ ! == -> . . _INTCONbits 0 0 `i -> 1 `i 152  ]
 {
-"148
-[; ;Mainfinal2.c: 148:         MTMR0();
-[e ( _MTMR0 ..  ]
-"149
-[; ;Mainfinal2.c: 149:         TMR0 = 176;
-[e = _TMR0 -> -> 176 `i `uc ]
-"150
-[; ;Mainfinal2.c: 150:         INTCONbits.T0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"151
-[; ;Mainfinal2.c: 151:     }
+"131
+[; ;Mainfinal2.c: 131:         if(PORTBbits.RB2 == 0){
+[e $ ! == -> . . _PORTBbits 0 2 `i -> 0 `i 153  ]
+{
+"132
+[; ;Mainfinal2.c: 132:             FLAG = 1;
+[e = _FLAG -> -> 1 `i `uc ]
+"133
+[; ;Mainfinal2.c: 133:             while(FLAG == 1){
+[e $U 154  ]
+[e :U 155 ]
+{
+"134
+[; ;Mainfinal2.c: 134:                 TXSTAbits.TXEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+"135
+[; ;Mainfinal2.c: 135:                 UART();
+[e ( _UART ..  ]
+"136
+[; ;Mainfinal2.c: 136:         }
+}
+[e :U 154 ]
+"133
+[; ;Mainfinal2.c: 133:             while(FLAG == 1){
+[e $ == -> _FLAG `i -> 1 `i 155  ]
+[e :U 156 ]
+"137
+[; ;Mainfinal2.c: 137:             TXSTAbits.TXEN = 0;
+[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
+"138
+[; ;Mainfinal2.c: 138:             }
 }
 [e :U 153 ]
+"139
+[; ;Mainfinal2.c: 139:         if(PORTBbits.RB0 == 0){
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 157  ]
+{
+"140
+[; ;Mainfinal2.c: 140:             PORTDbits.RD0 = 1;
+[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
+"141
+[; ;Mainfinal2.c: 141:             PORTDbits.RD1 = 0;
+[e = . . _PORTDbits 0 1 -> -> 0 `i `uc ]
+"142
+[; ;Mainfinal2.c: 142:             escribir(VALOR1, 0x10);
+[e ( _escribir (2 , _VALOR1 -> -> 16 `i `uc ]
+"143
+[; ;Mainfinal2.c: 143:             escribir(VALOR2, 0x11);
+[e ( _escribir (2 , _VALOR2 -> -> 17 `i `uc ]
+"144
+[; ;Mainfinal2.c: 144:             escribir(POT3, 0X12);
+[e ( _escribir (2 , _POT3 -> -> 18 `i `uc ]
+"145
+[; ;Mainfinal2.c: 145:             escribir(POT4, 0X13);
+[e ( _escribir (2 , _POT4 -> -> 19 `i `uc ]
+"146
+[; ;Mainfinal2.c: 146:             _delay((unsigned long)((500)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"147
+[; ;Mainfinal2.c: 147:         }
+}
+[e :U 157 ]
+"148
+[; ;Mainfinal2.c: 148:         if(PORTBbits.RB1 == 0){
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 158  ]
+{
+"149
+[; ;Mainfinal2.c: 149:             ADCON0bits.ADON = 0;
+[e = . . _ADCON0bits 0 0 -> -> 0 `i `uc ]
+"150
+[; ;Mainfinal2.c: 150:             PORTDbits.RD0 = 0;
+[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
+"151
+[; ;Mainfinal2.c: 151:             PORTDbits.RD1 = 1;
+[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
+"152
+[; ;Mainfinal2.c: 152:             val1 = leer(0X10);
+[e = _val1 ( _leer (1 -> -> 16 `i `uc ]
 "153
-[; ;Mainfinal2.c: 153:     PIR1bits.TMR2IF = 0;
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+[; ;Mainfinal2.c: 153:             val2 = leer(0x11);
+[e = _val2 ( _leer (1 -> -> 17 `i `uc ]
 "154
-[; ;Mainfinal2.c: 154: }
+[; ;Mainfinal2.c: 154:             val3 = leer(0x12);
+[e = _val3 ( _leer (1 -> -> 18 `i `uc ]
+"155
+[; ;Mainfinal2.c: 155:             val4 = leer(0x13);
+[e = _val4 ( _leer (1 -> -> 19 `i `uc ]
+"157
+[; ;Mainfinal2.c: 157:             CCPR1L = val1;
+[e = _CCPR1L _val1 ]
+"158
+[; ;Mainfinal2.c: 158:             CCPR2L = val2;
+[e = _CCPR2L _val2 ]
+"159
+[; ;Mainfinal2.c: 159:             POT3 = val3;
+[e = _POT3 _val3 ]
+"160
+[; ;Mainfinal2.c: 160:             POT4 = val4;
+[e = _POT4 _val4 ]
+"161
+[; ;Mainfinal2.c: 161:             _delay((unsigned long)((3000)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"162
+[; ;Mainfinal2.c: 162:             ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+"163
+[; ;Mainfinal2.c: 163:         }
+}
+[e :U 158 ]
+"164
+[; ;Mainfinal2.c: 164:         INTCONbits.RBIF = 0;
+[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+"165
+[; ;Mainfinal2.c: 165:     }
+}
+[e :U 152 ]
+"167
+[; ;Mainfinal2.c: 167:     PIR1bits.TMR2IF = 0;
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+"168
+[; ;Mainfinal2.c: 168: }
 [e :UE 138 ]
 }
-"159
-[; ;Mainfinal2.c: 159: void setup(void){
+"173
+[; ;Mainfinal2.c: 173: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"161
-[; ;Mainfinal2.c: 161:     ANSEL = 0B00011111;
+"175
+[; ;Mainfinal2.c: 175:     ANSEL = 0B00011111;
 [e = _ANSEL -> -> 31 `i `uc ]
-"162
-[; ;Mainfinal2.c: 162:     ANSELH = 0X00;
+"176
+[; ;Mainfinal2.c: 176:     ANSELH = 0X00;
 [e = _ANSELH -> -> 0 `i `uc ]
-"164
-[; ;Mainfinal2.c: 164:     TRISA = 0B00011111;
-[e = _TRISA -> -> 31 `i `uc ]
-"165
-[; ;Mainfinal2.c: 165:     TRISBbits.TRISB0 = 1;
-[e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
-"166
-[; ;Mainfinal2.c: 166:     TRISBbits.TRISB1 = 1;
-[e = . . _TRISBbits 0 1 -> -> 1 `i `uc ]
-"167
-[; ;Mainfinal2.c: 167:     TRISBbits.TRISB2 = 1;
-[e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
-"168
-[; ;Mainfinal2.c: 168:     TRISC = 0B10000000;
-[e = _TRISC -> -> 128 `i `uc ]
-"169
-[; ;Mainfinal2.c: 169:     TRISD = 0B00;
-[e = _TRISD -> -> 0 `i `uc ]
-"171
-[; ;Mainfinal2.c: 171:     PORTA = 0X00;
-[e = _PORTA -> -> 0 `i `uc ]
-"172
-[; ;Mainfinal2.c: 172:     PORTB = 0X00;
-[e = _PORTB -> -> 0 `i `uc ]
-"173
-[; ;Mainfinal2.c: 173:     PORTC = 0X00;
-[e = _PORTC -> -> 0 `i `uc ]
-"174
-[; ;Mainfinal2.c: 174:     PORTD = 0X00;
-[e = _PORTD -> -> 0 `i `uc ]
-"177
-[; ;Mainfinal2.c: 177:     IOCB = 0xFF;
-[e = _IOCB -> -> 255 `i `uc ]
 "178
-[; ;Mainfinal2.c: 178:     OPTION_REGbits.nRBPU = 0;
-[e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
+[; ;Mainfinal2.c: 178:     TRISA = 0B00011111;
+[e = _TRISA -> -> 31 `i `uc ]
 "179
-[; ;Mainfinal2.c: 179:     WPUB = 0B00000111;
-[e = _WPUB -> -> 7 `i `uc ]
+[; ;Mainfinal2.c: 179:     TRISBbits.TRISB0 = 1;
+[e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
+"180
+[; ;Mainfinal2.c: 180:     TRISBbits.TRISB1 = 1;
+[e = . . _TRISBbits 0 1 -> -> 1 `i `uc ]
+"181
+[; ;Mainfinal2.c: 181:     TRISBbits.TRISB2 = 1;
+[e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
 "182
-[; ;Mainfinal2.c: 182:     OPTION_REG = 0B00001000;
-[e = _OPTION_REG -> -> 8 `i `uc ]
+[; ;Mainfinal2.c: 182:     TRISC = 0B10000000;
+[e = _TRISC -> -> 128 `i `uc ]
 "183
-[; ;Mainfinal2.c: 183:     TMR0 = 176;
-[e = _TMR0 -> -> 176 `i `uc ]
-"184
-[; ;Mainfinal2.c: 184:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;Mainfinal2.c: 183:     TRISD = 0B00;
+[e = _TRISD -> -> 0 `i `uc ]
 "185
-[; ;Mainfinal2.c: 185:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;Mainfinal2.c: 185:     PORTA = 0X00;
+[e = _PORTA -> -> 0 `i `uc ]
 "186
-[; ;Mainfinal2.c: 186:     INTCONbits.T0IE = 1;
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;Mainfinal2.c: 186:     PORTB = 0X00;
+[e = _PORTB -> -> 0 `i `uc ]
 "187
-[; ;Mainfinal2.c: 187:     INTCONbits.T0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;Mainfinal2.c: 187:     PORTC = 0X00;
+[e = _PORTC -> -> 0 `i `uc ]
 "188
-[; ;Mainfinal2.c: 188:     INTCONbits.RBIE = 1;
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"189
-[; ;Mainfinal2.c: 189:     INTCONbits.RBIF = 0;
-[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+[; ;Mainfinal2.c: 188:     PORTD = 0X00;
+[e = _PORTD -> -> 0 `i `uc ]
+"191
+[; ;Mainfinal2.c: 191:     IOCB = 0xFF;
+[e = _IOCB -> -> 255 `i `uc ]
 "192
-[; ;Mainfinal2.c: 192:     OSCCONbits.SCS = 1;
-[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
+[; ;Mainfinal2.c: 192:     OPTION_REGbits.nRBPU = 0;
+[e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
 "193
-[; ;Mainfinal2.c: 193:     OSCCONbits.IRCF2 = 1;
-[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"194
-[; ;Mainfinal2.c: 194:     OSCCONbits.IRCF1 = 1;
-[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
-"195
-[; ;Mainfinal2.c: 195:     OSCCONbits.IRCF0 = 0;
-[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
+[; ;Mainfinal2.c: 193:     WPUB = 0B00000111;
+[e = _WPUB -> -> 7 `i `uc ]
 "196
-[; ;Mainfinal2.c: 196:     PIR1bits.TMR2IF = 0;
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+[; ;Mainfinal2.c: 196:     OPTION_REG = 0B00001000;
+[e = _OPTION_REG -> -> 8 `i `uc ]
 "197
-[; ;Mainfinal2.c: 197:     T2CON = 0X26;
-[e = _T2CON -> -> 38 `i `uc ]
+[; ;Mainfinal2.c: 197:     TMR0 = 176;
+[e = _TMR0 -> -> 176 `i `uc ]
+"198
+[; ;Mainfinal2.c: 198:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"199
+[; ;Mainfinal2.c: 199:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "200
-[; ;Mainfinal2.c: 200:     ADCON0bits.CHS = 0;
-[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
+[; ;Mainfinal2.c: 200:     INTCONbits.T0IE = 1;
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
 "201
-[; ;Mainfinal2.c: 201:     ADCON0bits.CHS = 2;
-[e = . . _ADCON0bits 0 2 -> -> 2 `i `uc ]
+[; ;Mainfinal2.c: 201:     INTCONbits.T0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "202
-[; ;Mainfinal2.c: 202:     _delay((unsigned long)((100)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-"204
-[; ;Mainfinal2.c: 204:     PIE1bits.ADIE = 1;
-[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
-"205
-[; ;Mainfinal2.c: 205:     PIR1bits.ADIF = 0;
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+[; ;Mainfinal2.c: 202:     INTCONbits.RBIE = 1;
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+"203
+[; ;Mainfinal2.c: 203:     INTCONbits.RBIF = 0;
+[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
 "206
-[; ;Mainfinal2.c: 206:     ADCON0bits.ADON = 1;
-[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+[; ;Mainfinal2.c: 206:     OSCCONbits.SCS = 1;
+[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
 "207
-[; ;Mainfinal2.c: 207:     ADCON0bits.ADCS = 1;
-[e = . . _ADCON0bits 0 3 -> -> 1 `i `uc ]
+[; ;Mainfinal2.c: 207:     OSCCONbits.IRCF2 = 1;
+[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
 "208
-[; ;Mainfinal2.c: 208:     ADCON1bits.ADFM = 0;
-[e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
+[; ;Mainfinal2.c: 208:     OSCCONbits.IRCF1 = 1;
+[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
 "209
-[; ;Mainfinal2.c: 209:     ADCON1bits.VCFG0 = 0;
-[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
+[; ;Mainfinal2.c: 209:     OSCCONbits.IRCF0 = 0;
+[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
 "210
-[; ;Mainfinal2.c: 210:     ADCON1bits.VCFG1 = 0;
-[e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
-"213
-[; ;Mainfinal2.c: 213:     PR2 = 250;
-[e = _PR2 -> -> 250 `i `uc ]
+[; ;Mainfinal2.c: 210:     PIR1bits.TMR2IF = 0;
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+"211
+[; ;Mainfinal2.c: 211:     T2CON = 0X26;
+[e = _T2CON -> -> 38 `i `uc ]
 "214
-[; ;Mainfinal2.c: 214:     CCP1CON = 0B00001100;
-[e = _CCP1CON -> -> 12 `i `uc ]
+[; ;Mainfinal2.c: 214:     ADCON0bits.CHS = 0;
+[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
 "215
-[; ;Mainfinal2.c: 215:     CCP2CON = 0B00001111;
-[e = _CCP2CON -> -> 15 `i `uc ]
+[; ;Mainfinal2.c: 215:     ADCON0bits.CHS = 2;
+[e = . . _ADCON0bits 0 2 -> -> 2 `i `uc ]
+"216
+[; ;Mainfinal2.c: 216:     _delay((unsigned long)((100)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "218
-[; ;Mainfinal2.c: 218:     PIR1bits.RCIF = 0;
-[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+[; ;Mainfinal2.c: 218:     PIE1bits.ADIE = 1;
+[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
 "219
-[; ;Mainfinal2.c: 219:     PIE1bits.RCIE = 0;
-[e = . . _PIE1bits 0 5 -> -> 0 `i `uc ]
+[; ;Mainfinal2.c: 219:     PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
 "220
-[; ;Mainfinal2.c: 220:     PIE1bits.TXIE = 0;
-[e = . . _PIE1bits 0 4 -> -> 0 `i `uc ]
+[; ;Mainfinal2.c: 220:     ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
 "221
-[; ;Mainfinal2.c: 221:     TXSTAbits.TX9 = 0;
-[e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
+[; ;Mainfinal2.c: 221:     ADCON0bits.ADCS = 1;
+[e = . . _ADCON0bits 0 3 -> -> 1 `i `uc ]
 "222
-[; ;Mainfinal2.c: 222:     TXSTAbits.TXEN = 1;
-[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+[; ;Mainfinal2.c: 222:     ADCON1bits.ADFM = 0;
+[e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
 "223
-[; ;Mainfinal2.c: 223:     TXSTAbits.SYNC = 0;
-[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+[; ;Mainfinal2.c: 223:     ADCON1bits.VCFG0 = 0;
+[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
 "224
-[; ;Mainfinal2.c: 224:     TXSTAbits.BRGH = 1;
-[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
-"225
-[; ;Mainfinal2.c: 225:     RCSTAbits.RX9 = 0;
-[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
-"226
-[; ;Mainfinal2.c: 226:     RCSTAbits.CREN = 1;
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+[; ;Mainfinal2.c: 224:     ADCON1bits.VCFG1 = 0;
+[e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
 "227
-[; ;Mainfinal2.c: 227:     RCSTAbits.SPEN = 1;
-[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-"231
-[; ;Mainfinal2.c: 231:     BAUDCTLbits.BRG16 = 0;
-[e = . . _BAUDCTLbits 0 3 -> -> 0 `i `uc ]
+[; ;Mainfinal2.c: 227:     PR2 = 250;
+[e = _PR2 -> -> 250 `i `uc ]
+"228
+[; ;Mainfinal2.c: 228:     CCP1CON = 0B00001100;
+[e = _CCP1CON -> -> 12 `i `uc ]
+"229
+[; ;Mainfinal2.c: 229:     CCP2CON = 0B00001111;
+[e = _CCP2CON -> -> 15 `i `uc ]
 "232
-[; ;Mainfinal2.c: 232:     SPBRG = 25;
-[e = _SPBRG -> -> 25 `i `uc ]
+[; ;Mainfinal2.c: 232:     PIR1bits.RCIF = 0;
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
 "233
-[; ;Mainfinal2.c: 233:     SPBRGH = 1;
-[e = _SPBRGH -> -> 1 `i `uc ]
+[; ;Mainfinal2.c: 233:     PIE1bits.RCIE = 0;
+[e = . . _PIE1bits 0 5 -> -> 0 `i `uc ]
 "234
-[; ;Mainfinal2.c: 234:     }
-[e :UE 154 ]
+[; ;Mainfinal2.c: 234:     PIE1bits.TXIE = 0;
+[e = . . _PIE1bits 0 4 -> -> 0 `i `uc ]
+"235
+[; ;Mainfinal2.c: 235:     TXSTAbits.TX9 = 0;
+[e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
+"236
+[; ;Mainfinal2.c: 236:     TXSTAbits.TXEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+"237
+[; ;Mainfinal2.c: 237:     TXSTAbits.SYNC = 0;
+[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+"238
+[; ;Mainfinal2.c: 238:     TXSTAbits.BRGH = 1;
+[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
+"239
+[; ;Mainfinal2.c: 239:     RCSTAbits.RX9 = 0;
+[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
+"240
+[; ;Mainfinal2.c: 240:     RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"241
+[; ;Mainfinal2.c: 241:     RCSTAbits.SPEN = 1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"245
+[; ;Mainfinal2.c: 245:     BAUDCTLbits.BRG16 = 0;
+[e = . . _BAUDCTLbits 0 3 -> -> 0 `i `uc ]
+"246
+[; ;Mainfinal2.c: 246:     SPBRG = 25;
+[e = _SPBRG -> -> 25 `i `uc ]
+"247
+[; ;Mainfinal2.c: 247:     SPBRGH = 1;
+[e = _SPBRGH -> -> 1 `i `uc ]
+"248
+[; ;Mainfinal2.c: 248:     }
+[e :UE 159 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"239
-[; ;Mainfinal2.c: 239: void main(void){
+"253
+[; ;Mainfinal2.c: 253: void main(void){
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"240
-[; ;Mainfinal2.c: 240:     setup();
+"254
+[; ;Mainfinal2.c: 254:     setup();
 [e ( _setup ..  ]
-"241
-[; ;Mainfinal2.c: 241:     while (1){
-[e :U 157 ]
+"255
+[; ;Mainfinal2.c: 255:     while (1){
+[e :U 162 ]
 {
-"242
-[; ;Mainfinal2.c: 242:         canales();
+"256
+[; ;Mainfinal2.c: 256:         canales();
 [e ( _canales ..  ]
-"243
-[; ;Mainfinal2.c: 243:     }
+"258
+[; ;Mainfinal2.c: 258:     }
 }
-[e :U 156 ]
-[e $U 157  ]
-[e :U 158 ]
-"244
-[; ;Mainfinal2.c: 244: }
-[e :UE 155 ]
+[e :U 161 ]
+[e $U 162  ]
+[e :U 163 ]
+"259
+[; ;Mainfinal2.c: 259: }
+[e :UE 160 ]
 }
-"249
-[; ;Mainfinal2.c: 249: void UART(void){
+"264
+[; ;Mainfinal2.c: 264: void UART(void){
 [v _UART `(v ~T0 @X0 1 ef ]
 {
 [e :U _UART ]
 [f ]
-"250
-[; ;Mainfinal2.c: 250:         _delay((unsigned long)((500)*(4000000/4000.0)));
+"265
+[; ;Mainfinal2.c: 265:         _delay((unsigned long)((500)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"251
-[; ;Mainfinal2.c: 251:             VALOR = 0;
+"266
+[; ;Mainfinal2.c: 266:             VALOR = 0;
 [e = _VALOR -> -> 0 `i `uc ]
-"252
-[; ;Mainfinal2.c: 252:             do{VALOR++;
-[e :U 162 ]
+"267
+[; ;Mainfinal2.c: 267:             do{VALOR++;
+[e :U 167 ]
 {
 [e ++ _VALOR -> -> 1 `i `uc ]
-"253
-[; ;Mainfinal2.c: 253:                 TXREG = I[VALOR];
+"268
+[; ;Mainfinal2.c: 268:                 TXREG = I[VALOR];
 [e = _TXREG *U + &U _I * -> _VALOR `ux -> -> # *U &U _I `ui `ux ]
-"254
-[; ;Mainfinal2.c: 254:                 _delay((unsigned long)((50)*(4000000/4000.0)));
+"269
+[; ;Mainfinal2.c: 269:                 _delay((unsigned long)((50)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"255
-[; ;Mainfinal2.c: 255:             }
+"270
+[; ;Mainfinal2.c: 270:             }
 }
-[e $ <= -> _VALOR `i -> 95 `i 162  ]
-[e :U 161 ]
-"257
-[; ;Mainfinal2.c: 257:             while(RCIF == 0);
-[e $U 163  ]
-[e :U 164 ]
-[e :U 163 ]
-[e $ == -> _RCIF `i -> 0 `i 164  ]
-[e :U 165 ]
-"258
-[; ;Mainfinal2.c: 258:             INS();
+[e $ <= -> _VALOR `i -> 72 `i 167  ]
+[e :U 166 ]
+"272
+[; ;Mainfinal2.c: 272:             while(RCIF == 0);
+[e $U 168  ]
+[e :U 169 ]
+[e :U 168 ]
+[e $ == -> _RCIF `i -> 0 `i 169  ]
+[e :U 170 ]
+"273
+[; ;Mainfinal2.c: 273:             INS();
 [e ( _INS ..  ]
-"259
-[; ;Mainfinal2.c: 259:  }
-[e :UE 159 ]
+"274
+[; ;Mainfinal2.c: 274:  }
+[e :UE 164 ]
 }
-"262
-[; ;Mainfinal2.c: 262: void canales(){
+"277
+[; ;Mainfinal2.c: 277: void canales(){
 [v _canales `(v ~T0 @X0 1 ef ]
 {
 [e :U _canales ]
 [f ]
-"263
-[; ;Mainfinal2.c: 263:     if(ADCON0bits.GO == 0){
-[e $ ! == -> . . _ADCON0bits 1 1 `i -> 0 `i 167  ]
-{
-"264
-[; ;Mainfinal2.c: 264:         switch(ADCON0bits.CHS){
-[e $U 169  ]
-{
-"265
-[; ;Mainfinal2.c: 265:             case 0:
-[e :U 170 ]
-"266
-[; ;Mainfinal2.c: 266:                 CCPR1L = ((0.247*VAL)+62);
-[e = _CCPR1L -> + * .0.247 -> -> _VAL `i `d -> -> 62 `i `d `uc ]
-"267
-[; ;Mainfinal2.c: 267:                 VALOR1 = CCPR1L;
-[e = _VALOR1 _CCPR1L ]
-"268
-[; ;Mainfinal2.c: 268:                 ADCON0bits.CHS = 1;
-[e = . . _ADCON0bits 0 2 -> -> 1 `i `uc ]
-"269
-[; ;Mainfinal2.c: 269:                 _delay((unsigned long)((100)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-"270
-[; ;Mainfinal2.c: 270:                 ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
-"271
-[; ;Mainfinal2.c: 271:                 break;
-[e $U 168  ]
-"273
-[; ;Mainfinal2.c: 273:             case 1:
-[e :U 171 ]
-"274
-[; ;Mainfinal2.c: 274:                 POT4 = ((0.049*VAL1)+7);
-[e = _POT4 -> + * .0.049 -> -> _VAL1 `i `d -> -> 7 `i `d `uc ]
-"275
-[; ;Mainfinal2.c: 275:                 ADCON0bits.CHS = 2;
-[e = . . _ADCON0bits 0 2 -> -> 2 `i `uc ]
-"276
-[; ;Mainfinal2.c: 276:                 _delay((unsigned long)((250)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-"277
-[; ;Mainfinal2.c: 277:                 ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
 "278
-[; ;Mainfinal2.c: 278:                 break;
-[e $U 168  ]
+[; ;Mainfinal2.c: 278:     if(ADCON0bits.GO == 0){
+[e $ ! == -> . . _ADCON0bits 1 1 `i -> 0 `i 172  ]
+{
+"279
+[; ;Mainfinal2.c: 279:         switch(ADCON0bits.CHS){
+[e $U 174  ]
+{
 "280
-[; ;Mainfinal2.c: 280:             case 2:
-[e :U 172 ]
+[; ;Mainfinal2.c: 280:             case 0:
+[e :U 175 ]
 "281
-[; ;Mainfinal2.c: 281:                 CCPR2L = ((0.247*VAL2)+62);
-[e = _CCPR2L -> + * .0.247 -> -> _VAL2 `i `d -> -> 62 `i `d `uc ]
+[; ;Mainfinal2.c: 281:                 CCPR1L = ((0.247*VAL)+62);
+[e = _CCPR1L -> + * .0.247 -> -> _VAL `i `d -> -> 62 `i `d `uc ]
 "282
-[; ;Mainfinal2.c: 282:                 VALOR2 = CCPR2L;
-[e = _VALOR2 _CCPR2L ]
+[; ;Mainfinal2.c: 282:                 VALOR1 = CCPR1L;
+[e = _VALOR1 _CCPR1L ]
 "283
-[; ;Mainfinal2.c: 283:                 ADCON0bits.CHS = 3;
-[e = . . _ADCON0bits 0 2 -> -> 3 `i `uc ]
+[; ;Mainfinal2.c: 283:                 ADCON0bits.CHS = 1;
+[e = . . _ADCON0bits 0 2 -> -> 1 `i `uc ]
 "284
 [; ;Mainfinal2.c: 284:                 _delay((unsigned long)((100)*(4000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
@@ -1379,16 +1372,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
 "286
 [; ;Mainfinal2.c: 286:                 break;
-[e $U 168  ]
+[e $U 173  ]
 "288
-[; ;Mainfinal2.c: 288:             case 3:
-[e :U 173 ]
+[; ;Mainfinal2.c: 288:             case 1:
+[e :U 176 ]
 "289
-[; ;Mainfinal2.c: 289:                 POT3 = ((0.049*VAL3)+7);
-[e = _POT3 -> + * .0.049 -> -> _VAL3 `i `d -> -> 7 `i `d `uc ]
+[; ;Mainfinal2.c: 289:                 POT4 = ((0.049*VAL1)+7);
+[e = _POT4 -> + * .0.049 -> -> _VAL1 `i `d -> -> 7 `i `d `uc ]
 "290
-[; ;Mainfinal2.c: 290:                 ADCON0bits.CHS = 0;
-[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
+[; ;Mainfinal2.c: 290:                 ADCON0bits.CHS = 2;
+[e = . . _ADCON0bits 0 2 -> -> 2 `i `uc ]
 "291
 [; ;Mainfinal2.c: 291:                 _delay((unsigned long)((250)*(4000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
@@ -1397,418 +1390,389 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
 "293
 [; ;Mainfinal2.c: 293:                 break;
-[e $U 168  ]
+[e $U 173  ]
 "295
-[; ;Mainfinal2.c: 295:             default:
-[e :U 174 ]
+[; ;Mainfinal2.c: 295:             case 2:
+[e :U 177 ]
 "296
-[; ;Mainfinal2.c: 296:                 break;
-[e $U 168  ]
+[; ;Mainfinal2.c: 296:                 CCPR2L = ((0.247*VAL2)+62);
+[e = _CCPR2L -> + * .0.247 -> -> _VAL2 `i `d -> -> 62 `i `d `uc ]
 "297
-[; ;Mainfinal2.c: 297:          }
-}
-[e $U 168  ]
-[e :U 169 ]
-[e [\ -> . . _ADCON0bits 0 2 `i , $ -> 0 `i 170
- , $ -> 1 `i 171
- , $ -> 2 `i 172
- , $ -> 3 `i 173
- 174 ]
-[e :U 168 ]
+[; ;Mainfinal2.c: 297:                 VALOR2 = CCPR2L;
+[e = _VALOR2 _CCPR2L ]
 "298
-[; ;Mainfinal2.c: 298:     }
-}
-[e :U 167 ]
+[; ;Mainfinal2.c: 298:                 ADCON0bits.CHS = 3;
+[e = . . _ADCON0bits 0 2 -> -> 3 `i `uc ]
 "299
-[; ;Mainfinal2.c: 299: }
-[e :UE 166 ]
+[; ;Mainfinal2.c: 299:                 _delay((unsigned long)((100)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"300
+[; ;Mainfinal2.c: 300:                 ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+"301
+[; ;Mainfinal2.c: 301:                 break;
+[e $U 173  ]
+"303
+[; ;Mainfinal2.c: 303:             case 3:
+[e :U 178 ]
+"304
+[; ;Mainfinal2.c: 304:                 POT3 = ((0.049*VAL3)+7);
+[e = _POT3 -> + * .0.049 -> -> _VAL3 `i `d -> -> 7 `i `d `uc ]
+"305
+[; ;Mainfinal2.c: 305:                 ADCON0bits.CHS = 0;
+[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
+"306
+[; ;Mainfinal2.c: 306:                 _delay((unsigned long)((250)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"307
+[; ;Mainfinal2.c: 307:                 ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+"308
+[; ;Mainfinal2.c: 308:                 break;
+[e $U 173  ]
+"310
+[; ;Mainfinal2.c: 310:             default:
+[e :U 179 ]
+"311
+[; ;Mainfinal2.c: 311:                 break;
+[e $U 173  ]
+"312
+[; ;Mainfinal2.c: 312:          }
 }
-"302
-[; ;Mainfinal2.c: 302: void escribir(uint8_t data, uint8_t address){
+[e $U 173  ]
+[e :U 174 ]
+[e [\ -> . . _ADCON0bits 0 2 `i , $ -> 0 `i 175
+ , $ -> 1 `i 176
+ , $ -> 2 `i 177
+ , $ -> 3 `i 178
+ 179 ]
+[e :U 173 ]
+"313
+[; ;Mainfinal2.c: 313:     }
+}
+[e :U 172 ]
+"314
+[; ;Mainfinal2.c: 314: }
+[e :UE 171 ]
+}
+"317
+[; ;Mainfinal2.c: 317: void escribir(uint8_t data, uint8_t address){
 [v _escribir `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _escribir ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [v _address `uc ~T0 @X0 1 r2 ]
 [f ]
-"303
-[; ;Mainfinal2.c: 303:     EEADR = address;
-[e = _EEADR _address ]
-"304
-[; ;Mainfinal2.c: 304:     EEDAT = data;
-[e = _EEDAT _data ]
-"306
-[; ;Mainfinal2.c: 306:     EECON1bits.EEPGD = 0;
-[e = . . _EECON1bits 0 5 -> -> 0 `i `uc ]
-"307
-[; ;Mainfinal2.c: 307:     EECON1bits.WREN = 1 ;
-[e = . . _EECON1bits 0 2 -> -> 1 `i `uc ]
-"308
-[; ;Mainfinal2.c: 308:     INTCONbits.GIE = 0;
-[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
-"310
-[; ;Mainfinal2.c: 310:     EECON2 = 0X55;
-[e = _EECON2 -> -> 85 `i `uc ]
-"311
-[; ;Mainfinal2.c: 311:     EECON2 = 0xAA;
-[e = _EECON2 -> -> 170 `i `uc ]
-"312
-[; ;Mainfinal2.c: 312:     EECON1bits.WR = 1;
-[e = . . _EECON1bits 0 1 -> -> 1 `i `uc ]
-"314
-[; ;Mainfinal2.c: 314:     while(PIR2bits.EEIF == 0);
-[e $U 176  ]
-[e :U 177 ]
-[e :U 176 ]
-[e $ == -> . . _PIR2bits 0 4 `i -> 0 `i 177  ]
-[e :U 178 ]
-"315
-[; ;Mainfinal2.c: 315:     PIR2bits.EEIF = 0;
-[e = . . _PIR2bits 0 4 -> -> 0 `i `uc ]
-"316
-[; ;Mainfinal2.c: 316:     EECON1bits.WREN = 0;
-[e = . . _EECON1bits 0 2 -> -> 0 `i `uc ]
-"317
-[; ;Mainfinal2.c: 317:     INTCONbits.GIE = 0;
-[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
 "318
-[; ;Mainfinal2.c: 318:    }
-[e :UE 175 ]
-}
+[; ;Mainfinal2.c: 318:     EEADR = address;
+[e = _EEADR _address ]
+"319
+[; ;Mainfinal2.c: 319:     EEDAT = data;
+[e = _EEDAT _data ]
 "321
-[; ;Mainfinal2.c: 321: uint8_t leer(uint8_t address){
+[; ;Mainfinal2.c: 321:     EECON1bits.EEPGD = 0;
+[e = . . _EECON1bits 0 5 -> -> 0 `i `uc ]
+"322
+[; ;Mainfinal2.c: 322:     EECON1bits.WREN = 1 ;
+[e = . . _EECON1bits 0 2 -> -> 1 `i `uc ]
+"323
+[; ;Mainfinal2.c: 323:     INTCONbits.GIE = 0;
+[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
+"325
+[; ;Mainfinal2.c: 325:     EECON2 = 0X55;
+[e = _EECON2 -> -> 85 `i `uc ]
+"326
+[; ;Mainfinal2.c: 326:     EECON2 = 0xAA;
+[e = _EECON2 -> -> 170 `i `uc ]
+"327
+[; ;Mainfinal2.c: 327:     EECON1bits.WR = 1;
+[e = . . _EECON1bits 0 1 -> -> 1 `i `uc ]
+"329
+[; ;Mainfinal2.c: 329:     while(PIR2bits.EEIF == 0);
+[e $U 181  ]
+[e :U 182 ]
+[e :U 181 ]
+[e $ == -> . . _PIR2bits 0 4 `i -> 0 `i 182  ]
+[e :U 183 ]
+"330
+[; ;Mainfinal2.c: 330:     PIR2bits.EEIF = 0;
+[e = . . _PIR2bits 0 4 -> -> 0 `i `uc ]
+"331
+[; ;Mainfinal2.c: 331:     EECON1bits.WREN = 0;
+[e = . . _EECON1bits 0 2 -> -> 0 `i `uc ]
+"332
+[; ;Mainfinal2.c: 332:     INTCONbits.GIE = 0;
+[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
+"333
+[; ;Mainfinal2.c: 333:    }
+[e :UE 180 ]
+}
+"336
+[; ;Mainfinal2.c: 336: uint8_t leer(uint8_t address){
 [v _leer `(uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _leer ]
 [v _address `uc ~T0 @X0 1 r1 ]
 [f ]
-"322
-[; ;Mainfinal2.c: 322:     EEADR = address;
+"337
+[; ;Mainfinal2.c: 337:     EEADR = address;
 [e = _EEADR _address ]
-"323
-[; ;Mainfinal2.c: 323:     EECON1bits.EEPGD = 0;
+"338
+[; ;Mainfinal2.c: 338:     EECON1bits.EEPGD = 0;
 [e = . . _EECON1bits 0 5 -> -> 0 `i `uc ]
-"324
-[; ;Mainfinal2.c: 324:     EECON1bits.RD = 1;
+"339
+[; ;Mainfinal2.c: 339:     EECON1bits.RD = 1;
 [e = . . _EECON1bits 0 0 -> -> 1 `i `uc ]
-"325
-[; ;Mainfinal2.c: 325:     uint8_t data = EEDATA;
+"340
+[; ;Mainfinal2.c: 340:     uint8_t data = EEDATA;
 [v _data `uc ~T0 @X0 1 a ]
 [e = _data _EEDATA ]
-"326
-[; ;Mainfinal2.c: 326:     return data;
+"341
+[; ;Mainfinal2.c: 341:     return data;
 [e ) _data ]
-[e $UE 179  ]
-"327
-[; ;Mainfinal2.c: 327: }
-[e :UE 179 ]
+[e $UE 184  ]
+"342
+[; ;Mainfinal2.c: 342: }
+[e :UE 184 ]
 }
-"330
-[; ;Mainfinal2.c: 330: void INS(void){
+"345
+[; ;Mainfinal2.c: 345: void INS(void){
 [v _INS `(v ~T0 @X0 1 ef ]
 {
 [e :U _INS ]
 [f ]
-"331
-[; ;Mainfinal2.c: 331:     OP = RCREG;
+"346
+[; ;Mainfinal2.c: 346:     OP = RCREG;
 [e = _OP _RCREG ]
-"332
-[; ;Mainfinal2.c: 332:     switch(OP){
-[e $U 182  ]
+"348
+[; ;Mainfinal2.c: 348:     switch(OP){
+[e $U 187  ]
 {
-"333
-[; ;Mainfinal2.c: 333:             case 49:
-[e :U 183 ]
-"334
-[; ;Mainfinal2.c: 334:                 TXSTAbits.TXEN = 0;
-[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
-"335
-[; ;Mainfinal2.c: 335:                 OP = 0;
-[e = _OP -> -> 0 `i `uc ]
-"336
-[; ;Mainfinal2.c: 336:                 break;
-[e $U 181  ]
-"337
-[; ;Mainfinal2.c: 337:             case 50:
-[e :U 184 ]
-"338
-[; ;Mainfinal2.c: 338:                     _delay((unsigned long)((500)*(4000000/4000.0)));
+"349
+[; ;Mainfinal2.c: 349:             case 49:
+[e :U 188 ]
+"350
+[; ;Mainfinal2.c: 350:                 _delay((unsigned long)((500)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"339
-[; ;Mainfinal2.c: 339:                     VALOR = 0;
+"351
+[; ;Mainfinal2.c: 351:                     VALOR = 0;
 [e = _VALOR -> -> 0 `i `uc ]
-"340
-[; ;Mainfinal2.c: 340:                     do{VALOR++;
-[e :U 187 ]
+"352
+[; ;Mainfinal2.c: 352:                     do{VALOR++;
+[e :U 191 ]
 {
 [e ++ _VALOR -> -> 1 `i `uc ]
-"341
-[; ;Mainfinal2.c: 341:                         TXREG = R[VALOR];
+"353
+[; ;Mainfinal2.c: 353:                         TXREG = R[VALOR];
 [e = _TXREG *U + &U _R * -> _VALOR `ux -> -> # *U &U _R `ui `ux ]
-"342
-[; ;Mainfinal2.c: 342:                         _delay((unsigned long)((50)*(4000000/4000.0)));
+"354
+[; ;Mainfinal2.c: 354:                         _delay((unsigned long)((50)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"343
-[; ;Mainfinal2.c: 343:                     }
+"355
+[; ;Mainfinal2.c: 355:                     }
 }
-[e $ <= -> _VALOR `i -> 60 `i 187  ]
-[e :U 186 ]
-"345
-[; ;Mainfinal2.c: 345:                         while(RCIF == 0);
-[e $U 188  ]
-[e :U 189 ]
-[e :U 188 ]
-[e $ == -> _RCIF `i -> 0 `i 189  ]
+[e $ <= -> _VALOR `i -> 60 `i 191  ]
 [e :U 190 ]
-"346
-[; ;Mainfinal2.c: 346:                     OP = 0;
+"357
+[; ;Mainfinal2.c: 357:                         while(RCIF == 0);
+[e $U 192  ]
+[e :U 193 ]
+[e :U 192 ]
+[e $ == -> _RCIF `i -> 0 `i 193  ]
+[e :U 194 ]
+"358
+[; ;Mainfinal2.c: 358:                     OP = 0;
 [e = _OP -> -> 0 `i `uc ]
-"347
-[; ;Mainfinal2.c: 347:                     OTRO();
+"359
+[; ;Mainfinal2.c: 359:                     OTRO();
 [e ( _OTRO ..  ]
-"348
-[; ;Mainfinal2.c: 348:                     break;
-[e $U 181  ]
-"349
-[; ;Mainfinal2.c: 349:         }
+"360
+[; ;Mainfinal2.c: 360:                     break;
+[e $U 186  ]
+"361
+[; ;Mainfinal2.c: 361:             case 50:
+[e :U 195 ]
+"362
+[; ;Mainfinal2.c: 362:                     TXSTAbits.TXEN = 0;
+[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
+"363
+[; ;Mainfinal2.c: 363:                 OP = 0;
+[e = _OP -> -> 0 `i `uc ]
+"364
+[; ;Mainfinal2.c: 364:                 break;
+[e $U 186  ]
+"365
+[; ;Mainfinal2.c: 365:         }
 }
-[e $U 181  ]
-[e :U 182 ]
-[e [\ -> _OP `i , $ -> 49 `i 183
- , $ -> 50 `i 184
- 181 ]
-[e :U 181 ]
-"350
-[; ;Mainfinal2.c: 350: }
-[e :UE 180 ]
+[e $U 186  ]
+[e :U 187 ]
+[e [\ -> _OP `i , $ -> 49 `i 188
+ , $ -> 50 `i 195
+ 186 ]
+[e :U 186 ]
+"366
+[; ;Mainfinal2.c: 366: }
+[e :UE 185 ]
 }
-"352
-[; ;Mainfinal2.c: 352: void OTRO(void){
+"368
+[; ;Mainfinal2.c: 368: void OTRO(void){
 [v _OTRO `(v ~T0 @X0 1 ef ]
 {
 [e :U _OTRO ]
 [f ]
-"353
-[; ;Mainfinal2.c: 353:     OP = RCREG;
-[e = _OP _RCREG ]
-"354
-[; ;Mainfinal2.c: 354:     switch(OP){
-[e $U 193  ]
-{
-"355
-[; ;Mainfinal2.c: 355:         case 49:
-[e :U 194 ]
-"356
-[; ;Mainfinal2.c: 356:             MENSAJE();
-[e ( _MENSAJE ..  ]
-"357
-[; ;Mainfinal2.c: 357:             if(RCREG >= 48 && RCREG <= 57){
-[e $ ! && >= -> _RCREG `i -> 48 `i <= -> _RCREG `i -> 57 `i 195  ]
-{
-"358
-[; ;Mainfinal2.c: 358:                 VAL = RCREG;
-[e = _VAL _RCREG ]
-"359
-[; ;Mainfinal2.c: 359:                 canales();
-[e ( _canales ..  ]
-"360
-[; ;Mainfinal2.c: 360:             }
-}
-[e :U 195 ]
-"361
-[; ;Mainfinal2.c: 361:             break;
-[e $U 192  ]
-"362
-[; ;Mainfinal2.c: 362:         case 50:
-[e :U 196 ]
-"363
-[; ;Mainfinal2.c: 363:             MENSAJE();
-[e ( _MENSAJE ..  ]
-"364
-[; ;Mainfinal2.c: 364:             if(RCREG >= 48 && RCREG <= 57){
-[e $ ! && >= -> _RCREG `i -> 48 `i <= -> _RCREG `i -> 57 `i 197  ]
-{
-"365
-[; ;Mainfinal2.c: 365:                 VAL1 = RCREG;
-[e = _VAL1 _RCREG ]
-"366
-[; ;Mainfinal2.c: 366:                 canales();
-[e ( _canales ..  ]
-"367
-[; ;Mainfinal2.c: 367:                 }
-}
-[e :U 197 ]
-"368
-[; ;Mainfinal2.c: 368:             break;
-[e $U 192  ]
 "369
-[; ;Mainfinal2.c: 369:         case 51:
-[e :U 198 ]
+[; ;Mainfinal2.c: 369:     OP = RCREG;
+[e = _OP _RCREG ]
 "370
-[; ;Mainfinal2.c: 370:             MENSAJE();
-[e ( _MENSAJE ..  ]
-"371
-[; ;Mainfinal2.c: 371:             if(RCREG >= 48 && RCREG <= 57){
-[e $ ! && >= -> _RCREG `i -> 48 `i <= -> _RCREG `i -> 57 `i 199  ]
+[; ;Mainfinal2.c: 370:     switch(OP){
+[e $U 198  ]
 {
-"372
-[; ;Mainfinal2.c: 372:                 VAL2 = RCREG;
-[e = _VAL2 _RCREG ]
-"373
-[; ;Mainfinal2.c: 373:                 canales();
-[e ( _canales ..  ]
-"374
-[; ;Mainfinal2.c: 374:             }
-}
+"371
+[; ;Mainfinal2.c: 371:         case 49:
 [e :U 199 ]
+"372
+[; ;Mainfinal2.c: 372:             MENSAJE();
+[e ( _MENSAJE ..  ]
+"373
+[; ;Mainfinal2.c: 373:             if(RCREG >= 48 && RCREG <= 57){
+[e $ ! && >= -> _RCREG `i -> 48 `i <= -> _RCREG `i -> 57 `i 200  ]
+{
+"374
+[; ;Mainfinal2.c: 374:                 VAL = RCREG;
+[e = _VAL _RCREG ]
 "375
-[; ;Mainfinal2.c: 375:             break;
-[e $U 192  ]
+[; ;Mainfinal2.c: 375:                 canales();
+[e ( _canales ..  ]
 "376
-[; ;Mainfinal2.c: 376:         case 52:
+[; ;Mainfinal2.c: 376:             }
+}
 [e :U 200 ]
 "377
-[; ;Mainfinal2.c: 377:             MENSAJE();
-[e ( _MENSAJE ..  ]
+[; ;Mainfinal2.c: 377:             break;
+[e $U 197  ]
 "378
-[; ;Mainfinal2.c: 378:             if(RCREG >= 48 && RCREG <= 57){
-[e $ ! && >= -> _RCREG `i -> 48 `i <= -> _RCREG `i -> 57 `i 201  ]
-{
-"379
-[; ;Mainfinal2.c: 379:                 VAL3 = RCREG;
-[e = _VAL3 _RCREG ]
-"380
-[; ;Mainfinal2.c: 380:                 canales();
-[e ( _canales ..  ]
-"381
-[; ;Mainfinal2.c: 381:             }
-}
+[; ;Mainfinal2.c: 378:         case 50:
 [e :U 201 ]
+"379
+[; ;Mainfinal2.c: 379:             MENSAJE();
+[e ( _MENSAJE ..  ]
+"380
+[; ;Mainfinal2.c: 380:             if(RCREG >= 48 && RCREG <= 57){
+[e $ ! && >= -> _RCREG `i -> 48 `i <= -> _RCREG `i -> 57 `i 202  ]
+{
+"381
+[; ;Mainfinal2.c: 381:                 VAL1 = RCREG;
+[e = _VAL1 _RCREG ]
 "382
-[; ;Mainfinal2.c: 382:             break;
-[e $U 192  ]
+[; ;Mainfinal2.c: 382:                 canales();
+[e ( _canales ..  ]
 "383
-[; ;Mainfinal2.c: 383:      }
+[; ;Mainfinal2.c: 383:                 }
 }
-[e $U 192  ]
-[e :U 193 ]
-[e [\ -> _OP `i , $ -> 49 `i 194
- , $ -> 50 `i 196
- , $ -> 51 `i 198
- , $ -> 52 `i 200
- 192 ]
-[e :U 192 ]
+[e :U 202 ]
 "384
-[; ;Mainfinal2.c: 384:  }
-[e :UE 191 ]
-}
+[; ;Mainfinal2.c: 384:             break;
+[e $U 197  ]
+"385
+[; ;Mainfinal2.c: 385:         case 51:
+[e :U 203 ]
 "386
-[; ;Mainfinal2.c: 386: void MENSAJE(void){
+[; ;Mainfinal2.c: 386:             MENSAJE();
+[e ( _MENSAJE ..  ]
+"387
+[; ;Mainfinal2.c: 387:             if(RCREG >= 48 && RCREG <= 57){
+[e $ ! && >= -> _RCREG `i -> 48 `i <= -> _RCREG `i -> 57 `i 204  ]
+{
+"388
+[; ;Mainfinal2.c: 388:                 VAL2 = RCREG;
+[e = _VAL2 _RCREG ]
+"389
+[; ;Mainfinal2.c: 389:                 canales();
+[e ( _canales ..  ]
+"390
+[; ;Mainfinal2.c: 390:             }
+}
+[e :U 204 ]
+"391
+[; ;Mainfinal2.c: 391:             break;
+[e $U 197  ]
+"392
+[; ;Mainfinal2.c: 392:         case 52:
+[e :U 205 ]
+"393
+[; ;Mainfinal2.c: 393:             MENSAJE();
+[e ( _MENSAJE ..  ]
+"394
+[; ;Mainfinal2.c: 394:             if(RCREG >= 48 && RCREG <= 57){
+[e $ ! && >= -> _RCREG `i -> 48 `i <= -> _RCREG `i -> 57 `i 206  ]
+{
+"395
+[; ;Mainfinal2.c: 395:                 VAL3 = RCREG;
+[e = _VAL3 _RCREG ]
+"396
+[; ;Mainfinal2.c: 396:                 canales();
+[e ( _canales ..  ]
+"397
+[; ;Mainfinal2.c: 397:             }
+}
+[e :U 206 ]
+"398
+[; ;Mainfinal2.c: 398:             break;
+[e $U 197  ]
+"399
+[; ;Mainfinal2.c: 399:      }
+}
+[e $U 197  ]
+[e :U 198 ]
+[e [\ -> _OP `i , $ -> 49 `i 199
+ , $ -> 50 `i 201
+ , $ -> 51 `i 203
+ , $ -> 52 `i 205
+ 197 ]
+[e :U 197 ]
+"400
+[; ;Mainfinal2.c: 400:  }
+[e :UE 196 ]
+}
+"402
+[; ;Mainfinal2.c: 402: void MENSAJE(void){
 [v _MENSAJE `(v ~T0 @X0 1 ef ]
 {
 [e :U _MENSAJE ]
 [f ]
-"387
-[; ;Mainfinal2.c: 387:     _delay((unsigned long)((500)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"388
-[; ;Mainfinal2.c: 388:     VALOR = 0;
-[e = _VALOR -> -> 0 `i `uc ]
-"389
-[; ;Mainfinal2.c: 389:     do{VALOR++;
-[e :U 205 ]
-{
-[e ++ _VALOR -> -> 1 `i `uc ]
-"390
-[; ;Mainfinal2.c: 390:     TXREG = M[VALOR];
-[e = _TXREG *U + &U _M * -> _VALOR `ux -> -> # *U &U _M `ui `ux ]
-"391
-[; ;Mainfinal2.c: 391:     _delay((unsigned long)((50)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"392
-[; ;Mainfinal2.c: 392:     }
-}
-[e $ <= -> _VALOR `i -> 36 `i 205  ]
-[e :U 204 ]
-"394
-[; ;Mainfinal2.c: 394:     while(RCIF == 0);
-[e $U 206  ]
-[e :U 207 ]
-[e :U 206 ]
-[e $ == -> _RCIF `i -> 0 `i 207  ]
-[e :U 208 ]
-"395
-[; ;Mainfinal2.c: 395:     OP = 0;
-[e = _OP -> -> 0 `i `uc ]
-"396
-[; ;Mainfinal2.c: 396:     }
-[e :UE 202 ]
-}
-"398
-[; ;Mainfinal2.c: 398: void MTMR0(void){
-[v _MTMR0 `(v ~T0 @X0 1 ef ]
-{
-[e :U _MTMR0 ]
-[f ]
-"399
-[; ;Mainfinal2.c: 399:     PWM1++;
-[e ++ _PWM1 -> -> 1 `i `uc ]
-"400
-[; ;Mainfinal2.c: 400:         if(PWM1 <= POT3){
-[e $ ! <= -> _PWM1 `i -> _POT3 `i 210  ]
-{
-"401
-[; ;Mainfinal2.c: 401:             PORTCbits.RC3 = 1;
-[e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
-"402
-[; ;Mainfinal2.c: 402:         }
-}
-[e $U 211  ]
 "403
-[; ;Mainfinal2.c: 403:         else{
+[; ;Mainfinal2.c: 403:     _delay((unsigned long)((500)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"404
+[; ;Mainfinal2.c: 404:     VALOR = 0;
+[e = _VALOR -> -> 0 `i `uc ]
+"405
+[; ;Mainfinal2.c: 405:     do{VALOR++;
 [e :U 210 ]
 {
-"404
-[; ;Mainfinal2.c: 404:             PORTCbits.RC3 = 0;
-[e = . . _PORTCbits 0 3 -> -> 0 `i `uc ]
-"405
-[; ;Mainfinal2.c: 405:         }
-}
-[e :U 211 ]
+[e ++ _VALOR -> -> 1 `i `uc ]
 "406
-[; ;Mainfinal2.c: 406:         if(PWM1 <= POT4){
-[e $ ! <= -> _PWM1 `i -> _POT4 `i 212  ]
-{
+[; ;Mainfinal2.c: 406:     TXREG = M[VALOR];
+[e = _TXREG *U + &U _M * -> _VALOR `ux -> -> # *U &U _M `ui `ux ]
 "407
-[; ;Mainfinal2.c: 407:             PORTCbits.RC4 = 1;
-[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
+[; ;Mainfinal2.c: 407:     _delay((unsigned long)((50)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "408
-[; ;Mainfinal2.c: 408:         }
+[; ;Mainfinal2.c: 408:     }
 }
-[e $U 213  ]
-"409
-[; ;Mainfinal2.c: 409:         else{
-[e :U 212 ]
-{
+[e $ <= -> _VALOR `i -> 36 `i 210  ]
+[e :U 209 ]
 "410
-[; ;Mainfinal2.c: 410:             PORTCbits.RC4 = 0;
-[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
-"411
-[; ;Mainfinal2.c: 411:         }
-}
+[; ;Mainfinal2.c: 410:     while(RCIF == 0);
+[e $U 211  ]
+[e :U 212 ]
+[e :U 211 ]
+[e $ == -> _RCIF `i -> 0 `i 212  ]
 [e :U 213 ]
+"411
+[; ;Mainfinal2.c: 411:     OP = 0;
+[e = _OP -> -> 0 `i `uc ]
 "412
-[; ;Mainfinal2.c: 412:         if(PWM1 >= 250){
-[e $ ! >= -> _PWM1 `i -> 250 `i 214  ]
-{
-"413
-[; ;Mainfinal2.c: 413:             PWM1 = 0;
-[e = _PWM1 -> -> 0 `i `uc ]
-"414
-[; ;Mainfinal2.c: 414:         }
-}
-[e :U 214 ]
-"415
-[; ;Mainfinal2.c: 415:     }
-[e :UE 209 ]
+[; ;Mainfinal2.c: 412:     }
+[e :UE 207 ]
 }

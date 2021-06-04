@@ -65,9 +65,9 @@ uint8_t VALOR1;
 uint8_t VALOR2;
 uint8_t FLAG;
 uint8_t OP;
-unsigned char I[85] = " \rComo desea controlar los servomotores?\r1) Manualmente \r2) Con comunicacion serial\r";
-unsigned char R[60] = " \rQue servomotor desea mover?\r1) PD \r2) PI \r3) CD \r4) CI\r";
-unsigned char M[36] = " \rIngrese un numero entre 0 y 9\r";
+unsigned char I[72] = " \nBienvenido, presione 1 para continuar con la comunicacion serial\n";
+unsigned char R[60] = " \nQue servomotor desea mover?\n1) PD \n2) PI \n3) CD \n4) CI\n";
+unsigned char M[36] = " \nIngrese un numero entre 0 y 9\n";
 
 //******************************************************************************
 //                 P R O T O T I P O S  de  F U N C I O N E S
@@ -103,6 +103,29 @@ void __interrupt() isr(void){
         PIR1bits.ADIF = 0;          // Limpiar bandera   
        }
         
+    // INTERRUPCIÓN DEL TIMER0
+    if(INTCONbits.T0IF == 1){       // Bandera del TMR0 encendida
+        PWM1++;                     // Incrementa el contador para el PWM del S1
+        if(PWM1 <= POT3){           // El valor del período depende del POT3    
+            PORTCbits.RC3 = 1;      // Encender el pin
+        }
+        else{                       
+            PORTCbits.RC3 = 0;      // Apagar el pin
+        }
+        if(PWM1 <= POT4){           // El valor del período depende del POT4  
+            PORTCbits.RC4 = 1;      // Encender el pin
+        }
+        else{
+            PORTCbits.RC4 = 0;      // Apagar el pin
+        }
+        if(PWM1 >= 250){            // Si se cumplen los 20ms reiniciar variable
+            PWM1 = 0;
+        }
+        TMR0 = _tmr0_value;         // Inicializar TMR0
+        INTCONbits.T0IF = 0;        // Limpiar bandera del TMR0
+    } 
+    
+    
     // INTERRUPCIÓN DEL PUERTO B
     if(INTCONbits.RBIF == 1){ 
         if(PORTBbits.RB2 == 0){
@@ -113,7 +136,6 @@ void __interrupt() isr(void){
         }
             TXSTAbits.TXEN = 0; 
             }
-        
         if(PORTBbits.RB0 == 0){     // Presionado porque son pull ups
             PORTDbits.RD0 = 1;
             PORTDbits.RD1 = 0;
@@ -136,19 +158,11 @@ void __interrupt() isr(void){
             CCPR2L = val2;
             POT3 = val3;
             POT4 = val4;
-            MTMR0();
             __delay_ms(3000);
             ADCON0bits.ADON = 1;
         }
         INTCONbits.RBIF = 0;    // Limpiar la bandera del IOCB
     }
-    
-    // INTERRUPCIÓN DEL TIMER0
-    if(INTCONbits.T0IF == 1){       // Bandera del TMR0 encendida
-        MTMR0();
-        TMR0 = _tmr0_value;         // Inicializar TMR0
-        INTCONbits.T0IF = 0;        // Limpiar bandera del TMR0
-    } 
     
     PIR1bits.TMR2IF = 0;        // Limpiar la bandera del TMR2
 }
@@ -240,6 +254,7 @@ void main(void){
     setup();                        // Llamar al set up       
     while (1){  
         canales();
+       //UART();
     }
 }
 //******************************************************************************
@@ -253,7 +268,7 @@ void UART(void){
                 TXREG = I[VALOR];   
                 __delay_ms(50); 
             } 
-            while(VALOR<=95);     // Cantidad de carcateres del Array
+            while(VALOR<=72);     // Cantidad de carcateres del Array
             while(RCIF == 0);
             INS();                // Llamar al mensaje a mostrar )
  } 
@@ -329,13 +344,10 @@ uint8_t leer(uint8_t address){
 // Mensaje a desplegar
 void INS(void){  
     OP = RCREG;
+    // I[72] = " \nBienvenido, presione 1 para continuar con la comunicacion serial\n";
     switch(OP){
             case 49:                      // Si se presiona el #1 MANUALMENTE
-                TXSTAbits.TXEN = 0;       // Apagar la bandera de transmisión
-                OP = 0;
-                break;   
-            case 50:                      // Si se presiona el #2 COM. SERIAL
-                    __delay_ms(500); 
+                __delay_ms(500); 
                     VALOR = 0;
                     do{VALOR++;          // Incrementar la variable
                         TXREG = R[VALOR];   
@@ -346,6 +358,10 @@ void INS(void){
                     OP = 0;               // Limpiar la variable que hace el cambio
                     OTRO();
                     break;  
+            case 50:                      // Si se presiona el #2 COM. SERIAL
+                    TXSTAbits.TXEN = 0;       // Apagar la bandera de transmisión
+                OP = 0;
+                break;   
         }
 }
 
@@ -395,21 +411,3 @@ void MENSAJE(void){
     OP = 0;              // Limpiar la variable que hace el cambio
     }
 
-void MTMR0(void){ 
-    PWM1++;                     // Incrementa el contador para el PWM del S1
-        if(PWM1 <= POT3){           // El valor del período depende del POT3    
-            PORTCbits.RC3 = 1;      // Encender el pin
-        }
-        else{                       
-            PORTCbits.RC3 = 0;      // Apagar el pin
-        }
-        if(PWM1 <= POT4){           // El valor del período depende del POT4  
-            PORTCbits.RC4 = 1;      // Encender el pin
-        }
-        else{
-            PORTCbits.RC4 = 0;      // Apagar el pin
-        }
-        if(PWM1 >= 250){            // Si se cumplen los 20ms reiniciar variable
-            PWM1 = 0;
-        }
-    }

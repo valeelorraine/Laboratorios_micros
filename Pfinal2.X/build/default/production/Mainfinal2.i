@@ -2664,9 +2664,9 @@ uint8_t VALOR1;
 uint8_t VALOR2;
 uint8_t FLAG;
 uint8_t OP;
-unsigned char I[85] = " \rComo desea controlar los servomotores?\r1) Manualmente \r2) Con comunicacion serial\r";
-unsigned char R[60] = " \rQue servomotor desea mover?\r1) PD \r2) PI \r3) CD \r4) CI\r";
-unsigned char M[36] = " \rIngrese un numero entre 0 y 9\r";
+unsigned char I[72] = " \nBienvenido, presione 1 para continuar con la comunicacion serial\n";
+unsigned char R[60] = " \nQue servomotor desea mover?\n1) PD \n2) PI \n3) CD \n4) CI\n";
+unsigned char M[36] = " \nIngrese un numero entre 0 y 9\n";
 
 
 
@@ -2703,6 +2703,29 @@ void __attribute__((picinterrupt(("")))) isr(void){
        }
 
 
+    if(INTCONbits.T0IF == 1){
+        PWM1++;
+        if(PWM1 <= POT3){
+            PORTCbits.RC3 = 1;
+        }
+        else{
+            PORTCbits.RC3 = 0;
+        }
+        if(PWM1 <= POT4){
+            PORTCbits.RC4 = 1;
+        }
+        else{
+            PORTCbits.RC4 = 0;
+        }
+        if(PWM1 >= 250){
+            PWM1 = 0;
+        }
+        TMR0 = 176;
+        INTCONbits.T0IF = 0;
+    }
+
+
+
     if(INTCONbits.RBIF == 1){
         if(PORTBbits.RB2 == 0){
             FLAG = 1;
@@ -2712,7 +2735,6 @@ void __attribute__((picinterrupt(("")))) isr(void){
         }
             TXSTAbits.TXEN = 0;
             }
-
         if(PORTBbits.RB0 == 0){
             PORTDbits.RD0 = 1;
             PORTDbits.RD1 = 0;
@@ -2735,18 +2757,10 @@ void __attribute__((picinterrupt(("")))) isr(void){
             CCPR2L = val2;
             POT3 = val3;
             POT4 = val4;
-            MTMR0();
             _delay((unsigned long)((3000)*(4000000/4000.0)));
             ADCON0bits.ADON = 1;
         }
         INTCONbits.RBIF = 0;
-    }
-
-
-    if(INTCONbits.T0IF == 1){
-        MTMR0();
-        TMR0 = 176;
-        INTCONbits.T0IF = 0;
     }
 
     PIR1bits.TMR2IF = 0;
@@ -2839,6 +2853,7 @@ void main(void){
     setup();
     while (1){
         canales();
+
     }
 }
 
@@ -2852,7 +2867,7 @@ void UART(void){
                 TXREG = I[VALOR];
                 _delay((unsigned long)((50)*(4000000/4000.0)));
             }
-            while(VALOR<=95);
+            while(VALOR<=72);
             while(RCIF == 0);
             INS();
  }
@@ -2928,13 +2943,10 @@ uint8_t leer(uint8_t address){
 
 void INS(void){
     OP = RCREG;
+
     switch(OP){
             case 49:
-                TXSTAbits.TXEN = 0;
-                OP = 0;
-                break;
-            case 50:
-                    _delay((unsigned long)((500)*(4000000/4000.0)));
+                _delay((unsigned long)((500)*(4000000/4000.0)));
                     VALOR = 0;
                     do{VALOR++;
                         TXREG = R[VALOR];
@@ -2945,6 +2957,10 @@ void INS(void){
                     OP = 0;
                     OTRO();
                     break;
+            case 50:
+                    TXSTAbits.TXEN = 0;
+                OP = 0;
+                break;
         }
 }
 
@@ -2992,23 +3008,4 @@ void MENSAJE(void){
     while(VALOR<=36);
     while(RCIF == 0);
     OP = 0;
-    }
-
-void MTMR0(void){
-    PWM1++;
-        if(PWM1 <= POT3){
-            PORTCbits.RC3 = 1;
-        }
-        else{
-            PORTCbits.RC3 = 0;
-        }
-        if(PWM1 <= POT4){
-            PORTCbits.RC4 = 1;
-        }
-        else{
-            PORTCbits.RC4 = 0;
-        }
-        if(PWM1 >= 250){
-            PWM1 = 0;
-        }
     }

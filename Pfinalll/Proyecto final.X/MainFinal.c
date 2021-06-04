@@ -195,15 +195,9 @@ void canales(uint8_t VAL){
                 break;
          }
 }
-       
-//void contadores(void){  
-//    Contador1 = 0;
-//    Contador2 = 1;
-//    Contador3 = 1;
-//}         
 
-
-// ALGO AHI
+//INTENTO CON PULLUP
+//
 ///* 
 // * File:   Main7.c (Laboratorio No. 7)
 // * Author: Valerie Lorraine Sofia Valdez Trujillo
@@ -247,117 +241,121 @@ void canales(uint8_t VAL){
 ////******************************************************************************
 ////             D I R E C T I V A S  del  C O M P I L A D O R
 ////******************************************************************************
-//#define _tmr0_value 6            // N = 6 para obtener un overflow de 1ms
+//#define _tmr0_value 176            // N = 176 para obtener un overflow de 0.08ms
 //#define _XTAL_FREQ 4000000         // Frecuencia de operación
+//#define addressEEPROM 0X00
 //
 ////******************************************************************************
 ////                           V A R I A B L E S
 ////******************************************************************************
 //uint8_t VAL;                       // Variable para los potenciómetros
-//uint8_t POT3;
-//uint8_t PWM1; // cambiarla a 16
+//uint8_t PWM1;                      // Variable para el 1er PWM creado
+//uint8_t PWM2;                      // Variable para el 2do PWM creado
+//uint8_t POT3;                      // Variable para el 3er POT
+//uint8_t POT4;                      // Variable para el 4to POT
+//uint8_t val1;                      // Valor 1er modo
+//uint8_t val2;                      // Valor 2do modo
+//uint8_t val3;                      // Valor 3er modo
+//char guardar = 103;                // g en ASCII
+//char rep = 114;                    // r en ASCII
+//unsigned char I[96] = " Que accion desea realizar?\r1) Grabar \r2) Reproducir\r3) Controlar Servos\r";
+//int VALOR = 0;
+//int VALOR1 = 0;
+//int OP;
 //
 ////******************************************************************************
 ////                 P R O T O T I P O S  de  F U N C I O N E S
 ////******************************************************************************
 //void setup(void);
-////void contadores(void);
 //void canales(uint8_t VAL);
+//void escribir(uint8_t data, uint8_t address);
+//uint8_t leer(uint8_t address);
+//void UART(void);
+//void INS(void);                    // Mensaje a desplegar
+//
 ////******************************************************************************
 ////                     F U N C I Ó N   para   I S R
 ////******************************************************************************
-//
 //void __interrupt() isr(void){  
-//    if(PIR1bits.ADIF == 1){  
-//        VAL = ADRESH;
+//    if(PIR1bits.ADIF == 1){         // Interrupción del ADC
+//        VAL = ADRESH;               // Asignarle valor de ADRESH a la variable
 //        PIR1bits.ADIF = 0;          // Limpiar bandera 
 //        }
-//    
-//    
-//    // Parte 1
-//    //TMR0 = 50 + 100;
-//    //PORTCbits.RC3 = 1;
-//    
-//    // Parte 2 
-//    //TMR0 = 100;
-//    // PORTCbits.RC3 = 0;
-//    
-//    //Paso 3 no se enciende
-//    // TMR0 = 0;
-//    
-//    // Paso 4
-//    // Este dura 0.5ms prendido
-//    //PORTCbits.RC4 = 1;
-//    
-//    // Paso 5
-//    // Apagarlo creo que lo demas para que dure 2.5ms
-//    
-//    //paso 6
-//    // TMR0 = 50 + 100;
-//    //PORTCbits.RC5 = 1;
-//    
+//
+//    //Interrupción del puerto B
+//    if(RBIF == 1){ 
+//    if(PORTBbits.RB0 == 0){          // Presionado porque son pull ups
+//        escribir(POT3, 0X00);
+//    }
+//    if(PORTBbits.RB1 == 0){          // Presionado porque son pull ups
+//       val1 = leer(0X00);
+//       POT3 = val1;
+//        }
+//    RBIF = 0;
+//    }
 //    
 //    
 ////Contador de 300
 //    if(INTCONbits.T0IF == 1){       // Bandera del TMR0 encendida
 //        PWM1++;                     // Incrementa el contador para el PWM del S1
 //        
-//        if(PWM1 <= 3){
+//        if(PWM1 <= POT3){           // El valor del período depende del POT3    
+//            PORTCbits.RC3 = 1;      // Encender el pin
+//        }
+//        else{                       
+//            PORTCbits.RC3 = 0;      // Apagar el pin
+//        }
+//        
+//        if(PWM1 <= POT4){           // El valor del período depende del POT4  
 //        //    TMR0 = POT3;
-//            PORTCbits.RC3 = 1; 
+//            PORTCbits.RC4 = 1;      // Encender el pin
 //        }
 //        else{
-//            PORTCbits.RC3 = 0;
+//            PORTCbits.RC4 = 0;      // Apagar el pin
 //        }
-//        if(PWM1 >= 20){
-//           // TMR0 = POT3;
+//        
+//        if(PWM1 >= 250){            // Si se cumplen los 20ms reiniciar variable
 //            PWM1 = 0;
 //        }
 //        
-////       if(PWM1 >= 50){              // Comparacion de la variable y el contador 
-////            PORTCbits.RC3 = 1;
-////            PWM1 = 0;
-////        } 
-////       if(PWM1 >= POT3){            // Comparacion de la variable y el contador 
-////            PORTCbits.RC3 = 0;
-////        }
-//        TMR0 = _tmr0_value;      // Inicializar TMR0
-//        INTCONbits.T0IF = 0;            // Apagar la bandera
+//        TMR0 = _tmr0_value;         // Inicializar TMR0
+//        INTCONbits.T0IF = 0;        // Limpiar bandera del TMR0
 //        } 
-//        PIR1bits.TMR2IF = 0;            // Limpiar la bandera del TMR2
+//        PIR1bits.TMR2IF = 0;        // Limpiar la bandera del TMR2
 //    }
-//
 //
 ////******************************************************************************
 ////                      C O N F I G U R A C I Ó N
 ////******************************************************************************
-//
 //void setup(void){
 //    // Configuración de puertos
-//    ANSEL = 0B00001111;          // Pines digitales en el puerto A
+//    ANSEL = 0B00011111;          // Pines digitales en el puerto A
 //    ANSELH = 0X00;               // Puerto B digital
 //    
-//    TRISA = 0B00001111;          // Puertos como outputs      
+//    TRISA = 0B00011111;          // Puertos como outputs   
+//    TRISB = 0B00000011;
 //    TRISC = 0X00; 
 //    TRISD = 0X00; 
+//    TRISCbits.TRISC6 = 0;       // RX entrada Y TX salida
+//    TRISCbits.TRISC7 = 1;       // RX entrada Y TX salida
 //    
-//    PORTA = 0X00;                // Inicializar los puertos
+//    PORTA = 0X00;               // Inicializar los puertos
+//    PORTB = 0X00;
 //    PORTC = 0X00;
+//    PORTD = 0X00;
 //    
-//    // Configuración del TMR0 con PRESCALER 1:16, N = 100 y un overflow de 2.5ms
-//    OPTION_REG = 0x81;          
+//    //Configuración del WEAK PULL UP
+//    OPTION_REGbits.nRBPU = 0;  // Internal pull ups habilitados
+//    WPUBbits.WPUB0 = 1;        // Botón 1
+//    WPUBbits.WPUB1 = 1;        // Botón 2
+//    
+//    // Configuración del TMR0 con PRESCALER 1:1, N = 176 y un overflow de 0.08ms
+//    OPTION_REG = 0x88;          
 //    TMR0 = _tmr0_value;           // Inicializar TMR0
 //    INTCONbits.GIE = 1;           // GIE Encender interrupción de global
 //    INTCONbits.PEIE = 1;          // PEIE 
 //    INTCONbits.T0IE = 1;          // T0IE Encender interrupción de OVERFLOW TMR0 
 //    INTCONbits.T0IF = 0;          // Limpiar la bandera del overflow TMR0
-//    
-//    // RBPU INTEDG T0CS T0SE PSA PS 
-//    TMR0 = _tmr0_value;          // Inicializar TMR0
-//    INTCONbits.GIE = 1;          // GIE Encender interrupción de global
-//    INTCONbits.PEIE = 1;         // PEIE 
-//    INTCONbits.T0IE = 1;         // T0IE Encender interrupción de OVERFLOW TMR0 
-//    INTCONbits.T0IF = 0;         // Limpiar la bandera del overflow TMR0
 //    
 //    // Configuración del oscilador, TMR2
 //    OSCCONbits.SCS = 1;          // Utilizar el oscilador itnterno
@@ -384,32 +382,58 @@ void canales(uint8_t VAL){
 //    PR2 = 250;                   // Período del pwm 4ms
 //    CCP1CON = 0B00001100;        // El CCP1 se encuentra en Modo PWM 
 //    CCP2CON = 0B00001111;        // El CCP2 se encuentra en modoo PWM
+//    
+//    // Configuración UART transmisor y receptor asíncrono
+//    PIR1bits.RCIF = 0;          // Bandera
+//    PIE1bits.RCIE = 0;          // Habilitar la interrución por el modo receptor
+//    PIE1bits.TXIE = 0;          // Habilitar bandera de interrupción
+//    TXSTAbits.TX9 = 0;          // 8 bits
+//    TXSTAbits.TXEN = 1;         // Se habilita el transmisor
+//    TXSTAbits.SYNC = 0;         // Se opera de forma asíncrona y de 8 bits
+//    TXSTAbits.BRGH = 1; 
+//    RCSTAbits.RX9 = 0;          // 8 bits
+//    RCSTAbits.CREN = 1;         // Receptor se habilita
+//    RCSTAbits.SPEN = 1;         // Módulo ON y el pin TX se config. como salida
+//                                // y el RX como entrada
+//
+//    // Generador de baudios del USART
+//    BAUDCTLbits.BRG16 = 0;      // Activar el generador de baudios
+//    SPBRG = 25;                 // Para una velocidad de transmisión de 9600
+//    SPBRGH = 1; 
 //    }
+//
 ////******************************************************************************
 ////                         L O O P   P R I N C I P A L
 ////******************************************************************************
-//
 //void main(void){  
 //    setup();                            // Llamar al set up       
 //    while (1){  
 //        canales(VAL);
+//       // UART();
 //    }
 //}
 ////******************************************************************************
 ////                           F U N C I O N E S 
 ////******************************************************************************
-//
 //// Bit banging se refiere a manejar el PWM por tiempos manuales
 //void canales(uint8_t VAL){                // Switcheo de los canales
 //    if(ADCON0bits.GO == 0){
 //        switch(ADCON0bits.CHS){           
 //            case 0: 
 //                CCPR1L = ((0.247*VAL)+62);// Función para el servo
-//                ADCON0bits.CHS = 2;       // Canal 2
+//                ADCON0bits.CHS = 1;       // Canal 2
 //                __delay_us(100);          // Delay para activar una medición
 //                ADCON0bits.GO = 1;        // Comienza el ciclo del ADC
 //                break; 
-//                          
+//                
+//            case 1:                       // PWM codificado
+//                POT4 = ((0.049*VAL)+7);
+//                PORTD = POT4;
+//                ADCON0bits.CHS = 2;       // Canal 0
+//                __delay_us(250);          // Delay para activar una medición
+//                ADCON0bits.GO = 1;        // Comienza el ciclo del ADC
+//                break; 
+//                              
 //            case 2: 
 //                CCPR2L = ((0.247*VAL)+62);// Función para el servo
 //                ADCON0bits.CHS = 3;       // Canal 3
@@ -418,25 +442,101 @@ void canales(uint8_t VAL){
 //                break; 
 //                
 //            case 3:                       // PWM codificado
-//                //POT3 = ((3.92*VAL)+63536);// Función para el servo
-//  //              POT3 = (((0.369)*VAL)+6);
-//                POT3 = VAL; 
-//                if(POT3 <= 5){
-//                    POT3 = 5;
-//                }
-//                if(POT3 >= 25){
-//                    POT3 = 25;
-//                }
-////                TMR0 = POT3;
-//                PORTD = POT3;
-//                ADCON0bits.CHS = 0;       // Canal 0
-//                __delay_us(100);          // Delay para activar una medición
+//                POT3 = ((0.049*VAL)+7); 
+//                ADCON0bits.CHS = 0;       // Canal 1
+//                __delay_us(250);          // Delay para activar una medición
 //                ADCON0bits.GO = 1;        // Comienza el ciclo del ADC
 //                break; 
 //                
 //            default:
 //                break;
-//    
 //         }
 //    }
 //}
+//
+//// Función para escribir en la EEPROM
+//void escribir(uint8_t data, uint8_t address){ 
+//    EEADR = address;            // Dirección de mem. a la que se le va a escribir
+//    EEDAT = data;               // Valor a escribir
+//   
+//    EECON1bits.EEPGD = 0;       // Apuntar a la data memory
+//    EECON1bits.WREN = 1 ;       // Habilitar escritura
+//    INTCONbits.GIE = 0;         // Apagar las interrupciones globales
+//    
+//    EECON2 = 0X55;              // Secuencia necesaria para la escritura
+//    EECON2 = 0xAA;
+//    
+//    EECON1bits.WR = 1;          // Iniciar la escritura
+//    
+//    while(PIR2bits.EEIF == 0);  // Esperar al final de la escritura
+//    PIR2bits.EEIF = 0;          // Apagar la bandera
+//    
+//    EECON1bits.WREN = 0;        // Asegurar que no se está escribiendo
+//    INTCONbits.GIE = 0;         // Habilitar las interrupciones globales
+//   }  
+//
+//// Función para leer de la EEPROM
+//uint8_t leer(uint8_t address){   
+//    EEADR = address;             // Ingresar dirección
+//    EECON1bits.EEPGD = 0;        // Apuntar a la PROGRAM MEM.
+//    EECON1bits.RD = 1;           // Indicar que se leerá
+//    uint8_t data = EEDATA;       // El dato permanece en la variable
+//    return data;                 // Recueprar el dato 
+//}
+//
+//void UART(void){ 
+//// Para imprimir e mensaje en la terminal
+//        __delay_ms(500); 
+//            VALOR = 0;
+//            do{VALOR++;          // Incrementar la variable
+//                TXREG = I[VALOR];   
+//                __delay_ms(50); 
+//            } 
+//            while(VALOR<=95);     // Cantidad de carcateres del Array
+//            while(RCIF == 0);
+//            INS();                // Llamar al mensaje a mostrar )
+// } 
+//
+//// Mensaje a desplegar
+//void INS(void){  
+//    OP = RCREG;
+//    switch(OP){
+//            case 49:  
+//                __delay_ms(200); // Si presionan 1
+////                do{VALOR1++;               // Incrementar variable
+////                TXREG = DATO[VALOR1];      // Mostrar caracter
+////                __delay_ms(50); 
+////            } 
+////                while(VALOR1<=21);
+////                 VALOR1 = 0;              // Limpiar la variable que hace el cambio
+////                 OP = 0;
+//                break;
+//                
+//            case 50:                      // Si presionan 2
+//                 __delay_ms(500);
+//                while(RCIF == 0);         // Esperar a ingresar caracter
+//                PORTA = RCREG;            // El valor ingresado estará en PORTA
+//                OP = 0;                   // Limpiar la variable que hace el cambio
+//                break;
+//                
+//            case 51:                      // Si presionan 3
+//                __delay_ms(50);  
+//                while(RCIF == 0);         // Esperar a ingresar caracter
+//                PORTB = RCREG;            // El valor ingresado estará en PORTB
+//                OP = 0;                   // Limpiar la variable que hace el cambio
+//                break;
+//        }
+//     }
+
+
+
+//        __delay_ms(500); 
+//            VALOR = 0;
+//            do{VALOR++;          // Incrementar la variable
+//                TXREG = I[VALOR];   
+//                __delay_ms(50); 
+//            } 
+//            while(VALOR<=95);     // Cantidad de carcateres del Array
+//            while(RCIF == 0);
+//            INS();                // Llamar al mensaje a mostrar )
+// } 

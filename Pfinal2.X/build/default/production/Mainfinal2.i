@@ -2648,69 +2648,99 @@ typedef uint16_t uintptr_t;
 #pragma config WRT = OFF
 # 51 "Mainfinal2.c"
 uint8_t VAL;
+uint8_t VAL1;
+uint8_t VAL2;
+uint8_t VAL3;
 uint8_t PWM1;
 uint8_t PWM2;
 uint8_t POT3;
 uint8_t POT4;
-uint8_t RX;
-uint8_t modo;
-uint8_t modos;
 uint8_t val1;
 uint8_t val2;
 uint8_t val3;
-char guardar = 103;
-char rep = 114;
+uint8_t val4;
+uint8_t VALOR = 0;
+uint8_t VALOR1;
+uint8_t VALOR2;
+uint8_t OP;
+unsigned char I[85] = " \rComo desea controlar los servomotores?\r1) Manualmente \r2) Con comunicacion serial\r";
+unsigned char R[60] = " \rQue servomotor desea mover?\r1) PD \r2) PI \r3) CD \r4) CI\r";
+unsigned char M[36] = " \rIngrese un numero entre 0 y 9\r";
 
 
 
 
 void setup(void);
-void canales(uint8_t VAL);
+void canales(void);
 void escribir(uint8_t data, uint8_t address);
 uint8_t leer(uint8_t address);
-void play(void);
-void record(void);
+void UART(void);
+void INS(void);
+void OTRO(void);
+void MENSAJE(void);
+void MTMR0(void);
 
 
 
 void __attribute__((picinterrupt(("")))) isr(void){
     if(PIR1bits.ADIF == 1){
-        VAL = ADRESH;
+        switch(ADCON0bits.CHS){
+            case 0:
+                VAL = ADRESH;
+                break;
+            case 1:
+                VAL1 = ADRESH;
+                break;
+            case 2:
+                VAL2 = ADRESH;
+                break;
+            case 3:
+                VAL3 = ADRESH;
+                break;
+            }
         PIR1bits.ADIF = 0;
-        }
+       }
 
-    if(PIR1bits.RCIF == 1){
-        RX = RCREG;
+
+    if(INTCONbits.RBIF == 1){
+        if(PORTBbits.RB0 == 0){
+            PORTDbits.RD0 = 1;
+            PORTDbits.RD1 = 0;
+            escribir(VALOR1, 0x10);
+            escribir(VALOR2, 0x11);
+            escribir(POT3, 0X12);
+            escribir(POT4, 0X13);
+            _delay((unsigned long)((500)*(4000000/4000.0)));
         }
+        if(PORTBbits.RB1 == 0){
+            ADCON0bits.ADON = 0;
+            PORTDbits.RD0 = 0;
+            PORTDbits.RD1 = 1;
+            val1 = leer(0X10);
+            val2 = leer(0x11);
+            val3 = leer(0x12);
+            val4 = leer(0x13);
+
+            CCPR1L = val1;
+            CCPR2L = val2;
+            POT3 = val3;
+            POT4 = val4;
+            MTMR0();
+            _delay((unsigned long)((3000)*(4000000/4000.0)));
+            ADCON0bits.ADON = 1;
+        }
+        INTCONbits.RBIF = 0;
+    }
 
 
     if(INTCONbits.T0IF == 1){
-        PWM1++;
-
-        if(PWM1 <= POT3){
-            PORTCbits.RC3 = 1;
-        }
-        else{
-            PORTCbits.RC3 = 0;
-        }
-
-        if(PWM1 <= POT4){
-
-            PORTCbits.RC4 = 1;
-        }
-        else{
-            PORTCbits.RC4 = 0;
-        }
-
-        if(PWM1 >= 250){
-            PWM1 = 0;
-        }
-
+        MTMR0();
         TMR0 = 176;
         INTCONbits.T0IF = 0;
-        }
-        PIR1bits.TMR2IF = 0;
     }
+
+    PIR1bits.TMR2IF = 0;
+}
 
 
 
@@ -2721,11 +2751,10 @@ void setup(void){
     ANSELH = 0X00;
 
     TRISA = 0B00011111;
-    TRISB = 0B00000011;
-    TRISC = 0X00;
-    TRISD = 0X00;
-    TRISCbits.TRISC6 = 0;
-    TRISCbits.TRISC7 = 1;
+    TRISBbits.TRISB0 = 1;
+    TRISBbits.TRISB1 = 1;
+    TRISC = 0B10000000;
+    TRISD = 0B00;
 
     PORTA = 0X00;
     PORTB = 0X00;
@@ -2733,14 +2762,19 @@ void setup(void){
     PORTD = 0X00;
 
 
+    IOCB = 0xFF;
+    OPTION_REGbits.nRBPU = 0;
+    WPUB = 0B00000011;
 
 
-    OPTION_REG = 0x88;
+    OPTION_REG = 0B00001000;
     TMR0 = 176;
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
     INTCONbits.T0IE = 1;
     INTCONbits.T0IF = 0;
+    INTCONbits.RBIE = 1;
+    INTCONbits.RBIF = 0;
 
 
     OSCCONbits.SCS = 1;
@@ -2793,46 +2827,55 @@ void setup(void){
 void main(void){
     setup();
     while (1){
-        canales(VAL);
-        if(RX == guardar){
-            record();
-        }
-        if(RX == rep){
-            play();
-        }
+        canales();
+       UART();
     }
+}
+
+
+
+
+void UART(void){
+        _delay((unsigned long)((500)*(4000000/4000.0)));
+            VALOR = 0;
+            do{VALOR++;
+                TXREG = I[VALOR];
+                _delay((unsigned long)((50)*(4000000/4000.0)));
+            }
+            while(VALOR<=95);
+            while(RCIF == 0);
+            INS();
  }
 
 
-
-
-void canales(uint8_t VAL){
+void canales(){
     if(ADCON0bits.GO == 0){
         switch(ADCON0bits.CHS){
             case 0:
                 CCPR1L = ((0.247*VAL)+62);
+                VALOR1 = CCPR1L;
                 ADCON0bits.CHS = 1;
                 _delay((unsigned long)((100)*(4000000/4000000.0)));
                 ADCON0bits.GO = 1;
                 break;
 
             case 1:
-                POT4 = ((0.049*VAL)+7);
-                PORTD = POT4;
+                POT4 = ((0.049*VAL1)+7);
                 ADCON0bits.CHS = 2;
                 _delay((unsigned long)((250)*(4000000/4000000.0)));
                 ADCON0bits.GO = 1;
                 break;
 
             case 2:
-                CCPR2L = ((0.247*VAL)+62);
+                CCPR2L = ((0.247*VAL2)+62);
+                VALOR2 = CCPR2L;
                 ADCON0bits.CHS = 3;
                 _delay((unsigned long)((100)*(4000000/4000000.0)));
                 ADCON0bits.GO = 1;
                 break;
 
             case 3:
-                POT3 = ((0.049*VAL)+7);
+                POT3 = ((0.049*VAL3)+7);
                 ADCON0bits.CHS = 0;
                 _delay((unsigned long)((250)*(4000000/4000000.0)));
                 ADCON0bits.GO = 1;
@@ -2855,14 +2898,12 @@ void escribir(uint8_t data, uint8_t address){
 
     EECON2 = 0X55;
     EECON2 = 0xAA;
-
     EECON1bits.WR = 1;
 
     while(PIR2bits.EEIF == 0);
     PIR2bits.EEIF = 0;
-
     EECON1bits.WREN = 0;
-    INTCONbits.GIE = 1;
+    INTCONbits.GIE = 0;
    }
 
 
@@ -2874,50 +2915,89 @@ uint8_t leer(uint8_t address){
     return data;
 }
 
-void play(void){
-    RX = 0;
 
-    switch(modo){
-        case 0:
-            escribir(0x00, val1);
-            escribir(0x01, val2);
-            escribir(0x02, val3);
-            modos = 1;
-            break;
-        case 1:
-            escribir(0x03, val1);
-            escribir(0x04, val2);
-            escribir(0x05, val3);
-            break;
+void INS(void){
+    OP = RCREG;
+    switch(OP){
+            case 49:
+                OP = 0;
+                break;
+            case 50:
+                    _delay((unsigned long)((500)*(4000000/4000.0)));
+                    VALOR = 0;
+                    do{VALOR++;
+                        TXREG = R[VALOR];
+                        _delay((unsigned long)((50)*(4000000/4000.0)));
+                    }
+                    while(VALOR<=60);
+                        while(RCIF == 0);
+                    OP = 0;
+                    OTRO();
+                    break;
+        }
+}
 
-        case 2:
-            escribir(0x06, val1);
-            escribir(0x07, val2);
-            escribir(0x08, val3);
+void OTRO(void){
+    OP = RCREG;
+    switch(OP){
+        case 49:
+            MENSAJE();
+            if(RCREG >= 48 && RCREG <= 57){
+                VAL = RCREG;
+                canales();
+            }
             break;
-    }
-
+        case 50:
+            MENSAJE();
+            if(RCREG >= 48 && RCREG <= 57){
+                VAL1 = RCREG;
+                canales();
+                }
+            break;
+        case 51:
+            MENSAJE();
+            if(RCREG >= 48 && RCREG <= 57){
+                VAL2 = RCREG;
+                canales();
+            }
+            break;
+        case 52:
+            MENSAJE();
+            if(RCREG >= 48 && RCREG <= 57){
+                VAL3 = RCREG;
+                canales();
+            }
+            break;
+     }
  }
 
-void record(void){
-    RX = 0;
-    switch(modos){
-        case 0:
-            escribir(0x00, val1);
-            escribir(0x01, val2);
-            escribir(0x02, val3);
-            modos = 1;
-            break;
-        case 1:
-            escribir(0x03, val1);
-            escribir(0x04, val2);
-            escribir(0x05, val3);
-            break;
-
-        case 2:
-            escribir(0x06, val1);
-            escribir(0x07, val2);
-            escribir(0x08, val3);
-            break;
+void MENSAJE(void){
+    _delay((unsigned long)((500)*(4000000/4000.0)));
+    VALOR = 0;
+    do{VALOR++;
+    TXREG = M[VALOR];
+    _delay((unsigned long)((50)*(4000000/4000.0)));
     }
-}
+    while(VALOR<=36);
+    while(RCIF == 0);
+    OP = 0;
+    }
+
+void MTMR0(void){
+    PWM1++;
+        if(PWM1 <= POT3){
+            PORTCbits.RC3 = 1;
+        }
+        else{
+            PORTCbits.RC3 = 0;
+        }
+        if(PWM1 <= POT4){
+            PORTCbits.RC4 = 1;
+        }
+        else{
+            PORTCbits.RC4 = 0;
+        }
+        if(PWM1 >= 250){
+            PWM1 = 0;
+        }
+    }

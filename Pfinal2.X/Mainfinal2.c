@@ -63,6 +63,7 @@ uint8_t val4;
 uint8_t VALOR = 0;
 uint8_t VALOR1;
 uint8_t VALOR2;
+uint8_t FLAG;
 uint8_t OP;
 unsigned char I[85] = " \rComo desea controlar los servomotores?\r1) Manualmente \r2) Con comunicacion serial\r";
 unsigned char R[60] = " \rQue servomotor desea mover?\r1) PD \r2) PI \r3) CD \r4) CI\r";
@@ -104,6 +105,15 @@ void __interrupt() isr(void){
         
     // INTERRUPCIÓN DEL PUERTO B
     if(INTCONbits.RBIF == 1){ 
+        if(PORTBbits.RB2 == 0){
+            FLAG = 1;               // aCTIVAR BANDERA DEL UART
+            while(FLAG == 1){
+                TXSTAbits.TXEN = 1; 
+                UART();
+        }
+            TXSTAbits.TXEN = 0; 
+            }
+        
         if(PORTBbits.RB0 == 0){     // Presionado porque son pull ups
             PORTDbits.RD0 = 1;
             PORTDbits.RD1 = 0;
@@ -154,6 +164,7 @@ void setup(void){
     TRISA = 0B00011111;        // Puertos como outputs   
     TRISBbits.TRISB0 = 1;
     TRISBbits.TRISB1 = 1;
+    TRISBbits.TRISB2 = 1;
     TRISC = 0B10000000;
     TRISD = 0B00; 
     
@@ -165,7 +176,7 @@ void setup(void){
     // WEAK PULL UP
     IOCB = 0xFF; 
     OPTION_REGbits.nRBPU = 0;   // Internal pull ups habilitados
-    WPUB = 0B00000011;
+    WPUB = 0B00000111;
     
     // Configuración del TMR0, N = 176 y un overflow de 0.08ms
     OPTION_REG = 0B00001000;        
@@ -229,7 +240,6 @@ void main(void){
     setup();                        // Llamar al set up       
     while (1){  
         canales();
-       UART();
     }
 }
 //******************************************************************************
@@ -320,7 +330,8 @@ uint8_t leer(uint8_t address){
 void INS(void){  
     OP = RCREG;
     switch(OP){
-            case 49:                      // Si se presiona el #1 MANUALMENTE 
+            case 49:                      // Si se presiona el #1 MANUALMENTE
+                TXSTAbits.TXEN = 0;       // Apagar la bandera de transmisión
                 OP = 0;
                 break;   
             case 50:                      // Si se presiona el #2 COM. SERIAL

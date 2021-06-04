@@ -2662,6 +2662,7 @@ uint8_t val4;
 uint8_t VALOR = 0;
 uint8_t VALOR1;
 uint8_t VALOR2;
+uint8_t FLAG;
 uint8_t OP;
 unsigned char I[85] = " \rComo desea controlar los servomotores?\r1) Manualmente \r2) Con comunicacion serial\r";
 unsigned char R[60] = " \rQue servomotor desea mover?\r1) PD \r2) PI \r3) CD \r4) CI\r";
@@ -2703,6 +2704,15 @@ void __attribute__((picinterrupt(("")))) isr(void){
 
 
     if(INTCONbits.RBIF == 1){
+        if(PORTBbits.RB2 == 0){
+            FLAG = 1;
+            while(FLAG == 1){
+                TXSTAbits.TXEN = 1;
+                UART();
+        }
+            TXSTAbits.TXEN = 0;
+            }
+
         if(PORTBbits.RB0 == 0){
             PORTDbits.RD0 = 1;
             PORTDbits.RD1 = 0;
@@ -2753,6 +2763,7 @@ void setup(void){
     TRISA = 0B00011111;
     TRISBbits.TRISB0 = 1;
     TRISBbits.TRISB1 = 1;
+    TRISBbits.TRISB2 = 1;
     TRISC = 0B10000000;
     TRISD = 0B00;
 
@@ -2764,7 +2775,7 @@ void setup(void){
 
     IOCB = 0xFF;
     OPTION_REGbits.nRBPU = 0;
-    WPUB = 0B00000011;
+    WPUB = 0B00000111;
 
 
     OPTION_REG = 0B00001000;
@@ -2828,7 +2839,6 @@ void main(void){
     setup();
     while (1){
         canales();
-       UART();
     }
 }
 
@@ -2920,6 +2930,7 @@ void INS(void){
     OP = RCREG;
     switch(OP){
             case 49:
+                TXSTAbits.TXEN = 0;
                 OP = 0;
                 break;
             case 50:

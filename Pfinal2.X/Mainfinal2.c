@@ -59,12 +59,12 @@ uint8_t POT4;                      // Variable para el 4to POT
 uint8_t val1;                      // Valor 1er modo
 uint8_t val2;                      // Valor 2do modo
 uint8_t val3;                      // Valor 3er modo
-uint8_t val4;
+uint8_t val4;                      
 uint8_t VALOR = 0;
 uint8_t VALOR1;
 uint8_t VALOR2;
-uint8_t FLAG;
-uint8_t OP;
+uint8_t FLAG;                      // Bandera del UART
+uint8_t OP;                        // Opción para desplegar mensaje
 unsigned char I[72] = " \nBienvenido, presione 1 para continuar con la comunicacion serial\n";
 unsigned char R[60] = " \nQue servomotor desea mover?\n1) PD \n2) PI \n3) CD \n4) CI\n";
 unsigned char M[36] = " \nIngrese un numero entre 0 y 9\n";
@@ -72,13 +72,13 @@ unsigned char M[36] = " \nIngrese un numero entre 0 y 9\n";
 //******************************************************************************
 //                 P R O T O T I P O S  de  F U N C I O N E S
 //******************************************************************************
-void setup(void);
-void canales(void);
+void setup(void);                   // Configuraciones
+void canales(void);                 // Switcheo de pots con servos
 void escribir(uint8_t data, uint8_t address);
 uint8_t leer(uint8_t address);
-void UART(void);
-void INS(void);                     // Mensaje a desplegar
-void OTRO(void);
+void UART(void);                    // Función UART
+void INS(void);                     // Mensajes a desplegar
+void OTRO(void);                    
 void MENSAJE(void);
 void MTMR0(void);
 //******************************************************************************
@@ -137,9 +137,9 @@ void __interrupt() isr(void){
             TXSTAbits.TXEN = 0; 
             }
         if(PORTBbits.RB0 == 0){     // Presionado porque son pull ups
-            PORTDbits.RD0 = 1;
-            PORTDbits.RD1 = 0;
-            escribir(VALOR1, 0x10);
+            PORTDbits.RD0 = 1;      // Encender pin para la led
+            PORTDbits.RD1 = 0;      // Apagar el otro pin
+            escribir(VALOR1, 0x10); // Función de escritura de la EEPROM
             escribir(VALOR2, 0x11);
             escribir(POT3, 0X12);
             escribir(POT4, 0X13);
@@ -147,24 +147,23 @@ void __interrupt() isr(void){
         }
         if(PORTBbits.RB1 == 0){     // Presionado porque son pull ups
             ADCON0bits.ADON = 0;
-            PORTDbits.RD0 = 0;
-            PORTDbits.RD1 = 1;
-            val1 = leer(0X10);
+            PORTDbits.RD0 = 0;      // Apagar el otro pin
+            PORTDbits.RD1 = 1;      // Encender pin para la led
+            val1 = leer(0X10);      // Función de lectura de la EEPROM
             val2 = leer(0x11);
             val3 = leer(0x12);
             val4 = leer(0x13);
             
-            CCPR1L = val1;
+            CCPR1L = val1;          // Se igualan vals. para actualizar posic.
             CCPR2L = val2;
             POT3 = val3;
             POT4 = val4;
             __delay_ms(3000);
             ADCON0bits.ADON = 1;
         }
-        INTCONbits.RBIF = 0;    // Limpiar la bandera del IOCB
+        INTCONbits.RBIF = 0;       // Limpiar la bandera del IOCB
     }
-    
-    PIR1bits.TMR2IF = 0;        // Limpiar la bandera del TMR2
+    PIR1bits.TMR2IF = 0;           // Limpiar la bandera del TMR2
 }
 
 //******************************************************************************
@@ -253,7 +252,7 @@ void setup(void){
 void main(void){  
     setup();                        // Llamar al set up       
     while (1){  
-        canales();
+        canales();                  // Swicheo de los canales
        //UART();
     }
 }
@@ -264,13 +263,13 @@ void main(void){
 void UART(void){ 
         __delay_ms(500); 
             VALOR = 0;
-            do{VALOR++;          // Incrementar la variable
-                TXREG = I[VALOR];   
+            do{VALOR++;                     // Incrementar la variable
+                TXREG = I[VALOR];           // Desplegar los caracteres
                 __delay_ms(50); 
             } 
-            while(VALOR<=72);     // Cantidad de carcateres del Array
+            while(VALOR<=72);               // Cantidad de carcateres del Array
             while(RCIF == 0);
-            INS();                // Llamar al mensaje a mostrar )
+            INS();                          // Llamar al mensaje a mostrar )
  } 
 
 // Bit banging se refiere a manejar el PWM por tiempos manuales
@@ -315,84 +314,83 @@ void canales(){                // Switcheo de los canales
 
 // Función para escribir en la EEPROM
 void escribir(uint8_t data, uint8_t address){ 
-    EEADR = address;            // Dirección de mem. a la que se le va a escribir
-    EEDAT = data;               // Valor a escribir
+    EEADR = address;               // Dirección de mem. a la que se le va a escr.
+    EEDAT = data;                  // Valor a escribir
    
-    EECON1bits.EEPGD = 0;       // Apuntar a la data memory
-    EECON1bits.WREN = 1 ;       // Habilitar escritura
-    INTCONbits.GIE = 0;         // Apagar las interrupciones globales
+    EECON1bits.EEPGD = 0;          // Apuntar a la data memory
+    EECON1bits.WREN = 1 ;          // Habilitar escritura
+    INTCONbits.GIE = 0;            // Apagar las interrupciones globales
     
-    EECON2 = 0X55;              // Secuencia necesaria para la escritura
+    EECON2 = 0X55;                 // Secuencia necesaria para la escritura
     EECON2 = 0xAA;
-    EECON1bits.WR = 1;          // Iniciar la escritura
+    EECON1bits.WR = 1;             // Iniciar la escritura
     
-    while(PIR2bits.EEIF == 0);  // Esperar al final de la escritura
-    PIR2bits.EEIF = 0;          // Apagar la bandera
-    EECON1bits.WREN = 0;        // Asegurar que no se está escribiendo
-    INTCONbits.GIE = 0;         // Habilitar las interrupciones globales
+    while(PIR2bits.EEIF == 0);     // Esperar al final de la escritura
+    PIR2bits.EEIF = 0;             // Apagar la bandera
+    EECON1bits.WREN = 0;           // Asegurar que no se está escribiendo
+    INTCONbits.GIE = 0;            // Habilitar las interrupciones globales
    }  
 
 // Función para leer de la EEPROM
 uint8_t leer(uint8_t address){   
-    EEADR = address;            // Ingresar dirección
-    EECON1bits.EEPGD = 0;       // Apuntar a la PROGRAM MEM.
-    EECON1bits.RD = 1;          // Indicar que se leerá
-    uint8_t data = EEDATA;      // El dato permanece en la variable
-    return data;                // Recueprar el dato 
+    EEADR = address;               // Ingresar dirección
+    EECON1bits.EEPGD = 0;          // Apuntar a la PROGRAM MEM.
+    EECON1bits.RD = 1;             // Indicar que se leerá
+    uint8_t data = EEDATA;         // El dato permanece en la variable
+    return data;                   // Recueprar el dato 
 }
   
 // Mensaje a desplegar
 void INS(void){  
     OP = RCREG;
-    // I[72] = " \nBienvenido, presione 1 para continuar con la comunicacion serial\n";
     switch(OP){
-            case 49:                      // Si se presiona el #1 MANUALMENTE
-                __delay_ms(500); 
-                    VALOR = 0;
-                    do{VALOR++;          // Incrementar la variable
-                        TXREG = R[VALOR];   
-                        __delay_ms(50); 
-                    } 
-                    while(VALOR<=60);    // Cantidad de carcateres del Array
-                        while(RCIF == 0);
-                    OP = 0;               // Limpiar la variable que hace el cambio
-                    OTRO();
-                    break;  
-            case 50:                      // Si se presiona el #2 COM. SERIAL
-                    TXSTAbits.TXEN = 0;       // Apagar la bandera de transmisión
-                OP = 0;
-                break;   
+        case 49:                   // Si se presiona el #1 MANUALMENTE
+            __delay_ms(500); 
+            VALOR = 0;
+            do{VALOR++;            // Incrementar la variable
+                TXREG = R[VALOR];  // Desplegar cada caracter
+                __delay_ms(50); 
+            } 
+            while(VALOR<=60);      // Cantidad de carcateres del Array
+            while(RCIF == 0);
+                OP = 0;            // Limpiar la variable que hace el cambio
+                OTRO();
+                break;  
+        case 50:                   // Si se presiona el #2 COM. SERIAL
+            TXSTAbits.TXEN = 0;    // Apagar la bandera de transmisión
+            OP = 0;
+            break;   
         }
 }
 
-void OTRO(void){ 
+void OTRO(void){                   // Función para elegir servo a mover
     OP = RCREG;
     switch(OP){ 
-        case 49:
-            MENSAJE();
+        case 49:                   // Si se presiona #1
+            MENSAJE();             // Desplegar mensaje
             if(RCREG >= 48 && RCREG <= 57){ 
-                VAL = RCREG;
+                VAL = RCREG;       // Valor para el mapeo
                 canales();
             }
             break;
-        case 50:
-            MENSAJE();
+        case 50:                   // Si se presiona #2
+            MENSAJE();             // Desplegar mensaje
             if(RCREG >= 48 && RCREG <= 57){
-                VAL1 = RCREG;
+                VAL1 = RCREG;      // Valor para el mapeo
                 canales();
                 }
             break;
-        case 51:
-            MENSAJE();
+        case 51:                    // Si se presiona #3
+            MENSAJE();              // Desplegar mensaje
             if(RCREG >= 48 && RCREG <= 57){ 
-                VAL2 = RCREG;
+                VAL2 = RCREG;       // Valor para el mapeo
                 canales();
             }
             break;
-        case 52:
-            MENSAJE();
+        case 52:                    // Si se presiona #4
+            MENSAJE();              // Desplegar mensaje
             if(RCREG >= 48 && RCREG <= 57){ 
-                VAL3 = RCREG;
+                VAL3 = RCREG;       // Valor para el mapeo
                 canales();
             }
             break; 
@@ -402,12 +400,12 @@ void OTRO(void){
 void MENSAJE(void){
     __delay_ms(500); 
     VALOR = 0;
-    do{VALOR++;          // Incrementar la variable
-    TXREG = M[VALOR];   
+    do{VALOR++;                    // Incrementar la variable
+    TXREG = M[VALOR];              // Desplegar cada caracter
     __delay_ms(50); 
     } 
-    while(VALOR<=36);    // Cantidad de carcateres del Array
+    while(VALOR<=36);              // Cantidad de carcateres del Array
     while(RCIF == 0);
-    OP = 0;              // Limpiar la variable que hace el cambio
+    OP = 0;                        // Limpiar la variable que hace el cambio
     }
 

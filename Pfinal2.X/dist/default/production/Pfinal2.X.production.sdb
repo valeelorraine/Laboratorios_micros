@@ -24,24 +24,24 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "87 C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
 [v _isr isr `II(v  1 e 1 0 ]
-"173
+"172
 [v _setup setup `(v  1 e 1 0 ]
-"253
+"252
 [v _main main `(v  1 e 1 0 ]
-"264
+"263
 [v _UART UART `(v  1 e 1 0 ]
-"277
+"276
 [v _canales canales `(v  1 e 1 0 ]
 [v i1_canales canales `(v  1 e 1 0 ]
-"317
+"316
 [v _escribir escribir `(v  1 e 1 0 ]
-"336
+"335
 [v _leer leer `(uc  1 e 1 0 ]
-"345
+"344
 [v _INS INS `(v  1 e 1 0 ]
-"368
+"366
 [v _OTRO OTRO `(v  1 e 1 0 ]
-"402
+"400
 [v _MENSAJE MENSAJE `(v  1 e 1 0 ]
 "59 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
@@ -361,20 +361,20 @@
 [v _R R `[60]uc  1 e 60 0 ]
 "70
 [v _M M `[36]uc  1 e 36 0 ]
-"253
+"252
 [v _main main `(v  1 e 1 0 ]
 {
-"259
+"258
 } 0
-"173
+"172
 [v _setup setup `(v  1 e 1 0 ]
 {
-"248
+"247
 } 0
-"277
+"276
 [v _canales canales `(v  1 e 1 0 ]
 {
-"314
+"313
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -459,47 +459,47 @@
 "87 C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"168
+"167
 } 0
-"336
+"335
 [v _leer leer `(uc  1 e 1 0 ]
 {
 [v leer@address address `uc  1 a 1 wreg ]
-"340
+"339
 [v leer@data data `uc  1 a 1 2 ]
-"336
+"335
 [v leer@address address `uc  1 a 1 wreg ]
 [v leer@address address `uc  1 a 1 1 ]
-"342
+"341
 } 0
-"317
+"316
 [v _escribir escribir `(v  1 e 1 0 ]
 {
 [v escribir@data data `uc  1 a 1 wreg ]
 [v escribir@data data `uc  1 a 1 wreg ]
 [v escribir@address address `uc  1 p 1 0 ]
 [v escribir@data data `uc  1 a 1 1 ]
-"333
+"332
 } 0
-"264
+"263
 [v _UART UART `(v  1 e 1 0 ]
 {
-"274
+"273
 } 0
-"345
+"344
 [v _INS INS `(v  1 e 1 0 ]
 {
-"366
+"364
 } 0
-"368
+"366
 [v _OTRO OTRO `(v  1 e 1 0 ]
 {
-"400
+"398
 } 0
-"277
+"276
 [v i1_canales canales `(v  1 e 1 0 ]
 {
-"314
+"313
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
 [v i1___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -581,8 +581,8 @@
 [v i1___fladd@a a `d  1 p 4 30 ]
 "237
 } 0
-"402 C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+"400 C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
 [v _MENSAJE MENSAJE `(v  1 e 1 0 ]
 {
-"412
+"410
 } 0

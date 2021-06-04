@@ -47,7 +47,7 @@ idataBANK3 CODE 0 124F 124F 48 2
 dataBANK2 BANK2 1 110 110 60 1
 dataBANK3 BANK3 1 190 190 48 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\PERSON~1\AppData\Local\Temp\sius.o
+$C:\Users\PERSON~1\AppData\Local\Temp\sgg4.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 12 12 3 2
 config CONFIG 4 2007 2007 2 2
@@ -100,64 +100,64 @@ STRING 1800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Pfinal2.X.production.o
-15 cinit CODE >738:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-15 cinit CODE >741:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-15 cinit CODE >856:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-16 cinit CODE >857:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-17 cinit CODE >858:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-18 cinit CODE >859:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-19 cinit CODE >860:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-1A cinit CODE >861:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-1B cinit CODE >862:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-1C cinit CODE >863:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-1D cinit CODE >864:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-1E cinit CODE >865:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-23 cinit CODE >869:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-24 cinit CODE >870:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-25 cinit CODE >871:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-26 cinit CODE >872:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-27 cinit CODE >873:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-28 cinit CODE >874:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-29 cinit CODE >875:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-2A cinit CODE >876:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-2B cinit CODE >877:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-30 cinit CODE >881:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-31 cinit CODE >882:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-32 cinit CODE >883:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-33 cinit CODE >884:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-34 cinit CODE >885:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-35 cinit CODE >886:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-36 cinit CODE >887:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-37 cinit CODE >888:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-38 cinit CODE >889:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-39 cinit CODE >890:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-3A cinit CODE >891:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-3B cinit CODE >892:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-3C cinit CODE >895:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-3D cinit CODE >896:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-3E cinit CODE >897:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-3F cinit CODE >898:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-40 cinit CODE >899:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-41 cinit CODE >900:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-42 cinit CODE >903:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-43 cinit CODE >904:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-44 cinit CODE >905:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-45 cinit CODE >906:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-46 cinit CODE >907:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-47 cinit CODE >913:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-47 cinit CODE >915:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-48 cinit CODE >916:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
+15 cinit CODE >738:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+15 cinit CODE >741:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+15 cinit CODE >856:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+16 cinit CODE >857:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+17 cinit CODE >858:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+18 cinit CODE >859:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+19 cinit CODE >860:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+1A cinit CODE >861:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+1B cinit CODE >862:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+1C cinit CODE >863:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+1D cinit CODE >864:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+1E cinit CODE >865:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+23 cinit CODE >869:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+24 cinit CODE >870:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+25 cinit CODE >871:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+26 cinit CODE >872:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+27 cinit CODE >873:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+28 cinit CODE >874:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+29 cinit CODE >875:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+2A cinit CODE >876:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+2B cinit CODE >877:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+30 cinit CODE >881:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+31 cinit CODE >882:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+32 cinit CODE >883:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+33 cinit CODE >884:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+34 cinit CODE >885:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+35 cinit CODE >886:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+36 cinit CODE >887:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+37 cinit CODE >888:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+38 cinit CODE >889:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+39 cinit CODE >890:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+3A cinit CODE >891:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+3B cinit CODE >892:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+3C cinit CODE >895:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+3D cinit CODE >896:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+3E cinit CODE >897:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+3F cinit CODE >898:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+40 cinit CODE >899:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+41 cinit CODE >900:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+42 cinit CODE >903:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+43 cinit CODE >904:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+44 cinit CODE >905:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+45 cinit CODE >906:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+46 cinit CODE >907:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+47 cinit CODE >913:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+47 cinit CODE >915:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+48 cinit CODE >916:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
 4 intentry CODE >87:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-7C9 text20 CODE >402:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-7C9 text20 CODE >403:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-7D6 text20 CODE >404:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-7D9 text20 CODE >405:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-7DD text20 CODE >406:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-7E3 text20 CODE >407:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-7EC text20 CODE >408:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-7F4 text20 CODE >410:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-7F8 text20 CODE >411:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-7FB text20 CODE >412:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+7C9 text20 CODE >400:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+7C9 text20 CODE >401:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+7D6 text20 CODE >402:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+7D9 text20 CODE >403:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+7DD text20 CODE >404:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+7E3 text20 CODE >405:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+7EC text20 CODE >406:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+7F4 text20 CODE >408:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+7F8 text20 CODE >409:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+7FB text20 CODE >410:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
 AF0 text19 CODE >10:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
 AF0 text19 CODE >21:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
 AF7 text19 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
@@ -424,100 +424,100 @@ D77 text19 CODE >237:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common
 913 text15 CODE >42:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
 914 text15 CODE >43:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
 91C text15 CODE >44:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+91D text14 CODE >276:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
 91D text14 CODE >277:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-91D text14 CODE >278:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-924 text14 CODE >281:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-97C text14 CODE >282:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-982 text14 CODE >283:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-988 text14 CODE >284:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-98F text14 CODE >285:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-992 text14 CODE >286:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-993 text14 CODE >289:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-9EF text14 CODE >290:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-9F5 text14 CODE >291:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-9FC text14 CODE >292:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-9FF text14 CODE >293:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-A00 text14 CODE >296:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-A58 text14 CODE >297:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-A5E text14 CODE >298:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-A64 text14 CODE >299:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-A6B text14 CODE >300:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-A6E text14 CODE >301:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-A6F text14 CODE >304:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-AC9 text14 CODE >305:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-ACB text14 CODE >306:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-AD2 text14 CODE >307:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-AD5 text14 CODE >308:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-AD6 text14 CODE >312:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-AEF text14 CODE >314:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-145D text13 CODE >368:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-145D text13 CODE >369:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1465 text13 CODE >370:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1466 text13 CODE >372:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-146B text13 CODE >373:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1479 text13 CODE >374:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-147F text13 CODE >375:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1485 text13 CODE >379:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-148A text13 CODE >380:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1498 text13 CODE >381:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-149F text13 CODE >386:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-14A4 text13 CODE >387:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-14B2 text13 CODE >388:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-14B9 text13 CODE >393:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-14BE text13 CODE >394:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-14CC text13 CODE >395:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-14D3 text13 CODE >399:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-14EB text13 CODE >400:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+924 text14 CODE >280:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+97C text14 CODE >281:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+982 text14 CODE >282:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+988 text14 CODE >283:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+98F text14 CODE >284:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+992 text14 CODE >285:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+993 text14 CODE >288:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+9EF text14 CODE >289:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+9F5 text14 CODE >290:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+9FC text14 CODE >291:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+9FF text14 CODE >292:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+A00 text14 CODE >295:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+A58 text14 CODE >296:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+A5E text14 CODE >297:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+A64 text14 CODE >298:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+A6B text14 CODE >299:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+A6E text14 CODE >300:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+A6F text14 CODE >303:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+AC9 text14 CODE >304:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+ACB text14 CODE >305:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+AD2 text14 CODE >306:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+AD5 text14 CODE >307:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+AD6 text14 CODE >311:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+AEF text14 CODE >313:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+145D text13 CODE >366:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+145D text13 CODE >367:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1465 text13 CODE >368:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1466 text13 CODE >370:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+146B text13 CODE >371:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1479 text13 CODE >372:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+147F text13 CODE >373:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1485 text13 CODE >377:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+148A text13 CODE >378:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1498 text13 CODE >379:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+149F text13 CODE >384:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+14A4 text13 CODE >385:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+14B2 text13 CODE >386:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+14B9 text13 CODE >391:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+14BE text13 CODE >392:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+14CC text13 CODE >393:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+14D3 text13 CODE >397:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+14EB text13 CODE >398:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1297 text12 CODE >344:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
 1297 text12 CODE >345:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1297 text12 CODE >346:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-129F text12 CODE >348:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12A0 text12 CODE >350:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12AE text12 CODE >351:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12B1 text12 CODE >352:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12B5 text12 CODE >353:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12BB text12 CODE >354:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12C6 text12 CODE >355:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12CE text12 CODE >357:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12D2 text12 CODE >358:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12D5 text12 CODE >359:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12DA text12 CODE >360:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12DB text12 CODE >361:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12DB text12 CODE >362:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12DE text12 CODE >363:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12E1 text12 CODE >364:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12E2 text12 CODE >365:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12F4 text12 CODE >366:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+129F text12 CODE >346:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12A0 text12 CODE >348:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12AE text12 CODE >349:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12B1 text12 CODE >350:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12B5 text12 CODE >351:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12BB text12 CODE >352:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12C6 text12 CODE >353:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12CE text12 CODE >355:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12D2 text12 CODE >356:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12D5 text12 CODE >357:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12DA text12 CODE >358:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12DB text12 CODE >359:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12DB text12 CODE >360:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12DE text12 CODE >361:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12E1 text12 CODE >362:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12E2 text12 CODE >363:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12F4 text12 CODE >364:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1217 text11 CODE >263:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
 1217 text11 CODE >264:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1217 text11 CODE >265:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1225 text11 CODE >266:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1228 text11 CODE >267:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-122C text11 CODE >268:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1232 text11 CODE >269:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-123D text11 CODE >270:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1245 text11 CODE >272:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1249 text11 CODE >273:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-124E text11 CODE >274:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-11AA text10 CODE >317:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-11AB text10 CODE >318:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-11AF text10 CODE >319:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-11B1 text10 CODE >321:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-11B4 text10 CODE >322:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-11B5 text10 CODE >323:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-11B6 text10 CODE >325:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-11B8 text10 CODE >326:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-11BA text10 CODE >327:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-11BB text10 CODE >329:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-11C1 text10 CODE >330:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-11C2 text10 CODE >331:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-11C5 text10 CODE >332:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-11C6 text10 CODE >333:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1186 text9 CODE >336:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1187 text9 CODE >337:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-118B text9 CODE >338:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-118E text9 CODE >339:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-118F text9 CODE >340:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1195 text9 CODE >341:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1196 text9 CODE >342:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1225 text11 CODE >265:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1228 text11 CODE >266:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+122C text11 CODE >267:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1232 text11 CODE >268:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+123D text11 CODE >269:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1245 text11 CODE >271:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1249 text11 CODE >272:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+124E text11 CODE >273:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+11AA text10 CODE >316:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+11AB text10 CODE >317:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+11AF text10 CODE >318:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+11B1 text10 CODE >320:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+11B4 text10 CODE >321:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+11B5 text10 CODE >322:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+11B6 text10 CODE >324:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+11B8 text10 CODE >325:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+11BA text10 CODE >326:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+11BB text10 CODE >328:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+11C1 text10 CODE >329:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+11C2 text10 CODE >330:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+11C5 text10 CODE >331:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+11C6 text10 CODE >332:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1186 text9 CODE >335:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1187 text9 CODE >336:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+118B text9 CODE >337:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+118E text9 CODE >338:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+118F text9 CODE >339:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1195 text9 CODE >340:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1196 text9 CODE >341:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
 14EC text8 CODE >87:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
 14EC text8 CODE >88:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
 14F1 text8 CODE >91:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
@@ -579,8 +579,8 @@ AEF text14 CODE >314:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\L
 1613 text8 CODE >161:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
 1621 text8 CODE >162:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
 1624 text8 CODE >164:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1625 text8 CODE >167:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1626 text8 CODE >168:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1625 text8 CODE >166:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1626 text8 CODE >167:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
 D78 text7 CODE >10:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
 D78 text7 CODE >21:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
 D7F text7 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
@@ -847,109 +847,109 @@ F2 text5 CODE >123:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\s
 7BF text3 CODE >42:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
 7C0 text3 CODE >43:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
 7C8 text3 CODE >44:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+1631 text2 CODE >276:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
 1631 text2 CODE >277:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1631 text2 CODE >278:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1638 text2 CODE >281:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-168E text2 CODE >282:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1696 text2 CODE >283:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-169C text2 CODE >284:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-16A3 text2 CODE >285:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-16A6 text2 CODE >286:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-16A7 text2 CODE >289:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-16FF text2 CODE >290:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1705 text2 CODE >291:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-170C text2 CODE >292:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-170F text2 CODE >293:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1710 text2 CODE >296:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1766 text2 CODE >297:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-176E text2 CODE >298:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1774 text2 CODE >299:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-177B text2 CODE >300:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-177E text2 CODE >301:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-177F text2 CODE >304:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-17D7 text2 CODE >305:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-17D9 text2 CODE >306:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-17E0 text2 CODE >307:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-17E3 text2 CODE >308:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-17E4 text2 CODE >312:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-17FF text2 CODE >314:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12F5 text1 CODE >173:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12F5 text1 CODE >175:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12F9 text1 CODE >176:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12FA text1 CODE >178:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12FE text1 CODE >179:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-12FF text1 CODE >180:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1300 text1 CODE >181:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1301 text1 CODE >182:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1303 text1 CODE >183:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1304 text1 CODE >185:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1307 text1 CODE >186:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1308 text1 CODE >187:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1309 text1 CODE >188:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-130A text1 CODE >191:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-130E text1 CODE >192:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-130F text1 CODE >193:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1311 text1 CODE >196:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1313 text1 CODE >197:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1317 text1 CODE >198:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1318 text1 CODE >199:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1319 text1 CODE >200:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-131A text1 CODE >201:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-131B text1 CODE >202:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-131C text1 CODE >203:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-131D text1 CODE >206:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1320 text1 CODE >207:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1321 text1 CODE >208:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1322 text1 CODE >209:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1323 text1 CODE >210:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1326 text1 CODE >211:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1328 text1 CODE >214:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-132A text1 CODE >215:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-132E text1 CODE >216:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1335 text1 CODE >218:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1338 text1 CODE >219:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-133B text1 CODE >220:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-133C text1 CODE >221:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1340 text1 CODE >222:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1343 text1 CODE >223:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1344 text1 CODE >224:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1345 text1 CODE >227:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1347 text1 CODE >228:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-134B text1 CODE >229:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-134D text1 CODE >232:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-134E text1 CODE >233:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1351 text1 CODE >234:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1352 text1 CODE >235:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1353 text1 CODE >236:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1354 text1 CODE >237:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1355 text1 CODE >238:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1356 text1 CODE >239:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1359 text1 CODE >240:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-135A text1 CODE >241:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-135B text1 CODE >245:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-135E text1 CODE >246:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1362 text1 CODE >247:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1364 text1 CODE >248:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1638 text2 CODE >280:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+168E text2 CODE >281:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1696 text2 CODE >282:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+169C text2 CODE >283:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+16A3 text2 CODE >284:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+16A6 text2 CODE >285:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+16A7 text2 CODE >288:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+16FF text2 CODE >289:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1705 text2 CODE >290:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+170C text2 CODE >291:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+170F text2 CODE >292:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1710 text2 CODE >295:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1766 text2 CODE >296:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+176E text2 CODE >297:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1774 text2 CODE >298:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+177B text2 CODE >299:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+177E text2 CODE >300:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+177F text2 CODE >303:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+17D7 text2 CODE >304:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+17D9 text2 CODE >305:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+17E0 text2 CODE >306:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+17E3 text2 CODE >307:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+17E4 text2 CODE >311:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+17FF text2 CODE >313:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12F5 text1 CODE >172:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12F5 text1 CODE >174:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12F9 text1 CODE >175:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12FA text1 CODE >177:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12FE text1 CODE >178:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+12FF text1 CODE >179:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1300 text1 CODE >180:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1301 text1 CODE >181:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1303 text1 CODE >182:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1304 text1 CODE >184:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1307 text1 CODE >185:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1308 text1 CODE >186:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1309 text1 CODE >187:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+130A text1 CODE >190:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+130E text1 CODE >191:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+130F text1 CODE >192:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1311 text1 CODE >195:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1313 text1 CODE >196:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1317 text1 CODE >197:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1318 text1 CODE >198:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1319 text1 CODE >199:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+131A text1 CODE >200:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+131B text1 CODE >201:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+131C text1 CODE >202:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+131D text1 CODE >205:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1320 text1 CODE >206:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1321 text1 CODE >207:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1322 text1 CODE >208:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1323 text1 CODE >209:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1326 text1 CODE >210:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1328 text1 CODE >213:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+132A text1 CODE >214:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+132E text1 CODE >215:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1335 text1 CODE >217:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1338 text1 CODE >218:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+133B text1 CODE >219:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+133C text1 CODE >220:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1340 text1 CODE >221:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1343 text1 CODE >222:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1344 text1 CODE >223:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1345 text1 CODE >226:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1347 text1 CODE >227:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+134B text1 CODE >228:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+134D text1 CODE >231:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+134E text1 CODE >232:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1351 text1 CODE >233:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1352 text1 CODE >234:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1353 text1 CODE >235:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1354 text1 CODE >236:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1355 text1 CODE >237:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1356 text1 CODE >238:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1359 text1 CODE >239:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+135A text1 CODE >240:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+135B text1 CODE >244:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+135E text1 CODE >245:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1362 text1 CODE >246:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1364 text1 CODE >247:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1178 maintext CODE >252:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
 1178 maintext CODE >253:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1178 maintext CODE >254:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-117D maintext CODE >256:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
-1197 inittext CODE >830:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-1197 inittext CODE >831:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-1198 inittext CODE >832:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-1199 inittext CODE >833:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-119A inittext CODE >834:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-119B inittext CODE >841:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-119B inittext CODE >842:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-11A0 inittext CODE >843:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-11A1 inittext CODE >844:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-11A2 inittext CODE >845:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-11A3 inittext CODE >846:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-11A4 inittext CODE >847:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-11A5 inittext CODE >848:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-11A6 inittext CODE >849:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-11A7 inittext CODE >850:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-11A8 inittext CODE >851:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
-11A9 inittext CODE >852:C:\Users\PERSON~1\AppData\Local\Temp\sius.s
+117D maintext CODE >255:C:\Users\personal01\Documents\Valerie\Micros\Laboratorios\Laboratorios_micros\Pfinal2.X\Mainfinal2.c
+1197 inittext CODE >830:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+1197 inittext CODE >831:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+1198 inittext CODE >832:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+1199 inittext CODE >833:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+119A inittext CODE >834:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+119B inittext CODE >841:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+119B inittext CODE >842:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+11A0 inittext CODE >843:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+11A1 inittext CODE >844:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+11A2 inittext CODE >845:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+11A3 inittext CODE >846:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+11A4 inittext CODE >847:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+11A5 inittext CODE >848:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+11A6 inittext CODE >849:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+11A7 inittext CODE >850:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+11A8 inittext CODE >851:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
+11A9 inittext CODE >852:C:\Users\PERSON~1\AppData\Local\Temp\sgg4.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -997,7 +997,7 @@ _VAL1 EE 0 BANK1 1 bssBANK1 dist/default/production\Pfinal2.X.production.o
 _VAL2 ED 0 BANK1 1 bssBANK1 dist/default/production\Pfinal2.X.production.o
 _VAL3 EC 0 BANK1 1 bssBANK1 dist/default/production\Pfinal2.X.production.o
 _WPUB 95 0 ABS 0 - dist/default/production\Pfinal2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\PERSON~1\AppData\Local\Temp\sius.o
+___sp 0 0 STACK 2 stack C:\Users\PERSON~1\AppData\Local\Temp\sgg4.o
 _leer 230C 0 CODE 0 text9 dist/default/production\Pfinal2.X.production.o
 _main 22F0 0 CODE 0 maintext dist/default/production\Pfinal2.X.production.o
 _val1 1DF 0 BANK3 1 bssBANK3 dist/default/production\Pfinal2.X.production.o
@@ -1005,7 +1005,7 @@ _val2 1DE 0 BANK3 1 bssBANK3 dist/default/production\Pfinal2.X.production.o
 _val3 1DD 0 BANK3 1 bssBANK3 dist/default/production\Pfinal2.X.production.o
 _val4 1DC 0 BANK3 1 bssBANK3 dist/default/production\Pfinal2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Pfinal2.X.production.o
-start 24 0 CODE 0 init C:\Users\PERSON~1\AppData\Local\Temp\sius.o
+start 24 0 CODE 0 init C:\Users\PERSON~1\AppData\Local\Temp\sgg4.o
 ___flmul@aexp C0 0 BANK1 1 cstackBANK1 dist/default/production\Pfinal2.X.production.o
 ___flmul@bexp C1 0 BANK1 1 cstackBANK1 dist/default/production\Pfinal2.X.production.o
 ___flmul@prod C2 0 BANK1 1 cstackBANK1 dist/default/production\Pfinal2.X.production.o
@@ -1023,12 +1023,12 @@ __LidataBANK2 0 0 ABS 0 idataBANK2 -
 __LidataBANK3 0 0 ABS 0 idataBANK3 -
 __Hpowerup 0 0 CODE 0 powerup -
 __end_ofi1___xxtofl 123A 0 CODE 0 text15 dist/default/production\Pfinal2.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sius.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sius.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sius.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sius.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sius.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sius.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sgg4.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sgg4.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sgg4.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sgg4.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sgg4.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\PERSON~1\AppData\Local\Temp\sgg4.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Pfinal2.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Pfinal2.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -1058,8 +1058,8 @@ __end_of___fltol 28BA 0 CODE 0 text4 dist/default/production\Pfinal2.X.productio
 i1___fltol@f1 4E 0 BANK0 1 cstackBANK0 dist/default/production\Pfinal2.X.production.o
 __Umul8_16@multiplicand A0 0 BANK1 1 cstackBANK1 dist/default/production\Pfinal2.X.production.o
 _OPTION_REG 81 0 ABS 0 - dist/default/production\Pfinal2.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\PERSON~1\AppData\Local\Temp\sius.o
-___stacklo 0 0 ABS 0 - C:\Users\PERSON~1\AppData\Local\Temp\sius.o
+___stackhi 0 0 ABS 0 - C:\Users\PERSON~1\AppData\Local\Temp\sgg4.o
+___stacklo 0 0 ABS 0 - C:\Users\PERSON~1\AppData\Local\Temp\sgg4.o
 _BAUDCTLbits 187 0 ABS 0 - dist/default/production\Pfinal2.X.production.o
 i1___fladd@aexp 4B 0 BANK0 1 cstackBANK0 dist/default/production\Pfinal2.X.production.o
 i1___fladd@bexp 4C 0 BANK0 1 cstackBANK0 dist/default/production\Pfinal2.X.production.o
@@ -1080,7 +1080,7 @@ __pcstackBANK1 A0 0 BANK1 1 cstackBANK1 dist/default/production\Pfinal2.X.produc
 _VALOR1 1DB 0 BANK3 1 bssBANK3 dist/default/production\Pfinal2.X.production.o
 _VALOR2 1DA 0 BANK3 1 bssBANK3 dist/default/production\Pfinal2.X.production.o
 __end_ofi1__Umul8_16 23DC 0 CODE 0 text18 dist/default/production\Pfinal2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\PERSON~1\AppData\Local\Temp\sius.o
+___int_sp 0 0 STACK 2 stack C:\Users\PERSON~1\AppData\Local\Temp\sgg4.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -1152,7 +1152,7 @@ i1___flmul@sign 2D 0 BANK0 1 cstackBANK0 dist/default/production\Pfinal2.X.produ
 i1___flmul@temp 38 0 BANK0 1 cstackBANK0 dist/default/production\Pfinal2.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
 i1___fladd@signs 4A 0 BANK0 1 cstackBANK0 dist/default/production\Pfinal2.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\PERSON~1\AppData\Local\Temp\sius.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\PERSON~1\AppData\Local\Temp\sgg4.o
 __end_of___xxtofl F92 0 CODE 0 text3 dist/default/production\Pfinal2.X.production.o
 __pdataBANK2 110 0 BANK2 1 dataBANK2 dist/default/production\Pfinal2.X.production.o
 __pdataBANK3 190 0 BANK3 1 dataBANK3 dist/default/production\Pfinal2.X.production.o

@@ -2762,7 +2762,6 @@ void __attribute__((picinterrupt(("")))) isr(void){
         }
         INTCONbits.RBIF = 0;
     }
-
     PIR1bits.TMR2IF = 0;
 }
 
@@ -2943,24 +2942,23 @@ uint8_t leer(uint8_t address){
 
 void INS(void){
     OP = RCREG;
-
     switch(OP){
-            case 49:
-                _delay((unsigned long)((500)*(4000000/4000.0)));
-                    VALOR = 0;
-                    do{VALOR++;
-                        TXREG = R[VALOR];
-                        _delay((unsigned long)((50)*(4000000/4000.0)));
-                    }
-                    while(VALOR<=60);
-                        while(RCIF == 0);
-                    OP = 0;
-                    OTRO();
-                    break;
-            case 50:
-                    TXSTAbits.TXEN = 0;
+        case 49:
+            _delay((unsigned long)((500)*(4000000/4000.0)));
+            VALOR = 0;
+            do{VALOR++;
+                TXREG = R[VALOR];
+                _delay((unsigned long)((50)*(4000000/4000.0)));
+            }
+            while(VALOR<=60);
+            while(RCIF == 0);
                 OP = 0;
+                OTRO();
                 break;
+        case 50:
+            TXSTAbits.TXEN = 0;
+            OP = 0;
+            break;
         }
 }
 
